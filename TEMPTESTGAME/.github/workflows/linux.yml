@@ -1,0 +1,49 @@
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a set of commands using the runners shell
+      - name: script run line haha
+        run: |
+          sudo apt update
+          sudo apt-get install unzip
+          sudo apt-get install gcc-mipsel-linux-gnu g++-mipsel-linux-gnu binutils-mipsel-linux-gnu
+          sudo apt install wget
+          sudo apt install rar
+          wget http://psx.arthus.net/sdk/Psy-Q/psyq-4_7-converted-light.zip
+          wget https://github.com/Lameguy64/mkpsxiso/releases/download/v2.02/mkpsxiso-2.02-Linux.deb
+          sudo dpkg -i mkpsxiso-2.02-Linux.deb
+          unzip psyq-4_7-converted-light.zip
+          mv psyq-4_7-converted mips/psyq
+          sudo apt-get install libtinyxml2-dev
+          sudo apt-get install libswscale-dev
+          sudo apt-get install ffmpeg
+          sudo apt-get install libavformat-dev
+          wget https://download1515.mediafire.com/yiskdz62pfzg/7zeyfstxyg66kn2/licensea.dat
+          make -f Makefile.assets -j8
+          mkdir export
+          mv funkin.bin export
+          mv funkin.cue export
+          rar a export.rar export
+
+      - name: upload export
+        run: |
+          curl --upload-file export.rar https://transfer.sh/  
