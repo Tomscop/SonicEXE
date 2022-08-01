@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Defines the ISO project -->
+<iso_project image_name="funkin.bin" cue_sheet="funkin.cue" no_xa="0">
+	<!-- Data track -->
+	<track type="data">
+		<!-- Identifiers -->
+		<identifiers
+			system        = "PLAYSTATION"
+			application   = "PLAYSTATION"
+			volume        = "PSXFUNKIN"
+			volume_set    = "PSXFUNKIN"
+			publisher     = "CUCKYDEV"
+			copyright     = "NINJAMUFFIN99"
+		/>
+		<license file="licensea.dat"/>	
+	
+		<!-- Data directory tree -->
+		<directory_tree>
+			<!-- System -->
+			<file name = "system.cnf" type = "data" source = "iso/system.cnf"/>
+			<file name = "SCUS_000.00" type = "data" source = "funkin.ps-exe"/>
+			
+			<!-- Menu assets -->
+			<dir name = "menu">
+				<file name = "loading.tim" type = "data" source = "iso/images/menu/loading.tim"/>
+				<file name = "menu.arc" type = "data" source = "iso/images/menu/menu.arc"/>
+			</dir>
+			
+			<!-- Fonts -->
+			<dir name = "fonts">
+				<file name = "cdr.tim" type = "data" source = "iso/images/font/cdr.tim"/>
+				<file name = "boldfont.tim" type = "data" source = "iso/images/font/boldfont.tim"/>
+				<file name = "arial.tim" type = "data" source = "iso/images/font/arial.tim"/>
+			</dir>
+			
+			<!-- Stage assets -->
+			<dir name = "stage">
+				<file name = "hud0.tim" type = "data" source = "iso/images/hud0.tim"/>
+				<file name = "hud1.tim" type = "data" source = "iso/images/hud1.tim"/>
+				<file name = "note.tim" type = "data" source = "iso/images/note.tim"/>
+			</dir>
+			
+			<!-- Week 1 assets -->
+			<dir name = "stages">
+				<!-- Background art -->
+				<file name = "stage1.arc" type = "data" source = "iso/stages/stage1/back.arc"/>
+			</dir>
+			
+			<!-- Characters assets -->
+			<dir name = "char">
+				<!-- Boyfriend assets -->
+				<file name = "bf.arc" type = "data" source = "iso/characters/bf/main.arc"/>
+				
+				<!-- Dad assets -->
+				<file name = "dad.arc" type = "data" source = "iso/characters/dad/main.arc"/>
+				
+				<!-- Girlfriend assets -->
+				<file name = "gf.arc" type = "data" source = "iso/characters/gf/main.arc"/>
+				<file name = "gftut.arc" type = "data" source = "iso/characters/gf/tut.arc"/>
+				<file name = "speaker.tim" type = "data" source = "iso/characters/gf/speaker.tim"/>
+			</dir>
+			
+			<!-- Songs -->
+			<dir name = "songs">
+				<!-- Bopeebo charts -->
+				<file name = "1.1e.cht" type = "data" source = "iso/songs/bopeebo/bopeebo-easy.json.cht"/>
+				<file name = "1.1n.cht" type = "data" source = "iso/songs/bopeebo/bopeebo.json.cht"/>
+				<file name = "1.1h.cht" type = "data" source = "iso/songs/bopeebo/bopeebo-hard.json.cht"/>
+				<!-- Fresh charts -->
+				<file name = "1.2e.cht" type = "data" source = "iso/songs/fresh/fresh-easy.json.cht"/>
+				<file name = "1.2n.cht" type = "data" source = "iso/songs/fresh/fresh.json.cht"/>
+				<file name = "1.2h.cht" type = "data" source = "iso/songs/fresh/fresh-hard.json.cht"/>
+				<!-- Dadbattle charts -->
+				<file name = "1.3e.cht" type = "data" source = "iso/songs/dadbattle/dadbattle-easy.json.cht"/>
+				<file name = "1.3n.cht" type = "data" source = "iso/songs/dadbattle/dadbattle.json.cht"/>
+				<file name = "1.3h.cht" type = "data" source = "iso/songs/dadbattle/dadbattle-hard.json.cht"/>
+				<!-- Tutorial charts -->
+				<file name = "1.4e.cht" type = "data" source = "iso/songs/tutorial/tutorial-easy.json.cht"/>
+				<file name = "1.4n.cht" type = "data" source = "iso/songs/tutorial/tutorial.json.cht"/>
+				<file name = "1.4h.cht" type = "data" source = "iso/songs/tutorial/tutorial-hard.json.cht"/>
+			</dir>
+			
+			<!-- Music -->
+			<dir name = "music">
+				<file name = "menu.xa" type = "xa" source = "iso/music/menu.xa"/>
+				<dummy sectors="128"/>
+				<file name = "week1a.xa" type = "xa" source = "iso/songs/week1a.xa"/>
+				<dummy sectors="128"/>
+				<file name = "week1b.xa" type = "xa" source = "iso/songs/week1b.xa"/>
+				<dummy sectors="128"/>
+			</dir>
+			
+			<!-- Sound -->
+			<dir name = "sounds">
+				<file name = "micdrop.vag" type = "data" source = "iso/sounds/fnf_loss_sfx.vag"/>
+			</dir>
+			
+			<!-- Dummy sectors -->
+			<dummy sectors="1024"/>
+		</directory_tree>
+	</track>
+</iso_project>

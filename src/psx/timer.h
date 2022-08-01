@@ -1,0 +1,16 @@
+#ifndef PSXF_GUARD_TIMER_H
+#define PSXF_GUARD_TIMER_H
+
+#include "psx.h"
+#include "fixed.h"
+
+//Timer state
+extern u32 frame_count, animf_count;
+extern fixed_t timer_sec, timer_dt;
+
+//Timer interface
+void Timer_Init(void);
+void Timer_Tick(void);
+void Timer_Reset(void);
+
+#endif

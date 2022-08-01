@@ -1,0 +1,4 @@
+all:
+	@ $(MAKE) -f Makefile.mtim
+	@ $(MAKE) -f Makefile.mcht
+	@ $(MAKE) -f Makefile.max
