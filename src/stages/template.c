@@ -6,7 +6,9 @@
 
 #include "template.h"
 
-#include "../mem.h"
+#include "../../psx/archive.h"
+#include "../../psx/mem.h"
+#include "../../stage/stage.h"
 
 //Dummy background structure
 typedef struct

@@ -8,6 +8,7 @@ all: \
 	iso/characters/gf/speaker.tim \
 	\
 	iso/stages/stage1/back.arc \
+	iso/stages/gh/back.arc \
 	\
 	iso/images/menu/menu.arc \
 	iso/images/menu/loading.tim \
@@ -39,3 +40,6 @@ iso/characters/gf/tut.arc: iso/characters/gf/tut0.tim iso/characters/gf/tut1.tim
 
 # Stage1
 iso/stages/stage1/back.arc: iso/stages/stage1/back0.tim iso/stages/stage1/back1.tim
+
+# GH
+iso/stages/gh/back.arc: iso/stages/gh/0.tim iso/stages/gh/1.tim iso/stages/gh/2.tim iso/stages/gh/3.tim

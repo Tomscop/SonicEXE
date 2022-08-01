@@ -43,8 +43,8 @@
 			
 			<!-- Week 1 assets -->
 			<dir name = "stages">
-				<!-- Background art -->
 				<file name = "stage1.arc" type = "data" source = "iso/stages/stage1/back.arc"/>
+				<file name = "gh.arc" type = "data" source = "iso/stages/gh/back.arc"/>
 			</dir>
 			
 			<!-- Characters assets -->
@@ -64,13 +64,13 @@
 			<!-- Songs -->
 			<dir name = "songs">
 				<!-- Bopeebo charts -->
-				<file name = "1.1e.cht" type = "data" source = "iso/songs/bopeebo/bopeebo-easy.json.cht"/>
-				<file name = "1.1n.cht" type = "data" source = "iso/songs/bopeebo/bopeebo.json.cht"/>
-				<file name = "1.1h.cht" type = "data" source = "iso/songs/bopeebo/bopeebo-hard.json.cht"/>
+				<file name = "1.1e.cht" type = "data" source = "iso/songs/too-slow/too-slow-easy.json.cht"/>
+				<file name = "1.1n.cht" type = "data" source = "iso/songs/too-slow/too-slow.json.cht"/>
+				<file name = "1.1h.cht" type = "data" source = "iso/songs/too-slow/too-slow-hard.json.cht"/>
 				<!-- Fresh charts -->
-				<file name = "1.2e.cht" type = "data" source = "iso/songs/fresh/fresh-easy.json.cht"/>
-				<file name = "1.2n.cht" type = "data" source = "iso/songs/fresh/fresh.json.cht"/>
-				<file name = "1.2h.cht" type = "data" source = "iso/songs/fresh/fresh-hard.json.cht"/>
+				<file name = "1.2e.cht" type = "data" source = "iso/songs/too-slow-encore/too-slow-encore.json.cht"/>
+				<file name = "1.2n.cht" type = "data" source = "iso/songs/too-slow-encore/too-slow-encore.json.cht"/>
+				<file name = "1.2h.cht" type = "data" source = "iso/songs/too-slow-encore/too-slow-encore.json.cht"/>
 				<!-- Dadbattle charts -->
 				<file name = "1.3e.cht" type = "data" source = "iso/songs/dadbattle/dadbattle-easy.json.cht"/>
 				<file name = "1.3n.cht" type = "data" source = "iso/songs/dadbattle/dadbattle.json.cht"/>
@@ -94,6 +94,8 @@
 			<!-- Sound -->
 			<dir name = "sounds">
 				<file name = "micdrop.vag" type = "data" source = "iso/sounds/fnf_loss_sfx.vag"/>
+				<file name = "hitsta1.vag" type = "data" source = "iso/sounds/hitstatic1.vag"/>
+				<file name = "gamoend.vag" type = "data" source = "iso/sounds/gameoverend.vag"/>
 			</dir>
 			
 			<!-- Dummy sectors -->

@@ -44,17 +44,15 @@ void FollowCharCamera()
 
 void NoteHitEvent(u8 type)
 {
-	stage.bump += FIXED_DEC(10,1000);
-	if (type & NOTE_FLAG_BULLET)
-	{
-		stage.camera.zoom += FIXED_DEC(200,1000);
-		stage.bump += FIXED_DEC(100,1000);
-	}
+
 }
 
 void NoteMissEvent(u8 type, u8 state)
 {
 	PlayerState *this = &stage.player_state[state];
-	if (type & NOTE_FLAG_BULLET)
-		this->health = -0x7000;
+	if (type & NOTE_FLAG_STATIC)
+	{
+		Audio_PlaySound(stage.sound[1], 0x3fff);
+		this->health -= 2000;
+	}
 }

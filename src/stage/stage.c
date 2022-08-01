@@ -63,6 +63,7 @@ static const u8 note_anims[4][3] = {
 #include "../characters/gf/gf.h"
 
 #include "../stages/stage1/stage1.h"
+#include "../stages/gh/gh.h"
 
 static const StageDef stage_defs[StageId_Max] = {
 	#include "../songs.h"
@@ -904,7 +905,7 @@ static void Stage_DrawNotes(void)
 					Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				}
 			}
-			else if (note->type & NOTE_FLAG_BULLET)
+			else if (note->type & NOTE_FLAG_STATIC)
 			{
 				//Don't draw if already hit
 				if (note->type & NOTE_FLAG_HIT)
@@ -1229,6 +1230,16 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
     stage.sound[0] = Audio_LoadVAGData(data, file.size);
     Mem_Free(data);
 	
+	IO_FindFile(&file, "\\SOUNDS\\HITSTA1.VAG;1");
+   	data = IO_ReadFile(&file);
+    stage.sound[1] = Audio_LoadVAGData(data, file.size);
+    Mem_Free(data);
+	
+	IO_FindFile(&file, "\\SOUNDS\\GAMOEND.VAG;1");
+	data = IO_ReadFile(&file);
+	stage.sound[2] = Audio_LoadVAGData(data, file.size);
+	Mem_Free(data);
+	
 	//load fonts
 	FontData_Load(&stage.font_cdr, Font_CDR);
 	
@@ -1338,11 +1349,22 @@ void Stage_Tick(void)
 	SeamLoad:;
 	
 	//Tick transition
+	if (stage.state == StageState_Play)
 	{
 		//Return to menu when start is pressed
 		if (pad_state.press & PAD_START)
 		{
-			stage.trans = (stage.state == StageState_Play) ? StageTrans_Menu : StageTrans_Reload;
+			stage.trans = StageTrans_Menu;
+			Trans_Start();
+		}
+	}
+	else
+	{
+		//Return to menu when start is pressed
+		if (pad_state.press & PAD_START)
+		{
+			stage.trans = StageTrans_Reload;
+			Audio_PlaySound(stage.sound[2], 0x3fff);
 			Trans_Start();
 		}
 	}

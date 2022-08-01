@@ -27,7 +27,7 @@ struct Section
 #define NOTE_FLAG_SUSTAIN_END (1 << 4) //Is either end of sustain
 #define NOTE_FLAG_ALT_ANIM    (1 << 5) //Note plays alt animation
 #define NOTE_FLAG_MINE        (1 << 6) //Note is a mine
-#define NOTE_FLAG_BULLET      (1 << 7) //Note is a bullet
+#define NOTE_FLAG_STATIC      (1 << 7) //Note is a bullet
 #define NOTE_FLAG_HIT         (1 << 8) //Note has been hit
 
 struct Note
@@ -138,8 +138,8 @@ int main(int argc, char *argv[])
 				new_note.type |= NOTE_FLAG_ALT_ANIM;
 			if (sustain >= 0)
 				new_note.type |= NOTE_FLAG_SUSTAIN_END;
-			if (j[3] == "Bullet_Note")
-				new_note.type |= NOTE_FLAG_BULLET;
+			if (j[3] == "Static Note")
+				new_note.type |= NOTE_FLAG_STATIC;
 			
 			if (note_fudge.count(*((uint32_t*)&new_note)))
 			{

@@ -10,10 +10,10 @@ iso/%.xa:
 	tools/xainterleave/xainterleave $@ $^
 
 # Menu
-iso/music/menu.xa: iso/music/freakymenu.xa iso/music/gameover.xa
+iso/music/menu.xa: iso/music/menuscreen.xa iso/music/gameover.xa
 
 # Week1a
-iso/songs/week1a.xa: iso/songs/bopeebo/Inst.xa iso/songs/bopeebo/Merged.xa iso/songs/fresh/Inst.xa iso/songs/fresh/Merged.xa
+iso/songs/week1a.xa: iso/songs/too-slow/Inst.xa iso/songs/too-slow/Merged.xa iso/songs/too-slow-encore/Inst.xa iso/songs/too-slow-encore/Merged.xa
 
 # Week1b
 iso/songs/week1b.xa: iso/songs/dadbattle/Inst.xa iso/songs/dadbattle/Merged.xa iso/songs/tutorial/Inst.xa
