@@ -1,6 +1,7 @@
 all: \
 	iso/characters/bf/main.arc \
 	\
+	iso/characters/sonicexe/main.arc \
 	iso/characters/dad/main.arc \
 	\
 	iso/characters/gf/main.arc \
@@ -43,3 +44,6 @@ iso/stages/stage1/back.arc: iso/stages/stage1/back0.tim iso/stages/stage1/back1.
 
 # GH
 iso/stages/gh/back.arc: iso/stages/gh/0.tim iso/stages/gh/1.tim iso/stages/gh/2.tim iso/stages/gh/3.tim
+
+# SonicEXE
+iso/characters/sonicexe/main.arc: iso/characters/sonicexe/idle0.tim iso/characters/sonicexe/idle1.tim iso/characters/sonicexe/idle2.tim iso/characters/sonicexe/left0.tim iso/characters/sonicexe/left1.tim iso/characters/sonicexe/down0.tim iso/characters/sonicexe/down1.tim iso/characters/sonicexe/down2.tim iso/characters/sonicexe/down3.tim iso/characters/sonicexe/up0.tim iso/characters/sonicexe/up1.tim iso/characters/sonicexe/up2.tim iso/characters/sonicexe/up3.tim iso/characters/sonicexe/right0.tim iso/characters/sonicexe/right1.tim iso/characters/sonicexe/laugh0.tim iso/characters/sonicexe/laugh1.tim

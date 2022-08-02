@@ -1,7 +1,7 @@
 	{ //StageId_1_1 (Bopeebo)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
@@ -17,7 +17,7 @@
 	{ //StageId_1_2 (Fresh)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
@@ -33,7 +33,7 @@
 	{ //StageId_1_3 (Dadbattle)
 		//Characters
 		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background

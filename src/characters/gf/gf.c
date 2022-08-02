@@ -158,10 +158,7 @@ void Char_GF_Tick(Character *character)
 	
 	//Get parallax
 	fixed_t parallax;
-	if (stage.stage_id >= StageId_1_1 && stage.stage_id <= StageId_1_4)
-		parallax = FIXED_DEC(7,10);
-	else
-		parallax = FIXED_UNIT;
+	parallax = FIXED_UNIT;
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_GF_SetFrame);

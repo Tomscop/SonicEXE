@@ -34,14 +34,14 @@ static const u8 charicon[2][3][4] = {
 		//Sad
 		{49,10,43,35}
 	},
-	//BF
+	//SonicEXE
 	{
 		//Normal
-		{93,10,46,30},
+		{141,10,43,39},
 		//Happy
-		{1,10,47,31},
+		{141,10,43,39},
 		//Sad
-		{49,10,43,35}
+		{185,10,40,45}
 	}
 };
 
@@ -59,7 +59,7 @@ static const u8 note_anims[4][3] = {
 
 //Stage definitions
 #include "../characters/bf/bf.h"
-#include "../characters/dad/dad.h"
+#include "../characters/sonicexe/sonicexe.h"
 #include "../characters/gf/gf.h"
 
 #include "../stages/stage1/stage1.h"
@@ -648,13 +648,13 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 	};
 	RECT_FIXED dst = {
 		hx + ox * FIXED_DEC(20,1) + FIXED_DEC(4,1),
-		(SCREEN_HEIGHT2 - 20 + 4 - (src.h / 2)) << FIXED_SHIFT,
+		(SCREEN_HEIGHT2 - 30) << FIXED_SHIFT,
 		src.w << FIXED_SHIFT,
 		src.h << FIXED_SHIFT
 	};
 	
-	if (ox < 0)
-		dst.w = -dst.w;
+	//if (ox < 0)
+	//	dst.w = -dst.w;
 	
 	if (stage.downscroll)
 		dst.y = -dst.y;

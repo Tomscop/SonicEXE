@@ -52,8 +52,8 @@
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/characters/bf/main.arc"/>
 				
-				<!-- Dad assets -->
-				<file name = "dad.arc" type = "data" source = "iso/characters/dad/main.arc"/>
+				<!-- SonicEXE assets -->
+				<file name = "sonicexe.arc" type = "data" source = "iso/characters/sonicexe/main.arc"/>
 				
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/characters/gf/main.arc"/>

@@ -22,6 +22,7 @@ void Back_GH_DrawBG(StageBack *back)
 {
 	Back_GH *this = (Back_GH*)back;
 	
+	stage.camera.zoom -= FIXED_DEC(5,1000);
 	
 	fixed_t fx, fy;
 	
@@ -30,17 +31,17 @@ void Back_GH_DrawBG(StageBack *back)
 	
 	RECT backl_src = {0, 0, 256, 256};
 	RECT_FIXED backl_dst = {
-		FIXED_DEC(-255,1) - fx,
-		FIXED_DEC(-90,1) - fy,
-		FIXED_DEC(256,1),
-		FIXED_DEC(256,1)
+		FIXED_DEC(-298,1) - fx,
+		FIXED_DEC(-120,1) - fy,
+		FIXED_DEC(300,1),
+		FIXED_DEC(300,1)
 	};
 	RECT backr_src = {0, 0, 256, 256};
 	RECT_FIXED backr_dst = {
 		FIXED_DEC(-1,1) - fx,
-		FIXED_DEC(-90,1) - fy,
-		FIXED_DEC(256,1),
-		FIXED_DEC(256,1)
+		FIXED_DEC(-120,1) - fy,
+		FIXED_DEC(300,1),
+		FIXED_DEC(300,1)
 	};
 	
 	Stage_DrawTex(&this->tex_back0, &backl_src, &backl_dst, stage.camera.bzoom);
@@ -51,17 +52,17 @@ void Back_GH_DrawBG(StageBack *back)
 	
 	RECT back2l_src = {0, 0, 256, 256};
 	RECT_FIXED back2l_dst = {
-		FIXED_DEC(-255,1) - fx,
-		FIXED_DEC(-105,1) - fy,
-		FIXED_DEC(256,1),
-		FIXED_DEC(256,1)
+		FIXED_DEC(-298,1) - fx,
+		FIXED_DEC(-135,1) - fy,
+		FIXED_DEC(300,1),
+		FIXED_DEC(300,1)
 	};
 	RECT back2r_src = {0, 0, 256, 256};
 	RECT_FIXED back2r_dst = {
 		FIXED_DEC(-1,1) - fx,
-		FIXED_DEC(-105,1) - fy,
-		FIXED_DEC(256,1),
-		FIXED_DEC(256,1)
+		FIXED_DEC(-135,1) - fy,
+		FIXED_DEC(300,1),
+		FIXED_DEC(300,1)
 	};
 	
 	Stage_DrawTex(&this->tex_back2, &back2l_src, &back2l_dst, stage.camera.bzoom);

@@ -8,6 +8,7 @@ SRCS = src/main.c \
 	   \
 	   \
        src/characters/dad/dad.c \
+       src/characters/sonicexe/sonicexe.c \
 	   \
 	   \
        src/characters/gf/gf.c \
