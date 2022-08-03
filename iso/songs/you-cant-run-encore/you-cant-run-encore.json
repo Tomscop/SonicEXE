@@ -8831,7 +8831,7 @@
 		"stage": "cant-run-xd",
 		"arrowSkin": "",
 		"validScore": true,
-		"speed": 3.3,
+		"speed": 3,
 		"bpm": 140,
 		"noteStyle": "normal"
 	}
