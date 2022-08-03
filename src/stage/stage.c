@@ -24,7 +24,7 @@
 
 //#define STAGE_FREECAM //Freecam
 
-static const u8 charicon[2][3][4] = {
+static const u8 charicon[3][3][4] = {
 	//BF
 	{
 		//Normal
@@ -42,6 +42,15 @@ static const u8 charicon[2][3][4] = {
 		{141,10,43,39},
 		//Sad
 		{185,10,40,45}
+	},
+	//YCN
+	{
+		//Normal
+		{0,42,48,41},
+		//Happy
+		{0,42,48,41},
+		//Sad
+		{49,46,52,44}
 	}
 };
 
@@ -60,6 +69,7 @@ static const u8 note_anims[4][3] = {
 //Stage definitions
 #include "../characters/bf/bf.h"
 #include "../characters/sonicexe/sonicexe.h"
+#include "../characters/ycn/ycn.h"
 #include "../characters/gf/gf.h"
 
 #include "../stages/stage1/stage1.h"
@@ -1779,28 +1789,28 @@ void Stage_Tick(void)
 			
 			//Hardcoded stage stuff
 			//switch (stage.stage_id)
-			switch (1)
-			{
-				case StageId_1_2: //Fresh GF bop
-					switch (stage.song_step)
-					{
-						case 16 << 2:
-							stage.gf_speed = 2 << 2;
-							break;
-						case 48 << 2:
-							stage.gf_speed = 1 << 2;
-							break;
-						case 80 << 2:
-							stage.gf_speed = 2 << 2;
-							break;
-						case 112 << 2:
-							stage.gf_speed = 1 << 2;
-							break;
-					}
-					break;
-				default:
-					break;
-			}
+			//switch (1)
+			//{
+			//	case StageId_1_2: //Fresh GF bop
+			//		switch (stage.song_step)
+			//		{
+			//			case 16 << 2:
+			//				stage.gf_speed = 2 << 2;
+			//				break;
+			//			case 48 << 2:
+			//				stage.gf_speed = 1 << 2;
+			//				break;
+			//			case 80 << 2:
+			//				stage.gf_speed = 2 << 2;
+			//				break;
+			//			case 112 << 2:
+			//				stage.gf_speed = 1 << 2;
+			//				break;
+			//		}
+			//		break;
+			//	default:
+			//		break;
+			//}
 			
 			//Draw stage foreground
 			if (stage.back->draw_fg != NULL)

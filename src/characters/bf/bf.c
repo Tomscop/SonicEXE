@@ -209,10 +209,10 @@ void Char_BF_Tick(Character *character)
 		{
 			switch (stage.stage_id)
 			{
-				case StageId_1_4: //Tutorial peace
-					if (stage.song_step > 64 && stage.song_step < 192 && (stage.song_step & 0x3F) == 60)
-						character->set_anim(character, PlayerAnim_Peace);
-					break;
+				//case StageId_1_4: //Tutorial peace
+				//	if (stage.song_step > 64 && stage.song_step < 192 && (stage.song_step & 0x3F) == 60)
+				//		character->set_anim(character, PlayerAnim_Peace);
+				//	break;
 				default:
 					break;
 			}

@@ -1,7 +1,7 @@
 all: \
 	iso/music/menu.xa \
-	iso/songs/week1a.xa \
-	iso/songs/week1b.xa \
+	iso/songs/tooslow.xa \
+	iso/songs/youcantrun.xa \
 
 iso/%.xa: iso/%.ogg
 	tools/psxavenc/psxavenc -f 37800 -t xa -b 4 -c 2 -F 1 -C 0 $< $@ 
@@ -13,7 +13,7 @@ iso/%.xa:
 iso/music/menu.xa: iso/music/menuscreen.xa iso/music/gameover.xa
 
 # Week1a
-iso/songs/week1a.xa: iso/songs/too-slow/Inst.xa iso/songs/too-slow/Merged.xa iso/songs/too-slow-encore/Inst.xa iso/songs/too-slow-encore/Merged.xa
+iso/songs/tooslow.xa: iso/songs/too-slow/Inst.xa iso/songs/too-slow/Merged.xa iso/songs/too-slow-encore/Inst.xa iso/songs/too-slow-encore/Merged.xa
 
 # Week1b
-iso/songs/week1b.xa: iso/songs/dadbattle/Inst.xa iso/songs/dadbattle/Merged.xa iso/songs/tutorial/Inst.xa
+iso/songs/youcantrun.xa: iso/songs/you-cant-run/Inst.xa iso/songs/you-cant-run/Merged.xa iso/songs/you-cant-run-encore/Inst.xa iso/songs/you-cant-run-encore/Merged.xa

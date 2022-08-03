@@ -55,6 +55,9 @@
 				<!-- SonicEXE assets -->
 				<file name = "sonicexe.arc" type = "data" source = "iso/characters/sonicexe/main.arc"/>
 				
+				<!-- YCN assets -->
+				<file name = "ycn.arc" type = "data" source = "iso/characters/ycn/main.arc"/>
+				
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/characters/gf/main.arc"/>
 				<file name = "gftut.arc" type = "data" source = "iso/characters/gf/tut.arc"/>
@@ -72,22 +75,22 @@
 				<file name = "1.2n.cht" type = "data" source = "iso/songs/too-slow-encore/too-slow-encore.json.cht"/>
 				<file name = "1.2h.cht" type = "data" source = "iso/songs/too-slow-encore/too-slow-encore.json.cht"/>
 				<!-- Dadbattle charts -->
-				<file name = "1.3e.cht" type = "data" source = "iso/songs/dadbattle/dadbattle-easy.json.cht"/>
-				<file name = "1.3n.cht" type = "data" source = "iso/songs/dadbattle/dadbattle.json.cht"/>
-				<file name = "1.3h.cht" type = "data" source = "iso/songs/dadbattle/dadbattle-hard.json.cht"/>
+				<file name = "1.3e.cht" type = "data" source = "iso/songs/you-cant-run/you-cant-run.json.cht"/>
+				<file name = "1.3n.cht" type = "data" source = "iso/songs/you-cant-run/you-cant-run.json.cht"/>
+				<file name = "1.3h.cht" type = "data" source = "iso/songs/you-cant-run/you-cant-run.json.cht"/>
 				<!-- Tutorial charts -->
-				<file name = "1.4e.cht" type = "data" source = "iso/songs/tutorial/tutorial-easy.json.cht"/>
-				<file name = "1.4n.cht" type = "data" source = "iso/songs/tutorial/tutorial.json.cht"/>
-				<file name = "1.4h.cht" type = "data" source = "iso/songs/tutorial/tutorial-hard.json.cht"/>
+				<file name = "1.4e.cht" type = "data" source = "iso/songs/you-cant-run-encore/you-cant-run-encore.json.cht"/>
+				<file name = "1.4n.cht" type = "data" source = "iso/songs/you-cant-run-encore/you-cant-run-encore.json.cht"/>
+				<file name = "1.4h.cht" type = "data" source = "iso/songs/you-cant-run-encore/you-cant-run-encore.json.cht"/>
 			</dir>
 			
 			<!-- Music -->
 			<dir name = "music">
 				<file name = "menu.xa" type = "xa" source = "iso/music/menu.xa"/>
 				<dummy sectors="128"/>
-				<file name = "week1a.xa" type = "xa" source = "iso/songs/week1a.xa"/>
+				<file name = "tooslow.xa" type = "xa" source = "iso/songs/tooslow.xa"/>
 				<dummy sectors="128"/>
-				<file name = "week1b.xa" type = "xa" source = "iso/songs/week1b.xa"/>
+				<file name = "ycr.xa" type = "xa" source = "iso/songs/youcantrun.xa"/>
 				<dummy sectors="128"/>
 			</dir>
 			

@@ -248,11 +248,7 @@ void Menu_Load(MenuPage page)
 		case MenuPage_Opening:
 			//Get funny message to use
 			//Do this here so timing is less reliant on VSync
-			#ifdef PSXF_PC
-				menu.page_state.opening.funny_message = time(NULL) % COUNT_OF(funny_messages);
-			#else
-				menu.page_state.opening.funny_message = ((*((volatile u32*)0xBF801120)) >> 3) % COUNT_OF(funny_messages); //sysclk seeding
-			#endif
+			menu.page_state.opening.funny_message = ((*((volatile u32*)0xBF801120)) >> 3) % COUNT_OF(funny_messages); //sysclk seeding
 			break;
 		default:
 			break;
@@ -602,8 +598,8 @@ void Menu_Tick(void)
 				const char *name;
 				const char *tracks[3];
 			} menu_options[] = {
-				{NULL, StageId_1_4, "TUTORIAL", {"TUTORIAL", NULL, NULL}},
-				{"1", StageId_1_1, "DADDY DEAREST", {"BOPEEBO", "FRESH", "DADBATTLE"}}
+				{NULL, StageId_TooSlow, "TUTORIAL", {"TUTORIAL", NULL, NULL}},
+				{"1", StageId_TooSlow, "DADDY DEAREST", {"BOPEEBO", "FRESH", "DADBATTLE"}}
 			};
 			
 			//Initialize page
@@ -727,10 +723,10 @@ void Menu_Tick(void)
 				const char *text;
 			} menu_options[] = {
 				//{StageId_4_4, 0xFFFC96D7, "TEST"},
-				{StageId_1_4, 0xFF9271FD, "TUTORIAL"},
-				{StageId_1_1, 0xFF9271FD, "BOPEEBO"},
-				{StageId_1_2, 0xFF9271FD, "FRESH"},
-				{StageId_1_3, 0xFF9271FD, "DADBATTLE"}
+				{StageId_TooSlow, 0xFF9271FD, "TOO SLOW"},
+				{StageId_TooSlowEncore, 0xFF9271FD, "TOO SLOW ENCORE"},
+				{StageId_YouCantRun, 0xFF9271FD, "YOU CAN'T RUN"},
+				{StageId_YouCantRunEncore, 0xFF9271FD, "YOU CAN'T RUN ENCORE"}
 			};
 			
 			//Initialize page

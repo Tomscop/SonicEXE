@@ -2,7 +2,7 @@ all: \
 	iso/characters/bf/main.arc \
 	\
 	iso/characters/sonicexe/main.arc \
-	iso/characters/dad/main.arc \
+	iso/characters/ycn/main.arc \
 	\
 	iso/characters/gf/main.arc \
 	iso/characters/gf/tut.arc \
@@ -47,3 +47,6 @@ iso/stages/gh/back.arc: iso/stages/gh/0.tim iso/stages/gh/1.tim iso/stages/gh/2.
 
 # SonicEXE
 iso/characters/sonicexe/main.arc: iso/characters/sonicexe/idle0.tim iso/characters/sonicexe/idle1.tim iso/characters/sonicexe/idle2.tim iso/characters/sonicexe/left0.tim iso/characters/sonicexe/left1.tim iso/characters/sonicexe/down0.tim iso/characters/sonicexe/down1.tim iso/characters/sonicexe/down2.tim iso/characters/sonicexe/down3.tim iso/characters/sonicexe/up0.tim iso/characters/sonicexe/up1.tim iso/characters/sonicexe/up2.tim iso/characters/sonicexe/up3.tim iso/characters/sonicexe/right0.tim iso/characters/sonicexe/right1.tim iso/characters/sonicexe/laugh0.tim iso/characters/sonicexe/laugh1.tim
+
+# You Can't Run
+iso/characters/ycn/main.arc: iso/characters/ycn/idle0.tim iso/characters/ycn/idle1.tim iso/characters/ycn/left0.tim iso/characters/ycn/left1.tim iso/characters/ycn/left2.tim iso/characters/ycn/down0.tim iso/characters/ycn/down1.tim iso/characters/ycn/down2.tim iso/characters/ycn/up0.tim iso/characters/ycn/up1.tim iso/characters/ycn/up2.tim iso/characters/ycn/right0.tim iso/characters/ycn/right1.tim iso/characters/ycn/right2.tim iso/characters/ycn/laugh0.tim iso/characters/ycn/laugh1.tim iso/characters/ycn/laugh2.tim iso/characters/ycn/scream0.tim iso/characters/ycn/scream1.tim iso/characters/ycn/scream2.tim iso/characters/ycn/scream3.tim iso/characters/ycn/scream4.tim iso/characters/ycn/scream5.tim iso/characters/ycn/midle0.tim iso/characters/ycn/midle1.tim iso/characters/ycn/mleft0.tim iso/characters/ycn/mleft1.tim iso/characters/ycn/mleft2.tim iso/characters/ycn/mdown0.tim iso/characters/ycn/mdown1.tim iso/characters/ycn/mdown2.tim iso/characters/ycn/mup0.tim iso/characters/ycn/mup1.tim iso/characters/ycn/mup2.tim iso/characters/ycn/mright0.tim iso/characters/ycn/mright1.tim iso/characters/ycn/mright2.tim iso/characters/ycn/justdie0.tim iso/characters/ycn/justdie1.tim iso/characters/ycn/justdie2.tim iso/characters/ycn/justdie3.tim iso/characters/ycn/justdie4.tim iso/characters/ycn/justdie5.tim

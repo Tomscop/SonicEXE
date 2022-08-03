@@ -9,8 +9,32 @@
 #include "../psx/movie.h"
 #include "../psx/mutil.h"
 
+Event event;
+
+void NoteHitEvent(u8 type)
+{
+	
+}
+
+void NoteMissEvent(u8 type, u8 state)
+{
+	PlayerState *this = &stage.player_state[state];
+	if (type & NOTE_FLAG_STATIC)
+	{
+		Audio_PlaySound(stage.sound[1], 0x3fff);
+		this->health -= 2000;
+	}
+}
+
+static void Too_Slow()
+{
+	
+}
+
 void Events()
-{		
+{
+	Flash_tick();
+	Too_Slow();
 	if(stage.followcamera)
 		FollowCharCamera();
 }
@@ -42,17 +66,14 @@ void FollowCharCamera()
 	}
 }
 
-void NoteHitEvent(u8 type)
+void Flash_tick()
 {
-
-}
-
-void NoteMissEvent(u8 type, u8 state)
-{
-	PlayerState *this = &stage.player_state[state];
-	if (type & NOTE_FLAG_STATIC)
+	if (event.flash_col > 10)
 	{
-		Audio_PlaySound(stage.sound[1], 0x3fff);
-		this->health -= 2000;
+		static const RECT flash = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
+		Gfx_BlendRect(&flash, event.flash_col, event.flash_col, event.flash_col, 1);
+		event.flash_col -= 10;
 	}
+	else
+		event.flash_col = 0;
 }

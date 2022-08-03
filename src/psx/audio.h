@@ -6,9 +6,9 @@
 //XA enumerations
 typedef enum
 {
-	XA_Menu,   //MENU.XA
-	XA_Week1A, //WEEK1A.XA
-	XA_Week1B, //WEEK1B.XA
+	FL_Menu,   //MENU.XA
+	FL_TooSlow, //WEEK1A.XA
+	FL_YouCantRun, //WEEK1B.XA
 	
 	XA_Max,
 } XA_File;
@@ -19,11 +19,11 @@ typedef enum
 	XA_GettinFreaky, //Gettin' Freaky
 	XA_GameOver,     //Game Over
 	//WEEK1A.XA
-	XA_Bopeebo, //Bopeebo
-	XA_Fresh,   //Fresh
+	XA_TooSlow, //Bopeebo
+	XA_TooSlowEncore,   //Fresh
 	//WEEK1B.XA
-	XA_Dadbattle, //DadBattle
-	XA_Tutorial,  //Tutorial
+	XA_YouCantRun, //DadBattle
+	XA_YouCantRunEncore,  //Tutorial
 	
 	XA_TrackMax,
 } XA_Track;

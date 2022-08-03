@@ -7,8 +7,8 @@ SRCS = src/main.c \
        src/characters/bf/bf.c \
 	   \
 	   \
-       src/characters/dad/dad.c \
        src/characters/sonicexe/sonicexe.c \
+       src/characters/ycn/ycn.c \
 	   \
 	   \
        src/characters/gf/gf.c \

@@ -11,9 +11,17 @@
 #include "../stage/object.h"
 #include "../fonts/font.h"
 
+typedef struct
+{
+	u8 flash_col;
+} Event;
+
+extern Event event;
+
 void FollowCharCamera();
 void Events();
 void NoteHitEvent(u8 type);
 void NoteMissEvent(u8 type, u8 state);
+void Flash_tick();
 
 #endif

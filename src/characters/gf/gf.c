@@ -130,15 +130,15 @@ void Char_GF_Tick(Character *character)
 			//Stage specific animations
 			if (stage.note_scroll >= 0)
 			{
-				switch (stage.stage_id)
-				{
-					case StageId_1_4: //Tutorial cheer
-						if (stage.song_step > 64 && stage.song_step < 192 && (stage.song_step & 0x3F) == 60)
-							character->set_anim(character, CharAnim_UpAlt);
-						break;
-					default:
-						break;
-				}
+				//switch (stage.stage_id)
+				//{
+				//	case StageId_1_4: //Tutorial cheer
+				//		if (stage.song_step > 64 && stage.song_step < 192 && (stage.song_step & 0x3F) == 60)
+				//			character->set_anim(character, CharAnim_UpAlt);
+				//		break;
+				//	default:
+				//		break;
+				//}
 			}
 			
 			//Perform dance
@@ -231,20 +231,20 @@ Character *Char_GF_New(fixed_t x, fixed_t y)
 	//Load scene specific art
 	switch (stage.stage_id)
 	{
-		case StageId_1_4: //Tutorial
-		{
-			this->arc_scene = IO_Read("\\CHAR\\GFTUT.ARC;1");
-			
-			const char **pathp = (const char *[]){
-				"tut0.tim", //GF_ArcScene_0
-				"tut1.tim", //GF_ArcScene_1
-				NULL
-			};
-			IO_Data *arc_ptr = &this->arc_ptr[GF_ArcScene_0];
-			for (; *pathp != NULL; pathp++)
-				*arc_ptr++ = Archive_Find(this->arc_scene, *pathp);
-			break;
-		}
+		//case StageId_1_4: //Tutorial
+		//{
+		//	this->arc_scene = IO_Read("\\CHAR\\GFTUT.ARC;1");
+		//	
+		//	const char **pathp = (const char *[]){
+		//		"tut0.tim", //GF_ArcScene_0
+		//		"tut1.tim", //GF_ArcScene_1
+		//		NULL
+		//	};
+		//	IO_Data *arc_ptr = &this->arc_ptr[GF_ArcScene_0];
+		//	for (; *pathp != NULL; pathp++)
+		//		*arc_ptr++ = Archive_Find(this->arc_scene, *pathp);
+		//	break;
+		//}
 		default:
 			this->arc_scene = NULL;
 			break;
