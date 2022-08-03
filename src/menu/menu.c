@@ -423,35 +423,15 @@ void Menu_Tick(void)
 			}
 			
 			//Draw Friday Night Funkin' logo
-			if ((stage.flag & STAGE_FLAG_JUST_STEP) && (stage.song_step & 0x3) == 0 && menu.page_state.title.logo_bump == 0)
-				menu.page_state.title.logo_bump = (FIXED_DEC(7,1) / 24) - 1;
-			
-			static const fixed_t logo_scales[] = {
-				FIXED_DEC(1,1),
-				FIXED_DEC(101,100),
-				FIXED_DEC(102,100),
-				FIXED_DEC(103,100),
-				FIXED_DEC(105,100),
-				FIXED_DEC(110,100),
-				FIXED_DEC(97,100),
-			};
-			fixed_t logo_scale = logo_scales[(menu.page_state.title.logo_bump * 24) >> FIXED_SHIFT];
-			u32 x_rad = (logo_scale * (255 >> 1)) >> FIXED_SHIFT;
-			u32 y_rad = (logo_scale * (151 >> 1)) >> FIXED_SHIFT;
-			
-			menu.animcounter += 4;
-			if (menu.animcounter > 250)
-				menu.animcounter -= 250;
-			
 			RECT logo_src = {0, 0, 255, 150};
 			RECT logo_dst = {
-				160 + (SCREEN_WIDEADD2 >> 1),
+				SCREEN_WIDTH2,
 				120,
-				x_rad << 1,
-				y_rad << 1
+				255,
+				150
 			};
 			
-			Gfx_DrawTexRotate(&menu.tex_title, &logo_src, &logo_dst, MUtil_Sin(menu.animcounter - 50) / 30, logo_dst.w / 2, logo_dst.h / 2);
+			Gfx_DrawTexRotate(&menu.tex_title, &logo_src, &logo_dst, 0, logo_dst.w / 2, logo_dst.h / 2);
 			
 			if (menu.page_state.title.logo_bump > 0)
 				if ((menu.page_state.title.logo_bump -= timer_dt) < 0)
@@ -467,13 +447,13 @@ void Menu_Tick(void)
 				u8 press_b = (206 + ((press_lerp * (255 - 206)) >> 8)) >> 1;
 				
 				RECT press_src = {0, 151, 207, 18};
-				Gfx_BlitTexCol(&menu.tex_title, &press_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 48, press_r, press_g, press_b);
+				Gfx_BlitTexCol(&menu.tex_title, &press_src, SCREEN_WIDTH2 - press_src.w / 2, SCREEN_HEIGHT - 48, press_r, press_g, press_b);
 			}
 			else
 			{
 				//Flash white
 				RECT press_src = {0, (animf_count & 1) ? 151 : 169, 207, 18};
-				Gfx_BlitTex(&menu.tex_title, &press_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 48);
+				Gfx_BlitTex(&menu.tex_title, &press_src, SCREEN_WIDTH2 - press_src.w / 2, SCREEN_HEIGHT - 48);
 			}
 			break;
 		}
