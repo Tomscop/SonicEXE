@@ -10,45 +10,59 @@ enum
 {
 	YCN_ArcMain_Idle0,
 	YCN_ArcMain_Idle1,
+	
 	YCN_ArcMain_Left0,
 	YCN_ArcMain_Left1,
 	YCN_ArcMain_Left2,
+	
 	YCN_ArcMain_Down0,
 	YCN_ArcMain_Down1,
 	YCN_ArcMain_Down2,
+	
 	YCN_ArcMain_Up0,
 	YCN_ArcMain_Up1,
 	YCN_ArcMain_Up2,
+	
 	YCN_ArcMain_Right0,
 	YCN_ArcMain_Right1,
 	YCN_ArcMain_Right2,
-	YCN_ArcMain_Pixel,
-	YCN_ArcMain_MadIdle0,
-	YCN_ArcMain_MadIdle1,
-	YCN_ArcMain_MadLeft0,
-	YCN_ArcMain_MadLeft2,
-	YCN_ArcMain_MadDown0,
-	YCN_ArcMain_MadDown2,
-	YCN_ArcMain_MadUp0,
-	YCN_ArcMain_MadUp2,
-	YCN_ArcMain_MadRight0,
-	YCN_ArcMain_MadRight2,
+	
 	YCN_ArcMain_Laugh0,
 	YCN_ArcMain_Laugh1,
 	YCN_ArcMain_Laugh2,
+	
+	YCN_ArcMain_MIdle0,
+	YCN_ArcMain_MIdle1,
+	
+	YCN_ArcMain_MLeft0,
+	YCN_ArcMain_MLeft1,
+	YCN_ArcMain_MLeft2,
+	
+	YCN_ArcMain_MDown0,
+	YCN_ArcMain_MDown1,
+	YCN_ArcMain_MDown2,
+	
+	YCN_ArcMain_MUp0,
+	YCN_ArcMain_MUp1,
+	YCN_ArcMain_MUp2,
+	
+	YCN_ArcMain_MRight0,
+	YCN_ArcMain_MRight1,
+	YCN_ArcMain_MRight2,
+	
 	YCN_ArcMain_Scream0,
 	YCN_ArcMain_Scream1,
 	YCN_ArcMain_Scream2,
 	YCN_ArcMain_Scream3,
-	YCN_ArcMain_Scream4,
-	YCN_ArcMain_Scream5,
+	
 	YCN_ArcMain_JustDie0,
 	YCN_ArcMain_JustDie1,
 	YCN_ArcMain_JustDie2,
 	YCN_ArcMain_JustDie3,
 	YCN_ArcMain_JustDie4,
 	YCN_ArcMain_JustDie5,
-	YCN_ArcMain_JustDie6,
+	
+	YCN_ArcMain_Pixel,
 	
 	YCN_Arc_Max,
 };
@@ -89,20 +103,57 @@ static const CharFrame char_ycn_frame[] = {
 	{YCN_ArcMain_Right1, {  0,   0, 160, 154}, { 40, 150}}, //14
 	{YCN_ArcMain_Right2, {  0,   0, 170, 154}, { 39, 150}}, //15
 	
-	{YCN_ArcMain_Right0, {  0,   0, 117, 199}, { 43, 189}}, //16
-	{YCN_ArcMain_Right1, {  0,   0, 114, 199}, { 42, 189}}, //17
-	{YCN_ArcMain_Right2, {  0,   0, 117, 199}, { 43, 189}}, //18
+	{YCN_ArcMain_Laugh0, {  0,   0, 142, 149}, { 69, 145}}, //16
+	{YCN_ArcMain_Laugh1, {  0,   0, 139, 147}, { 66, 142}}, //17
+	{YCN_ArcMain_Laugh2, {  0,   0, 135, 148}, { 64, 143}}, //18
 };
 
 static const Animation char_ycn_anim[CharAnim_Max] = {
-	{2, (const u8[]){ 0,  1,  2,  3, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
-	{2, (const u8[]){ 4,  5,  6, ASCR_BACK}},         //CharAnim_Left
+	{2, (const u8[]){ 0,  1,  2,  3, ASCR_BACK, 0}}, //CharAnim_Idle
+	{2, (const u8[]){ 4,  5,  6, ASCR_BACK, 0}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
-	{2, (const u8[]){ 7,  8, 9, ASCR_BACK}},         //CharAnim_Down
-	{2, (const u8[]){ 16,  17, 18, ASCR_BACK}},         //CharAnim_DownAlt
-	{2, (const u8[]){ 10,  11, 12, ASCR_BACK}},         //CharAnim_Up
+	{2, (const u8[]){ 7,  8, 9, ASCR_BACK, 0}},         //CharAnim_Down
+	{2, (const u8[]){ 16,  17, 18, ASCR_BACK, 0}},         //CharAnim_DownAlt
+	{2, (const u8[]){ 10,  11, 12, ASCR_BACK, 0}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
-	{2, (const u8[]){13, 14, 15, ASCR_BACK}},         //CharAnim_Right
+	{2, (const u8[]){13, 14, 15, ASCR_BACK, 0}},         //CharAnim_Right
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+};
+
+//YCN character definitions
+static const CharFrame char_ycnpixel_frame[] = {
+	{YCN_ArcMain_Pixel, {  0,   0,  33,  47}, { 55, 175}}, //0
+	{YCN_ArcMain_Pixel, { 34,   0,  35,  47}, { 55, 175}}, //1
+	{YCN_ArcMain_Pixel, { 70,   0,  34,  47}, { 55, 175}}, //2
+	{YCN_ArcMain_Pixel, {105,   0,  33,  47}, { 55, 175}}, //3
+	{YCN_ArcMain_Pixel, {139,   0,  33,  47}, { 55, 175}}, //4
+	
+	{YCN_ArcMain_Pixel, {  0,  89,  50,  46}, { 55, 175}}, //5
+	{YCN_ArcMain_Pixel, { 51,  89,  50,  46}, { 55, 175}}, //6
+	{YCN_ArcMain_Pixel, {102,  89,  50,  46}, { 55, 175}}, //7
+	
+	{YCN_ArcMain_Pixel, {  0,  48,  56,  40}, { 55, 175}}, //8
+	{YCN_ArcMain_Pixel, { 57,  48,  52,  40}, { 55, 175}}, //9
+	{YCN_ArcMain_Pixel, {110,  48,  52,  40}, { 55, 175}}, //10
+	
+	{YCN_ArcMain_Pixel, {  0, 175,  42 , 49}, { 55, 175}}, //11
+	{YCN_ArcMain_Pixel, { 43, 175,  42 , 49}, { 55, 175}}, //12
+	{YCN_ArcMain_Pixel, { 86, 175,  42 , 49}, { 55, 175}}, //13
+	
+	{YCN_ArcMain_Pixel, {  0, 136,  49,  38}, { 55, 175}}, //14
+	{YCN_ArcMain_Pixel, { 50, 136,  47,  38}, { 55, 175}}, //15
+	{YCN_ArcMain_Pixel, { 98, 136,  48,  38}, { 55, 175}}, //16
+};
+
+static const Animation char_ycnpixel_anim[CharAnim_Max] = {
+	{2, (const u8[]){ 0,  1,  2,  3,  4, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
+	{2, (const u8[]){ 5,  6,  7, ASCR_BACK}},         //CharAnim_Left
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
+	{2, (const u8[]){ 8,  9, 10, ASCR_BACK}},         //CharAnim_Down
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},         //CharAnim_DownAlt
+	{2, (const u8[]){ 11,  12, 13, ASCR_BACK}},         //CharAnim_Up
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
+	{2, (const u8[]){14, 15, 16, ASCR_BACK}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 };
 
@@ -183,47 +234,62 @@ Character *Char_YCN_New(fixed_t x, fixed_t y)
 	this->arc_main = IO_Read("\\CHAR\\YCN.ARC;1");
 	
 	const char **pathp = (const char *[]){
-		"idle0.tim", //YCN_ArcMain_Idle0
-		"idle1.tim", //YCN_ArcMain_Idle1
-		"left0.tim",  //YCN_ArcMain_Left0
-		"left1.tim",  //YCN_ArcMain_Left1
-		"left2.tim",  //YCN_ArcMain_Left1
-		"down0.tim",  //YCN_ArcMain_Down0
-		"down1.tim",  //YCN_ArcMain_Down1
-		"down2.tim",  //YCN_ArcMain_Down1
-		"up0.tim",    //YCN_ArcMain_Up0
-		"up1.tim",    //YCN_ArcMain_Up1
-		"up2.tim",    //YCN_ArcMain_Up1
-		"right0.tim", //YCN_ArcMain_Right0
-		"right1.tim", //YCN_ArcMain_Right1
-		"right2.tim", //YCN_ArcMain_Right1
-		"pixel.tim", //YCN_ArcMain_Right1
-		"midle0.tim", //YCN_ArcMain_Idle0
-		"midle1.tim", //YCN_ArcMain_Idle1
-		"mleft0.tim",  //YCN_ArcMain_Left0
-		"mleft2.tim",  //YCN_ArcMain_Left1
-		"mdown0.tim",  //YCN_ArcMain_Down0
-		"mdown2.tim",  //YCN_ArcMain_Down1
-		"mup0.tim",    //YCN_ArcMain_Up0
-		"mup2.tim",    //YCN_ArcMain_Up1
-		"mright0.tim", //YCN_ArcMain_Right0
-		"mright2.tim", //YCN_ArcMain_Right1
-		"laugh0.tim", //YCN_ArcMain_Laugh0
-		"laugh1.tim", //YCN_ArcMain_Laugh1
-		"laugh2.tim", //YCN_ArcMain_Laugh1
-		"scream0.tim", //YCN_ArcMain_Laugh0
-		"scream1.tim", //YCN_ArcMain_Laugh1
-		"scream2.tim", //YCN_ArcMain_Laugh1
-		"scream3.tim", //YCN_ArcMain_Laugh0
-		"scream4.tim", //YCN_ArcMain_Laugh1
-		"scream5.tim", //YCN_ArcMain_Laugh1
-		"justdie0.tim", //YCN_ArcMain_Laugh0
-		"justdie1.tim", //YCN_ArcMain_Laugh1
-		"justdie2.tim", //YCN_ArcMain_Laugh1
-		"justdie3.tim", //YCN_ArcMain_Laugh0
-		"justdie4.tim", //YCN_ArcMain_Laugh1
-		"justdie5.tim", //YCN_ArcMain_Laugh1
-		"justdie6.tim", //YCN_ArcMain_Laugh1
+		"idle0.tim",    //YCN_ArcMain_Idle0
+		"idle1.tim",    //YCN_ArcMain_Idle1
+		
+		"left0.tim",    //YCN_ArcMain_Left0
+		"left1.tim",    //YCN_ArcMain_Left1
+		"left2.tim",    //YCN_ArcMain_Left2
+		
+		"down0.tim",    //YCN_ArcMain_Down0
+		"down1.tim",    //YCN_ArcMain_Down1
+		"down2.tim",    //YCN_ArcMain_Down2
+		
+		"up0.tim",      //YCN_ArcMain_Up0
+		"up1.tim",      //YCN_ArcMain_Up1
+		"up2.tim",      //YCN_ArcMain_Up2
+		
+		"right0.tim",   //YCN_ArcMain_Right0
+		"right1.tim",   //YCN_ArcMain_Right1
+		"right2.tim",   //YCN_ArcMain_Right2
+		
+		"laugh0.tim",   //YCN_ArcMain_Laugh0
+		"laugh1.tim",   //YCN_ArcMain_Laugh1
+		"laugh2.tim",   //YCN_ArcMain_Laugh1
+		
+		"midle0.tim",   //YCN_ArcMain_MIdle0
+		"midle1.tim",   //YCN_ArcMain_MIdle1
+		
+		"mleft0.tim",   //YCN_ArcMain_MLeft0
+		"mleft1.tim",   //YCN_ArcMain_MLeft1
+		"mleft2.tim",   //YCN_ArcMain_MLeft2
+		
+		"mdown0.tim",   //YCN_ArcMain_MDown0
+		"mdown1.tim",   //YCN_ArcMain_MDown1
+		"mdown2.tim",   //YCN_ArcMain_MDown2
+		
+		"mup0.tim",     //YCN_ArcMain_MUp0
+		"mup1.tim",     //YCN_ArcMain_MUp1
+		"mup2.tim",     //YCN_ArcMain_MUp2
+		
+		"mright0.tim",  //YCN_ArcMain_MRight0
+		"mright1.tim",  //YCN_ArcMain_MRight1
+		"mright2.tim",  //YCN_ArcMain_MRight2
+		
+		"scream0.tim",  //YCN_ArcMain_Scream0
+		"scream1.tim",  //YCN_ArcMain_Scream1
+		"scream2.tim",  //YCN_ArcMain_Scream2
+		"scream3.tim",  //YCN_ArcMain_Scream3
+		
+		"justdie0.tim", //YCN_ArcMain_JustDie0
+		"justdie1.tim", //YCN_ArcMain_JustDie1
+		"justdie2.tim", //YCN_ArcMain_JustDie2
+		"justdie3.tim", //YCN_ArcMain_JustDie3
+		"justdie4.tim", //YCN_ArcMain_JustDie4
+		"justdie5.tim", //YCN_ArcMain_JustDie5
+		
+		"pixel.tim",    //YCN_ArcMain_Pixel
+		
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

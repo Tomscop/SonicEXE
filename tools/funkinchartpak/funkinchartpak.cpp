@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
 			new_note.type = (uint8_t)j[1] & (3 | NOTE_FLAG_OPPONENT);
 			if (is_opponent)
 				new_note.type ^= NOTE_FLAG_OPPONENT;
-			if (j[3] == true)
+			if (j[3] == "Alt Animation")
 				new_note.type |= NOTE_FLAG_ALT_ANIM;
 			else if ((new_note.type & NOTE_FLAG_OPPONENT) && is_alt)
 				new_note.type |= NOTE_FLAG_ALT_ANIM;
@@ -140,6 +140,8 @@ int main(int argc, char *argv[])
 				new_note.type |= NOTE_FLAG_SUSTAIN_END;
 			if (j[3] == "Static Note")
 				new_note.type |= NOTE_FLAG_STATIC;
+			if (j[3] == "Phantom Note")
+				new_note.type |= NOTE_FLAG_MINE;
 			
 			if (note_fudge.count(*((uint32_t*)&new_note)))
 			{

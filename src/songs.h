@@ -32,12 +32,12 @@
 	},
 	{ //StageId_1_3 (Dadbattle)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_YCN_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_YCN_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Stage1_New,
+		Back_GH_New,
 		
 		//Song info
 		1, 3,
@@ -48,12 +48,12 @@
 	},
 	{ //StageId_1_4 (Tutorial)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_YCN_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_YCN_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Stage1_New,
+		Back_GH_New,
 		
 		//Song info
 		1, 4,
