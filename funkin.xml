@@ -43,8 +43,8 @@
 			
 			<!-- Week 1 assets -->
 			<dir name = "stages">
-				<file name = "stage1.arc" type = "data" source = "iso/stages/stage1/back.arc"/>
 				<file name = "gh.arc" type = "data" source = "iso/stages/gh/back.arc"/>
+				<file name = "ycr.arc" type = "data" source = "iso/stages/ycr/back.arc"/>
 			</dir>
 			
 			<!-- Characters assets -->

@@ -187,6 +187,7 @@ typedef struct
 	
 	struct
 	{
+		boolean force;
 		fixed_t x, y, zoom;
 		fixed_t tx, ty, tz, td;
 		fixed_t bzoom;
@@ -198,6 +199,8 @@ typedef struct
 	Character *player;
 	Character *opponent;
 	Character *gf;
+	
+	boolean hidegf;
 	
 	Section *cur_section; //Current section
 	Note *cur_note; //First visible and hittable note, used for drawing and hit detection

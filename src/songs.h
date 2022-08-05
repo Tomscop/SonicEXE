@@ -37,7 +37,7 @@
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_GH_New,
+		Back_YCR_New,
 		
 		//Song info
 		1, 3,
@@ -53,7 +53,7 @@
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_GH_New,
+		Back_YCR_New,
 		
 		//Song info
 		1, 4,

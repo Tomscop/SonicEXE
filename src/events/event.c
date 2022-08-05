@@ -26,6 +26,26 @@ void NoteMissEvent(u8 type, u8 state)
 	}
 }
 
+#include "../stages/ycr/ycr.h"
+#include "../characters/ycn/ycn.h"
+
+static void You_Cant_Run_Encore()
+{
+	FntPrint("steps: %d", stage.song_step);
+	if (stage.song_step < 528)
+		FollowCharCamera();
+	if(stage.song_step == 528)
+	{
+		StagePixel();
+		YCNChangePhase(1);
+	}
+	if(stage.song_step == 784)
+	{
+		StageNormal();
+		YCNChangePhase(2);
+	}
+}
+
 static void Too_Slow()
 {
 	
@@ -34,14 +54,17 @@ static void Too_Slow()
 void Events()
 {
 	Flash_tick();
-	Too_Slow();
-	if(stage.followcamera)
+	if (stage.stage_id == StageId_YouCantRunEncore)
+		You_Cant_Run_Encore();
+	if (stage.stage_id == StageId_TooSlow)
+		Too_Slow();
+	if(stage.followcamera && !(stage.stage_id == StageId_YouCantRunEncore))
 		FollowCharCamera();
 }
 
 void FollowCharCamera()
 {
-	u8 sensitivity = 5;
+	u8 sensitivity = 4;
 	if (stage.cur_section->flag & SECTION_FLAG_OPPFOCUS)
 	{
 		if (stage.opponent->animatable.anim == CharAnim_Up)

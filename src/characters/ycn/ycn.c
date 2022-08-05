@@ -80,6 +80,8 @@ typedef struct
 	u8 frame, tex_id;
 } Char_YCN;
 
+u8 phases;
+
 //YCN character definitions
 static const CharFrame char_ycn_frame[] = {
 	{YCN_ArcMain_Idle0, {  0,   0, 127, 184}, { 55, 175}}, //0
@@ -122,38 +124,78 @@ static const Animation char_ycn_anim[CharAnim_Max] = {
 
 //YCN character definitions
 static const CharFrame char_ycnpixel_frame[] = {
-	{YCN_ArcMain_Pixel, {  0,   0,  33,  47}, { 55, 175}}, //0
-	{YCN_ArcMain_Pixel, { 34,   0,  35,  47}, { 55, 175}}, //1
-	{YCN_ArcMain_Pixel, { 70,   0,  34,  47}, { 55, 175}}, //2
-	{YCN_ArcMain_Pixel, {105,   0,  33,  47}, { 55, 175}}, //3
-	{YCN_ArcMain_Pixel, {139,   0,  33,  47}, { 55, 175}}, //4
+	{YCN_ArcMain_Pixel, {  0,   0,  33,  47}, { -16+16, 78+46}}, //0
+	{YCN_ArcMain_Pixel, { 34,   0,  35,  47}, { -16+16, 78+46}}, //1
+	{YCN_ArcMain_Pixel, { 70,   0,  34,  47}, { -16+16, 78+46}}, //2
+	{YCN_ArcMain_Pixel, {105,   0,  33,  47}, { -16+16, 78+46}}, //3
+	{YCN_ArcMain_Pixel, {139,   0,  33,  47}, { -16+16, 78+46}}, //4
 	
-	{YCN_ArcMain_Pixel, {  0,  89,  50,  46}, { 55, 175}}, //5
-	{YCN_ArcMain_Pixel, { 51,  89,  50,  46}, { 55, 175}}, //6
-	{YCN_ArcMain_Pixel, {102,  89,  50,  46}, { 55, 175}}, //7
+	{YCN_ArcMain_Pixel, {  0,  89,  50,  46}, { -16+38, 78+45}}, //5
+	{YCN_ArcMain_Pixel, { 51,  89,  50,  46}, { -16+38, 78+45}}, //6
+	{YCN_ArcMain_Pixel, {102,  89,  50,  46}, { -16+38, 78+45}}, //7
 	
-	{YCN_ArcMain_Pixel, {  0,  48,  56,  40}, { 55, 175}}, //8
-	{YCN_ArcMain_Pixel, { 57,  48,  52,  40}, { 55, 175}}, //9
-	{YCN_ArcMain_Pixel, {110,  48,  52,  40}, { 55, 175}}, //10
+	{YCN_ArcMain_Pixel, {  0,  48,  56,  40}, { -16+28, 78+40}}, //8
+	{YCN_ArcMain_Pixel, { 57,  48,  52,  40}, { -16+26, 78+40}}, //9
+	{YCN_ArcMain_Pixel, {110,  48,  52,  40}, { -16+26, 78+40}}, //10
 	
-	{YCN_ArcMain_Pixel, {  0, 175,  42 , 49}, { 55, 175}}, //11
-	{YCN_ArcMain_Pixel, { 43, 175,  42 , 49}, { 55, 175}}, //12
-	{YCN_ArcMain_Pixel, { 86, 175,  42 , 49}, { 55, 175}}, //13
+	{YCN_ArcMain_Pixel, {  0, 175,  42 , 49}, { -16+21, 78+49}}, //11
+	{YCN_ArcMain_Pixel, { 43, 175,  42 , 49}, { -16+21, 78+49}}, //12
+	{YCN_ArcMain_Pixel, { 86, 175,  42 , 49}, { -16+21, 78+49}}, //13
 	
-	{YCN_ArcMain_Pixel, {  0, 136,  49,  38}, { 55, 175}}, //14
-	{YCN_ArcMain_Pixel, { 50, 136,  47,  38}, { 55, 175}}, //15
-	{YCN_ArcMain_Pixel, { 98, 136,  48,  38}, { 55, 175}}, //16
+	{YCN_ArcMain_Pixel, {  0, 136,  49,  38}, { -16+14, 78+38}}, //14
+	{YCN_ArcMain_Pixel, { 50, 136,  47,  38}, { -16+13, 78+38}}, //15
+	{YCN_ArcMain_Pixel, { 98, 136,  48,  38}, { -16+13, 78+38}}, //16
 };
 
 static const Animation char_ycnpixel_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 0,  1,  2,  3,  4, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
-	{2, (const u8[]){ 5,  6,  7, ASCR_BACK}},         //CharAnim_Left
+	{2, (const u8[]){ 5,  6,  7, ASCR_BACK, 0}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
-	{2, (const u8[]){ 8,  9, 10, ASCR_BACK}},         //CharAnim_Down
+	{2, (const u8[]){ 8,  9, 10, ASCR_BACK, 0}},         //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},         //CharAnim_DownAlt
-	{2, (const u8[]){ 11,  12, 13, ASCR_BACK}},         //CharAnim_Up
+	{2, (const u8[]){ 11,  12, 13, ASCR_BACK, 0}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
-	{2, (const u8[]){14, 15, 16, ASCR_BACK}},         //CharAnim_Right
+	{2, (const u8[]){14, 15, 16, ASCR_BACK, 0}},         //CharAnim_Right
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
+};
+
+//YCN character definitions
+static const CharFrame char_ycnmad_frame[] = {
+	{YCN_ArcMain_MIdle0, {  0,   0, 127, 184}, { 55, 175}}, //0
+	{YCN_ArcMain_MIdle0, {128,   0, 126, 184}, { 55, 175}}, //1
+	{YCN_ArcMain_MIdle1, {  0,   0, 126, 184}, { 55, 175}}, //2
+	{YCN_ArcMain_MIdle1, {127,   0, 127, 184}, { 55, 175}}, //3
+	
+	{YCN_ArcMain_MLeft0, {  0,   0,  168, 170}, { 110, 161}}, //4
+	{YCN_ArcMain_MLeft1, {  0,   0,  168, 170}, { 102, 162}}, //5
+	{YCN_ArcMain_MLeft2, {  0,   0,  172, 171}, { 105, 163}}, //6
+	
+	{YCN_ArcMain_MDown0, {  0,   0, 142, 155}, { 74, 153}}, //7
+	{YCN_ArcMain_MDown1, {  0,   0, 145, 159}, { 73, 157}}, //8
+	{YCN_ArcMain_MDown2, {  0,   0, 141, 158}, { 72, 156}}, //9
+	
+	{YCN_ArcMain_MUp0, {  0,   0, 127, 192}, { 60, 192}}, //10
+	{YCN_ArcMain_MUp1, {  0,   0, 132, 191}, { 62, 191}}, //11
+	{YCN_ArcMain_MUp2, {  0,   0, 132, 185}, { 62, 185}}, //12
+	
+	{YCN_ArcMain_MRight0, {  0,   0, 179, 153}, { 37, 149}}, //13
+	{YCN_ArcMain_MRight1, {  0,   0, 160, 154}, { 40, 150}}, //14
+	{YCN_ArcMain_MRight2, {  0,   0, 170, 154}, { 39, 150}}, //15
+	
+	{YCN_ArcMain_Laugh0, {  0,   0, 142, 149}, { 69, 145}}, //16
+	{YCN_ArcMain_Laugh1, {  0,   0, 139, 147}, { 66, 142}}, //17
+	{YCN_ArcMain_Laugh2, {  0,   0, 135, 148}, { 64, 143}}, //18
+};
+
+static const Animation char_ycnmad_anim[CharAnim_Max] = {
+	{2, (const u8[]){ 0,  1,  2,  3, ASCR_BACK, 0}}, //CharAnim_Idle
+	{2, (const u8[]){ 4,  5,  6, ASCR_BACK, 0}},         //CharAnim_Left
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
+	{2, (const u8[]){ 7,  8, 9, ASCR_BACK, 0}},         //CharAnim_Down
+	{2, (const u8[]){ 16,  17, 18, ASCR_BACK, 0}},         //CharAnim_DownAlt
+	{2, (const u8[]){ 10,  11, 12, ASCR_BACK, 0}},         //CharAnim_Up
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
+	{2, (const u8[]){13, 14, 15, ASCR_BACK, 0}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 };
 
@@ -167,8 +209,17 @@ void Char_YCN_SetFrame(void *user, u8 frame)
 	{
 		//Check if new art shall be loaded
 		const CharFrame *cframe = &char_ycn_frame[this->frame = frame];
+		const CharFrame *cframe1 = &char_ycnpixel_frame[this->frame = frame];
+		const CharFrame *cframe2 = &char_ycnmad_frame[this->frame = frame];
 		if (cframe->tex != this->tex_id)
-			Gfx_LoadTex(&this->tex, this->arc_ptr[this->tex_id = cframe->tex], 0);
+		{
+			if(phases == 0)
+				Gfx_LoadTex(&this->tex, this->arc_ptr[this->tex_id = cframe->tex], 0);
+			else if(phases == 1)
+				Gfx_LoadTex(&this->tex, this->arc_ptr[this->tex_id = cframe1->tex], 0);
+			else
+				Gfx_LoadTex(&this->tex, this->arc_ptr[this->tex_id = cframe2->tex], 0);
+		}
 	}
 }
 
@@ -182,7 +233,21 @@ void Char_YCN_Tick(Character *character)
 	
 	//Animate and draw
 	Animatable_Animate(&character->animatable, (void*)this, Char_YCN_SetFrame);
-	Character_Draw(character, &this->tex, &char_ycn_frame[this->frame]);
+	if(phases == 0)
+	{
+		Character_Draw(character, &this->tex, &char_ycn_frame[this->frame]);
+		Animatable_Init(&this->character.animatable, char_ycn_anim);
+	}
+	else if(phases == 1)
+	{
+		Character_Draw(character, &this->tex, &char_ycnpixel_frame[this->frame]);
+		Animatable_Init(&this->character.animatable, char_ycnpixel_anim);
+	}
+	else
+	{
+		Character_Draw(character, &this->tex, &char_ycnmad_frame[this->frame]);
+		Animatable_Init(&this->character.animatable, char_ycnmad_anim);
+	}
 }
 
 void Char_YCN_SetAnim(Character *character, u8 anim)
@@ -229,6 +294,8 @@ Character *Char_YCN_New(fixed_t x, fixed_t y)
 	this->character.focus_zoom = FIXED_DEC(1,1);
 	
 	this->character.size = FIXED_DEC(1,1);
+	
+	phases = 0;
 	
 	//Load art
 	this->arc_main = IO_Read("\\CHAR\\YCN.ARC;1");
@@ -300,4 +367,9 @@ Character *Char_YCN_New(fixed_t x, fixed_t y)
 	this->tex_id = this->frame = 0xFF;
 	
 	return (Character*)this;
+}
+
+void YCNChangePhase(u8 phase)
+{
+	phases = phase;
 }

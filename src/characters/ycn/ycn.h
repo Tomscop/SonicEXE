@@ -6,4 +6,6 @@
 //SonicEXE character functions
 Character *Char_YCN_New(fixed_t x, fixed_t y);
 
+void YCNChangePhase(u8 phase);
+
 #endif

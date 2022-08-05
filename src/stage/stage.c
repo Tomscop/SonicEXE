@@ -72,8 +72,8 @@ static const u8 note_anims[4][3] = {
 #include "../characters/ycn/ycn.h"
 #include "../characters/gf/gf.h"
 
-#include "../stages/stage1/stage1.h"
 #include "../stages/gh/gh.h"
+#include "../stages/ycr/ycr.h"
 
 static const StageDef stage_defs[StageId_Max] = {
 	#include "../songs.h"
@@ -1206,6 +1206,7 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	Stage_LoadPlayer();
 	Stage_LoadOpponent();
 	Stage_LoadGirlfriend();
+	stage.hidegf = false;
 	Stage_SwapChars();
 	
 	//Load stage chart
@@ -1224,6 +1225,7 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	stage.camera.x = stage.camera.tx;
 	stage.camera.y = stage.camera.ty;
 	stage.camera.zoom = stage.camera.tz;
+	stage.camera.force = false;
 	
 	stage.bump = FIXED_UNIT;
 	stage.sbump = FIXED_UNIT;
@@ -1568,10 +1570,13 @@ void Stage_Tick(void)
 			}
 			
 			//Scroll camera
-			if (stage.cur_section->flag & SECTION_FLAG_OPPFOCUS)
-				Stage_FocusCharacter(stage.opponent, FIXED_UNIT / 24);
-			else
-				Stage_FocusCharacter(stage.player, FIXED_UNIT / 24);
+			if (!stage.camera.force)
+			{
+				if (stage.cur_section->flag & SECTION_FLAG_OPPFOCUS)
+					Stage_FocusCharacter(stage.opponent, FIXED_UNIT / 24);
+				else
+					Stage_FocusCharacter(stage.player, FIXED_UNIT / 24);
+			}
 			Stage_ScrollCamera();
 			
 			switch (stage.mode)
@@ -1828,8 +1833,9 @@ void Stage_Tick(void)
 				stage.back->draw_md(stage.back);
 			
 			//Tick girlfriend
-			if (stage.gf != NULL)
-				stage.gf->tick(stage.gf);
+			if (!stage.hidegf)
+				if (stage.gf != NULL )
+					stage.gf->tick(stage.gf);
 			
 			//static const RECT flash = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
 			//Gfx_BlendRect(&flash, stage.camera.zoom / 2, 0, stage.camera.zoom / 2, 1);
