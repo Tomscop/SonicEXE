@@ -16,6 +16,7 @@ all: \
 	iso/images/font/boldfont.tim \
 	iso/images/font/cdr.tim \
 	iso/images/font/arial.tim \
+	iso/images/events/static.tim \
 	iso/images/hud0.tim \
 	iso/images/hud1.tim \
 	iso/images/note.tim \

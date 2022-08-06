@@ -14,6 +14,8 @@
 typedef struct
 {
 	u8 flash_col;
+	u8 hitstatic;
+	Gfx_Tex tex_static;
 } Event;
 
 extern Event event;
@@ -23,5 +25,6 @@ void Events();
 void NoteHitEvent(u8 type);
 void NoteMissEvent(u8 type, u8 state);
 void Flash_tick();
+void LoadEvents();
 
 #endif
