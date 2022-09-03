@@ -706,7 +706,11 @@ void Menu_Tick(void)
 				{StageId_TooSlow, 0xFF9271FD, "TOO SLOW"},
 				{StageId_TooSlowEncore, 0xFF9271FD, "TOO SLOW ENCORE"},
 				{StageId_YouCantRun, 0xFF9271FD, "YOU CAN'T RUN"},
-				{StageId_YouCantRunEncore, 0xFF9271FD, "YOU CAN'T RUN ENCORE"}
+				{StageId_YouCantRunEncore, 0xFF9271FD, "YOU CAN'T RUN ENCORE"},
+				{StageId_TripleTrouble, 0xFF9271FD, "TRIPLE TROUBLE"},
+				{StageId_FinalEscape, 0xFF9271FD, "FINAL ESCAPE"},
+				{StageId_Cycles, 0xFF9271FD, "CYCLES"},
+				{StageId_CyclesEncore, 0xFF9271FD, "CYCLES ENCORE"}
 			};
 			
 			//Initialize page

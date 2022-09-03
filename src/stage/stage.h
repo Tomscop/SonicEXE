@@ -34,11 +34,15 @@ typedef enum
 	StageId_TooSlowEncore,
 	StageId_YouCantRun,
 	StageId_YouCantRunEncore,
+	StageId_TripleTrouble,
+	StageId_FinalEscape,
+	StageId_Cycles,
+	StageId_CyclesEncore,
 	
 	StageId_Max
 } StageId;
 
-#define StageId_LastVanilla StageId_YouCantRunEncore
+#define StageId_LastVanilla StageId_CyclesEncore
 
 typedef enum
 {

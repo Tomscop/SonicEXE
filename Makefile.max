@@ -2,6 +2,9 @@ all: \
 	iso/music/menu.xa \
 	iso/songs/tooslow.xa \
 	iso/songs/youcantrun.xa \
+	iso/songs/tt-fe.xa \
+	iso/songs/cycles.xa \
+	iso/songs/fate-exec.xa \
 
 iso/%.xa: iso/%.ogg
 	tools/psxavenc/psxavenc -f 37800 -t xa -b 4 -c 2 -F 1 -C 0 $< $@ 
@@ -12,8 +15,17 @@ iso/%.xa:
 # Menu
 iso/music/menu.xa: iso/music/menuscreen.xa iso/music/gameover.xa
 
-# Week1a
+# Too Slow
 iso/songs/tooslow.xa: iso/songs/too-slow/Inst.xa iso/songs/too-slow/Merged.xa iso/songs/too-slow-encore/Inst.xa iso/songs/too-slow-encore/Merged.xa
 
-# Week1b
+# You Can't Run
 iso/songs/youcantrun.xa: iso/songs/you-cant-run/Inst.xa iso/songs/you-cant-run/Merged.xa iso/songs/you-cant-run-encore/Inst.xa iso/songs/you-cant-run-encore/Merged.xa
+
+# Triple Trouble  Final Escape
+iso/songs/tt-fe.xa: iso/songs/triple-trouble/Inst.xa iso/songs/triple-trouble/Merged.xa iso/songs/final-escape/Inst.xa iso/songs/final-escape/Merged.xa
+
+# Cycles
+iso/songs/cycles.xa: iso/songs/cycles/Inst.xa iso/songs/cycles/Merged.xa iso/songs/cycles-encore/Inst.xa iso/songs/cycles-encore/Merged.xa
+
+# Fate  Execution
+iso/songs/fate-exec.xa: iso/songs/fate/Inst.xa iso/songs/execution/Inst.xa

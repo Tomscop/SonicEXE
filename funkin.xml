@@ -59,6 +59,9 @@
 				<!-- YCN assets -->
 				<file name = "ycn.arc" type = "data" source = "iso/characters/ycn/main.arc"/>
 				
+				<!-- LordX assets -->
+				<file name = "lordx.arc" type = "data" source = "iso/characters/lordx/main.arc"/>
+				
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/characters/gf/main.arc"/>
 				<file name = "gftut.arc" type = "data" source = "iso/characters/gf/tut.arc"/>
@@ -67,22 +70,22 @@
 			
 			<!-- Songs -->
 			<dir name = "songs">
-				<!-- Bopeebo charts -->
-				<file name = "1.1e.cht" type = "data" source = "iso/songs/too-slow/too-slow-easy.json.cht"/>
-				<file name = "1.1n.cht" type = "data" source = "iso/songs/too-slow/too-slow.json.cht"/>
-				<file name = "1.1h.cht" type = "data" source = "iso/songs/too-slow/too-slow-hard.json.cht"/>
-				<!-- Fresh charts -->
-				<file name = "1.2e.cht" type = "data" source = "iso/songs/too-slow-encore/too-slow-encore.json.cht"/>
-				<file name = "1.2n.cht" type = "data" source = "iso/songs/too-slow-encore/too-slow-encore.json.cht"/>
-				<file name = "1.2h.cht" type = "data" source = "iso/songs/too-slow-encore/too-slow-encore.json.cht"/>
-				<!-- Dadbattle charts -->
-				<file name = "1.3e.cht" type = "data" source = "iso/songs/you-cant-run/you-cant-run.json.cht"/>
-				<file name = "1.3n.cht" type = "data" source = "iso/songs/you-cant-run/you-cant-run.json.cht"/>
-				<file name = "1.3h.cht" type = "data" source = "iso/songs/you-cant-run/you-cant-run.json.cht"/>
-				<!-- Tutorial charts -->
-				<file name = "1.4e.cht" type = "data" source = "iso/songs/you-cant-run-encore/you-cant-run-encore.json.cht"/>
-				<file name = "1.4n.cht" type = "data" source = "iso/songs/you-cant-run-encore/you-cant-run-encore.json.cht"/>
-				<file name = "1.4h.cht" type = "data" source = "iso/songs/you-cant-run-encore/you-cant-run-encore.json.cht"/>
+				<!-- too-slow charts -->
+				<file name = "1.1.cht" type = "data" source = "iso/songs/too-slow/too-slow-hard.json.cht"/>
+				<!-- too-slow-encore charts -->
+				<file name = "1.2.cht" type = "data" source = "iso/songs/too-slow-encore/too-slow-encore.json.cht"/>
+				<!-- you-cant-run charts -->
+				<file name = "1.3.cht" type = "data" source = "iso/songs/you-cant-run/you-cant-run.json.cht"/>
+				<!-- you-cant-run-encore charts -->
+				<file name = "1.4.cht" type = "data" source = "iso/songs/you-cant-run-encore/you-cant-run-encore.json.cht"/>
+				<!-- triple-trouble charts -->
+				<file name = "1.5.cht" type = "data" source = "iso/songs/triple-trouble/triple-trouble.json.cht"/>
+				<!-- final-escape charts -->
+				<file name = "1.6.cht" type = "data" source = "iso/songs/final-escape/final-escape.json.cht"/>
+				<!-- cycles charts -->
+				<file name = "1.7.cht" type = "data" source = "iso/songs/cycles/cycles.json.cht"/>
+				<!-- cycles-encore charts -->
+				<file name = "1.8.cht" type = "data" source = "iso/songs/cycles-encore/cycles-encore.json.cht"/>
 			</dir>
 			
 			<!-- Music -->
@@ -92,6 +95,10 @@
 				<file name = "tooslow.xa" type = "xa" source = "iso/songs/tooslow.xa"/>
 				<dummy sectors="128"/>
 				<file name = "ycr.xa" type = "xa" source = "iso/songs/youcantrun.xa"/>
+				<dummy sectors="128"/>
+				<file name = "tt-fe.xa" type = "xa" source = "iso/songs/tt-fe.xa"/>
+				<dummy sectors="128"/>
+				<file name = "cycles.xa" type = "xa" source = "iso/songs/cycles.xa"/>
 				<dummy sectors="128"/>
 			</dir>
 			

@@ -68,8 +68,11 @@ static const u8 note_anims[4][3] = {
 
 //Stage definitions
 #include "../characters/bf/bf.h"
+
 #include "../characters/sonicexe/sonicexe.h"
 #include "../characters/ycn/ycn.h"
+#include "../characters/lordx/lordx.h"
+
 #include "../characters/gf/gf.h"
 
 #include "../stages/gh/gh.h"
@@ -1022,7 +1025,7 @@ static void Stage_LoadChart(void)
 	else
 	{
 		//Use standard path convention
-		sprintf(chart_path, "\\SONGS\\%d.%d%c.CHT;1", stage.stage_def->week, stage.stage_def->week_song, "ENH"[stage.stage_diff]);
+		sprintf(chart_path, "\\SONGS\\%d.%d.CHT;1", stage.stage_def->week, stage.stage_def->week_song);
 	}
 	
 	if (stage.chart_data != NULL)

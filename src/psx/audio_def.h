@@ -16,12 +16,20 @@ static const XA_TrackDef xa_tracks[] = {
 	//WEEK1B.XA
 	{FL_YouCantRun, XA_LENGTH(15943)}, //XA_Dadbattle
 	{FL_YouCantRun, XA_LENGTH(20096)}, //XA_Tutorial
+	//WEEK1A.XA
+	{FL_TT_FE, XA_LENGTH(50710)}, //XA_Bopeebo
+	{FL_TT_FE, XA_LENGTH(22400)}, //XA_Fresh
+	//WEEK1B.XA
+	{FL_Cycles, XA_LENGTH(15231)}, //XA_Dadbattle
+	{FL_Cycles, XA_LENGTH(15540)}, //XA_Tutorial
 };
 
 static const char *xa_paths[] = {
 	"\\MUSIC\\MENU.XA;1",   //XA_Menu
 	"\\MUSIC\\TOOSLOW.XA;1", //XA_Week1A
 	"\\MUSIC\\YCR.XA;1", //XA_Week1B
+	"\\MUSIC\\TT-FE.XA;1", //XA_Week1B
+	"\\MUSIC\\CYCLES.XA;1", //XA_Week1B
 	NULL,
 };
 
@@ -41,6 +49,12 @@ static const XA_Mp3 xa_mp3s[] = {
 	//WEEK1B.XA
 	{"youcantrun", true},
 	{"youcantrunencore", true},
+	
+	{"tripletrouble", true},
+	{"finalescape", true},
+	
+	{"cycles", true},
+	{"cyclesencore", true},
 	
 	{NULL, false}
 };

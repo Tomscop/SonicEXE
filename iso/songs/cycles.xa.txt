@@ -1,0 +1,4 @@
+1 xa cycles/Merged.xa 1 0
+1 xa cycles/Inst.xa 1 1
+1 xa cycles-encore/Merged.xa 1 2
+1 xa cycles-encore/Inst.xa 1 3
