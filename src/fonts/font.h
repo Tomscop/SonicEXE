@@ -21,7 +21,7 @@ typedef enum
 typedef struct FontData
 {
 	//Font functions and data
-	s32 (*get_width)(struct FontData *this, const char *text);
+	fixed_t (*get_width)(struct FontData *this, const char *text);
 	void (*draw_col)(struct FontData *this, const char *text, s32 x, s32 y, FontAlign align, u8 r, u8 g, u8 b);
 	void (*draw)(struct FontData *this, const char *text, s32 x, s32 y, FontAlign align);
 	

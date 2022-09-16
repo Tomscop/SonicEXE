@@ -11,6 +11,7 @@ all: \
 	\
 	iso/stages/gh/back.arc \
 	iso/stages/ycr/back.arc \
+	iso/stages/trichael/back.arc \
 	\
 	iso/images/menu/menu.arc \
 	iso/images/menu/loading.tim \
@@ -46,6 +47,9 @@ iso/stages/stage1/back.arc: iso/stages/stage1/back0.tim iso/stages/stage1/back1.
 
 # GH
 iso/stages/gh/back.arc: iso/stages/gh/0.tim iso/stages/gh/1.tim iso/stages/gh/2.tim iso/stages/gh/3.tim
+
+# Trichael
+iso/stages/trichael/back.arc: iso/stages/trichael/0.tim iso/stages/trichael/1.tim
 
 # SonicEXE
 iso/characters/sonicexe/main.arc: iso/characters/sonicexe/idle0.tim iso/characters/sonicexe/idle1.tim iso/characters/sonicexe/idle2.tim iso/characters/sonicexe/left0.tim iso/characters/sonicexe/left1.tim iso/characters/sonicexe/down0.tim iso/characters/sonicexe/down1.tim iso/characters/sonicexe/down2.tim iso/characters/sonicexe/down3.tim iso/characters/sonicexe/up0.tim iso/characters/sonicexe/up1.tim iso/characters/sonicexe/up2.tim iso/characters/sonicexe/up3.tim iso/characters/sonicexe/right0.tim iso/characters/sonicexe/right1.tim iso/characters/sonicexe/laugh0.tim iso/characters/sonicexe/laugh1.tim

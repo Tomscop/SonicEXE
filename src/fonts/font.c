@@ -127,20 +127,24 @@ s32 Font_CDR_GetWidth(struct FontData *this, const char *text)
 	return width;
 }
 
-void Font_CDR_DrawCol(struct FontData *this, const char *text, fixed_t x, fixed_t y, FontAlign align, u8 r, u8 g, u8 b)
+void Font_CDR_DrawCol(struct FontData *this, const char *text, s32 x, s32 y, FontAlign align, u8 r, u8 g, u8 b)
 {
 	//Offset position based off alignment
+	s32 alignoffset = Font_CDR_GetWidth(this, text);
+	
 	switch (align)
 	{
 		case FontAlign_Left:
+			alignoffset = 0;
 			break;
 		case FontAlign_Center:
-			x -= Font_CDR_GetWidth(this, text) >> 1;
+			alignoffset = alignoffset / 2;
 			break;
 		case FontAlign_Right:
-			x -= Font_CDR_GetWidth(this, text);
+			alignoffset = alignoffset;
 			break;
 	}
+	FntPrint("width: %d", alignoffset);
 	
 	//Draw string character by character
 	u8 c;
@@ -158,12 +162,9 @@ void Font_CDR_DrawCol(struct FontData *this, const char *text, fixed_t x, fixed_
 		
 		//Draw character
 		RECT src = {font_cdrmap[c].charX, font_cdrmap[c].charY, font_cdrmap[c].charW, font_cdrmap[c].charL};
-		RECT_FIXED dst = {x, y, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
+		RECT_FIXED dst = {x - FIXED_DEC(alignoffset,1), y, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
 
-		if (gameloop == GameLoop_Stage)
-			Stage_DrawTexCol(&this->tex, &src, &dst, stage.bump, r, g, b);
-		else
-			Gfx_BlitTexCol(&this->tex, &src, x, y, r, g, b);
+		Stage_DrawTexCol(&this->tex, &src, &dst, stage.bump, r, g, b);
 		
 		//Increment X
 		x += (font_cdrmap[c].charW - 1) << FIXED_SHIFT;

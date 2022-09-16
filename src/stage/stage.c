@@ -77,6 +77,7 @@ static const u8 note_anims[4][3] = {
 
 #include "../stages/gh/gh.h"
 #include "../stages/ycr/ycr.h"
+#include "../stages/trichael/trichael.h"
 
 static const StageDef stage_defs[StageId_Max] = {
 	#include "../songs.h"
@@ -661,7 +662,7 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 	};
 	RECT_FIXED dst = {
 		hx + ox * FIXED_DEC(20,1) + FIXED_DEC(4,1),
-		(SCREEN_HEIGHT2 - 30) << FIXED_SHIFT,
+		(SCREEN_HEIGHT2 - 34) << FIXED_SHIFT,
 		src.w << FIXED_SHIFT,
 		src.h << FIXED_SHIFT
 	};
@@ -1133,9 +1134,7 @@ static void Stage_LoadState(void)
 		stage.player_state[i].accuracy = 0;
 		stage.player_state[i].max_accuracy = 0;
 		stage.player_state[i].min_accuracy = 0;
-		strcpy(stage.player_state[i].score_text, "Score: 0");
-		strcpy(stage.player_state[i].miss_text, "Misses: 0");
-		strcpy(stage.player_state[i].accuracy_text, "Accuracy: 0%");
+		strcpy(stage.player_state[i].score_text, "Score: 0 | Misses: 0 | Accuracy: 0%");
 		strcpy(stage.player_state[i].P2_text, "SC: 0 | MS: 0 | AC: 0%");
 		
 		stage.player_state[i].pad_held = stage.player_state[i].pad_press = 0;
@@ -1663,7 +1662,7 @@ void Stage_Tick(void)
 					else
 						stage.font_cdr.draw(&stage.font_cdr,
 							this->P2_text,
-							FIXED_DEC(-142,1),
+							FIXED_DEC(-11,1),
 							FIXED_DEC(100,1),
 							FontAlign_Right
 						);
@@ -1673,46 +1672,27 @@ void Stage_Tick(void)
 			{
 				this = &stage.player_state[0];
 				
-				if (this->refresh_score)
-				{
-					VScore = (this->score * stage.max_score / this->max_score) * 10;
-					sprintf(this->score_text, "Score: %d", VScore);
-					this->refresh_score = false;
-				}
-				
-				stage.font_cdr.draw(&stage.font_cdr,
-					this->score_text,
-					FIXED_DEC(-156,1), 
-					FIXED_DEC(80,1),
-					FontAlign_Left
-				);
-
-				if (this->refresh_miss)
-				{
-					sprintf(this->miss_text, "Misses: %d", this->miss);
-					this->refresh_miss = false;
-				}
-
-				stage.font_cdr.draw(&stage.font_cdr,
-					this->miss_text,
-					FIXED_DEC(-156,1), 
-					FIXED_DEC(90,1),
-					FontAlign_Left
-				);
-				
 				this->accuracy = (this->min_accuracy * 100) / (this->max_accuracy);
 				
-				if (this->refresh_accuracy)
+				if (this->refresh_score || this->refresh_miss || this->refresh_miss)
 				{
-					sprintf(this->accuracy_text, "Accuracy: %d%%", this->accuracy);
+					VScore = (this->score * stage.max_score / this->max_score) * 10;
+					sprintf(this->score_text, "Score: %d | Misses: %d | Accuracy: %d%%", VScore, this->miss, this->accuracy);
+					this->refresh_score = false;
+					this->refresh_miss = false;
 					this->refresh_accuracy = false;
 				}
 				
+				s32 texty = 100;
+				
+				if (stage.downscroll)
+					texty = -70;
+				
 				stage.font_cdr.draw(&stage.font_cdr,
-					this->accuracy_text,
-					FIXED_DEC(-156,1), 
-					FIXED_DEC(100,1),
-					FontAlign_Left
+					this->score_text,
+					FIXED_DEC(20,1), 
+					FIXED_DEC(texty,1),
+					FontAlign_Center
 				);
 			}
 			
@@ -1767,7 +1747,7 @@ void Stage_Tick(void)
 					
 					//Draw health bar
 					RECT health_border_src = {0, 0, 210, 8};
-					RECT_FIXED health_border_dst = {FIXED_DEC(-100,1), (SCREEN_HEIGHT2 - 32) << FIXED_SHIFT, FIXED_DEC(210,1), FIXED_DEC(8,1)};
+					RECT_FIXED health_border_dst = {FIXED_DEC(-100,1), (SCREEN_HEIGHT2 - 36) << FIXED_SHIFT, FIXED_DEC(210,1), FIXED_DEC(8,1)};
 				
 					if (stage.downscroll)
 						health_border_dst.y = -health_border_dst.y;
@@ -1776,7 +1756,7 @@ void Stage_Tick(void)
 					
 					
 					RECT health_color_src = {210, 0, 1, 1};
-					RECT_FIXED health_color_dst = {FIXED_DEC(109 - (208 * stage.player_state[0].health / 20000),1), (SCREEN_HEIGHT2 - 32) << FIXED_SHIFT, FIXED_DEC(0 + (208 * stage.player_state[0].health / 20000),1), FIXED_DEC(8,1)};
+					RECT_FIXED health_color_dst = {FIXED_DEC(109 - (208 * stage.player_state[0].health / 20000),1), (SCREEN_HEIGHT2 - 36) << FIXED_SHIFT, FIXED_DEC(0 + (208 * stage.player_state[0].health / 20000),1), FIXED_DEC(8,1)};
 					
 					if (stage.downscroll)
 						health_color_dst.y = -health_color_dst.y;
@@ -1785,42 +1765,14 @@ void Stage_Tick(void)
 					
 					
 					RECT health_back_src = {210, 2, 1, 1};
-					RECT_FIXED health_back_dst = {FIXED_DEC(-99,1), (SCREEN_HEIGHT2 - 32) << FIXED_SHIFT, FIXED_DEC(208,1), FIXED_DEC(8,1)};
+					RECT_FIXED health_back_dst = {FIXED_DEC(-99,1), (SCREEN_HEIGHT2 - 36) << FIXED_SHIFT, FIXED_DEC(208,1), FIXED_DEC(8,1)};
 					
 					if (stage.downscroll)
 						health_back_dst.y = -health_back_dst.y;
-				
-				Stage_DrawTex(&stage.tex_hud1, &health_back_src, &health_back_dst, stage.bump);
+					
+					Stage_DrawTex(&stage.tex_hud1, &health_back_src, &health_back_dst, stage.bump);
 				}
-				
-				//if (stage.downscroll)
-				//	health_dst.y = -health_dst.y - health_dst.h;
 			}
-			
-			//Hardcoded stage stuff
-			//switch (stage.stage_id)
-			//switch (1)
-			//{
-			//	case StageId_1_2: //Fresh GF bop
-			//		switch (stage.song_step)
-			//		{
-			//			case 16 << 2:
-			//				stage.gf_speed = 2 << 2;
-			//				break;
-			//			case 48 << 2:
-			//				stage.gf_speed = 1 << 2;
-			//				break;
-			//			case 80 << 2:
-			//				stage.gf_speed = 2 << 2;
-			//				break;
-			//			case 112 << 2:
-			//				stage.gf_speed = 1 << 2;
-			//				break;
-			//		}
-			//		break;
-			//	default:
-			//		break;
-			//}
 			
 			//Draw stage foreground
 			if (stage.back->draw_fg != NULL)

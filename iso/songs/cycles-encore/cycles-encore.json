@@ -4173,7 +4173,7 @@
 		"stage": "lordx",
 		"needsVoices": true,
 		"validScore": true,
-		"speed": 3.3,
+		"speed": 3,
 		"bpm": 156,
 		"noteStyle": null
 	}

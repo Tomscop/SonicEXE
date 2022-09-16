@@ -19,6 +19,7 @@ SRCS = src/main.c \
 	   \
        src/stages/gh/gh.c \
        src/stages/ycr/ycr.c \
+       src/stages/trichael/trichael.c \
 	   \
 	   \
        \

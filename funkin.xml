@@ -46,6 +46,7 @@
 			<dir name = "stages">
 				<file name = "gh.arc" type = "data" source = "iso/stages/gh/back.arc"/>
 				<file name = "ycr.arc" type = "data" source = "iso/stages/ycr/back.arc"/>
+				<file name = "trichael.arc" type = "data" source = "iso/stages/trichael/back.arc"/>
 			</dir>
 			
 			<!-- Characters assets -->

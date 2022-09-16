@@ -135,17 +135,15 @@ typedef struct
 	
 	boolean refresh_miss;
 	s32 miss;
-	char miss_text[13];
 	
 	boolean refresh_accuracy;
 	s32 min_accuracy;
 	u8 accuracy;
 	s32 max_accuracy;
-	char accuracy_text[14];
 	
 	boolean refresh_score;
 	s32 score, max_score;
-	char score_text[15];
+	char score_text[50];
 	
 	char P2_text[30];
 	
