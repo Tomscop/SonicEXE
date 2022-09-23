@@ -39,3 +39,4 @@ build/
 *.cht
 
 # Big Chungus
+.DS_Store
