@@ -1,5 +1,5 @@
 /*
- * funkinchtpak by Regan "CuckyDev" Green
+ * funkinchartpak by Regan "CuckyDev" Green
  * Packs Friday Night Funkin' json formatted charts into a binary file for the PSX port
 */
 
@@ -27,12 +27,13 @@ struct Section
 #define NOTE_FLAG_SUSTAIN_END (1 << 4) //Is either end of sustain
 #define NOTE_FLAG_ALT_ANIM    (1 << 5) //Note plays alt animation
 #define NOTE_FLAG_MINE        (1 << 6) //Note is a mine
-#define NOTE_FLAG_HIT         (1 << 7) //Note has been hit
+#define NOTE_FLAG_STATIC      (1 << 7) //Note is a bullet
+#define NOTE_FLAG_HIT         (1 << 8) //Note has been hit
 
 struct Note
 {
 	uint16_t pos; //1/12 steps
-	uint8_t type, pad = 0;
+	uint16_t type, pad = 0;
 };
 
 typedef int32_t fixed_t;
@@ -63,7 +64,7 @@ int main(int argc, char *argv[])
 {
 	if (argc < 2)
 	{
-		std::cout << "usage: funkinchtpak in_json" << std::endl;
+		std::cout << "usage: funkinchartpak in_json" << std::endl;
 		return 0;
 	}
 	
@@ -131,13 +132,15 @@ int main(int argc, char *argv[])
 			new_note.type = (uint8_t)j[1] & (3 | NOTE_FLAG_OPPONENT);
 			if (is_opponent)
 				new_note.type ^= NOTE_FLAG_OPPONENT;
-			if (j[3] == true)
+			if (j[3] == "Alt Animation")
 				new_note.type |= NOTE_FLAG_ALT_ANIM;
 			else if ((new_note.type & NOTE_FLAG_OPPONENT) && is_alt)
 				new_note.type |= NOTE_FLAG_ALT_ANIM;
 			if (sustain >= 0)
 				new_note.type |= NOTE_FLAG_SUSTAIN_END;
-			if (((uint8_t)j[1]) & 8)
+			if (j[3] == "Static Note")
+				new_note.type |= NOTE_FLAG_STATIC;
+			if (j[3] == "Phantom Note")
 				new_note.type |= NOTE_FLAG_MINE;
 			
 			if (note_fudge.count(*((uint32_t*)&new_note)))
