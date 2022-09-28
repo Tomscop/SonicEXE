@@ -15,7 +15,7 @@ static const XA_TrackDef xa_tracks[] = {
 	{FL_TooSlow, XA_LENGTH(18216)}, //XA_Fresh
 	//WEEK1B.XA
 	{FL_YouCantRun, XA_LENGTH(15943)}, //XA_Dadbattle
-	{FL_YouCantRun, XA_LENGTH(20096)}, //XA_Tutorial
+	{FL_YouCantRun, XA_LENGTH(20900)}, //XA_Tutorial
 	//WEEK1A.XA
 	{FL_TT_FE, XA_LENGTH(50710)}, //XA_Bopeebo
 	{FL_TT_FE, XA_LENGTH(22400)}, //XA_Fresh
