@@ -33,7 +33,7 @@ struct Section
 struct Note
 {
 	uint16_t pos; //1/12 steps
-	uint16_t type, pad = 0;
+	uint16_t type;
 };
 
 typedef int32_t fixed_t;
@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
 			Note new_note;
 
 			//invalid number
-			if (j[1] < 0);
+			if (j[1] < 0)
 				continue;
 			int sustain = (int)PosRound(j[2], step_crochet) - 1;
 			new_note.pos = (step_base * 12) + PosRound(((double)j[0] - milli_base) * 12.0, step_crochet);
@@ -214,8 +214,7 @@ int main(int argc, char *argv[])
 	for (auto &i : notes)
 	{
 		WriteWord(out, i.pos);
-		out.put(i.type);
-		out.put(0);
+		WriteWord(out, i.type);
 	}
 	return 0;
 }
