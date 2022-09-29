@@ -125,4 +125,20 @@
 		"Cycles Encore",
 		
 		StageId_CyclesEncore, 0
+	},
+	{ //StageId_FightOrFlight
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_LordX_New, FIXED_DEC(-95,1), FIXED_DEC(110,1)},
+		{NULL,    FIXED_DEC(0,1),   FIXED_DEC(-10,1)},
+		
+		//Stage background
+		Back_Trichael_New,
+		
+		//Song info
+		1, 9,
+		XA_FightOrFlight, 0,
+		"Fight Or Flight",
+		
+		StageId_FightOrFlight, 0
 	}

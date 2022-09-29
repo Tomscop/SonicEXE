@@ -11,6 +11,7 @@ typedef enum
 	FL_YouCantRun,
 	FL_TT_FE,
 	FL_Cycles,
+	FL_FOF,
 	
 	XA_Max,
 } XA_File;
@@ -32,6 +33,8 @@ typedef enum
 	
 	XA_Cycles,
 	XA_CyclesEncore,
+
+	XA_FightOrFlight,
 	
 	XA_TrackMax,
 } XA_Track;
