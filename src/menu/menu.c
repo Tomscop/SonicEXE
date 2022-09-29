@@ -710,7 +710,8 @@ void Menu_Tick(void)
 				{StageId_TripleTrouble, 0xFF9271FD, "TRIPLE TROUBLE"},
 				{StageId_FinalEscape, 0xFF9271FD, "FINAL ESCAPE"},
 				{StageId_Cycles, 0xFF9271FD, "CYCLES"},
-				{StageId_CyclesEncore, 0xFF9271FD, "CYCLES ENCORE"}
+				{StageId_CyclesEncore, 0xFF9271FD, "CYCLES ENCORE"},
+				{StageId_FightOrFlight, 0xFF9271FD, "FIGHT OR FLIGHT"}
 			};
 			
 			//Initialize page

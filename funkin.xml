@@ -87,6 +87,8 @@
 				<file name = "1.7.cht" type = "data" source = "iso/songs/cycles/cycles.json.cht"/>
 				<!-- cycles-encore charts -->
 				<file name = "1.8.cht" type = "data" source = "iso/songs/cycles-encore/cycles-encore.json.cht"/>
+                <!-- fight-or-flight charts -->
+                <file name = "1.9.cht" type = "data" source = "iso/songs/fight-or-flight/fight-or-flight-hard.json.cht"/>
 			</dir>
 			
 			<!-- Music -->
@@ -100,6 +102,8 @@
 				<file name = "tt-fe.xa" type = "xa" source = "iso/songs/tt-fe.xa"/>
 				<dummy sectors="128"/>
 				<file name = "cycles.xa" type = "xa" source = "iso/songs/cycles.xa"/>
+				<dummy sectors="128"/>
+				<file name = "fof.xa" type = "xa" source = "iso/songs/fight-or-flight.xa"/>
 				<dummy sectors="128"/>
 			</dir>
 			
