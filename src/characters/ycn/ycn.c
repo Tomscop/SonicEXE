@@ -130,17 +130,17 @@ static const CharFrame char_ycnpixel_frame[] = {
 	{YCN_ArcMain_Pixel, { 86,  39,  29,  39}, { 17, 39}}, //3
 	{YCN_ArcMain_Pixel, {115,  39,  29,  40}, { 17, 40}}, //4
 	
-	{YCN_ArcMain_Pixel, {  0,  89,  50,  46}, { -16+38, 78+45}}, //5
-	{YCN_ArcMain_Pixel, { 51,  89,  50,  46}, { -16+38, 78+45}}, //6
+	{YCN_ArcMain_Pixel, {  0,  78,  29,  38}, { 16, 38}}, //5
+	{YCN_ArcMain_Pixel, { 29,  78,  27,  39}, { 15, 39}}, //6
 	
-	{YCN_ArcMain_Pixel, {  0,  48,  56,  40}, { -16+28, 78+40}}, //7
-	{YCN_ArcMain_Pixel, { 57,  48,  52,  40}, { -16+26, 78+40}}, //8
+	{YCN_ArcMain_Pixel, {  0,  0,  29,  38}, { 15, 38}}, //7
+	{YCN_ArcMain_Pixel, { 29,  0,  28,  39}, { 15, 39}}, //8
 	
-	{YCN_ArcMain_Pixel, {  0, 175,  42 , 49}, { -16+21, 78+49}}, //9
-	{YCN_ArcMain_Pixel, { 43, 175,  42 , 49}, { -16+21, 78+49}}, //10
+	{YCN_ArcMain_Pixel, {  0, 155,  27 , 40}, { 16, 40}}, //9
+	{YCN_ArcMain_Pixel, { 28, 155,  28 , 39}, { 16, 39}}, //10
 	
-	{YCN_ArcMain_Pixel, {  0, 136,  49,  38}, { -16+14, 78+38}}, //11
-	{YCN_ArcMain_Pixel, { 50, 136,  47,  38}, { -16+13, 78+38}}, //12
+	{YCN_ArcMain_Pixel, {  0, 117,  27,  37}, { 15, 37}}, //11
+	{YCN_ArcMain_Pixel, { 27, 117,  27,  38}, { 15, 38}}, //12
 };
 
 static const Animation char_ycnpixel_anim[CharAnim_Max] = {
