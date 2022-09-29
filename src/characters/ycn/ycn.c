@@ -124,11 +124,11 @@ static const Animation char_ycn_anim[CharAnim_Max] = {
 
 //YCN character definitions
 static const CharFrame char_ycnpixel_frame[] = {
-	{YCN_ArcMain_Pixel, {  0,  39,  29,  39}, { -16+16, 78+46}}, //0
-	{YCN_ArcMain_Pixel, { 29,  39,  28,  37}, { -16+16, 78+46}}, //1
-	{YCN_ArcMain_Pixel, { 57,  39,  28,  38}, { -16+16, 78+46}}, //2
-	{YCN_ArcMain_Pixel, { 86,  39,  29,  39}, { -16+16, 78+46}}, //3
-	{YCN_ArcMain_Pixel, {115,  39,  29,  40}, { -16+16, 78+46}}, //4
+	{YCN_ArcMain_Pixel, {  0,  39,  29,  39}, { 17, 40}}, //0
+	{YCN_ArcMain_Pixel, { 29,  39,  28,  37}, { 16, 37}}, //1
+	{YCN_ArcMain_Pixel, { 57,  39,  28,  38}, { 16, 38}}, //2
+	{YCN_ArcMain_Pixel, { 86,  39,  29,  39}, { 17, 39}}, //3
+	{YCN_ArcMain_Pixel, {115,  39,  29,  40}, { 17, 40}}, //4
 	
 	{YCN_ArcMain_Pixel, {  0,  89,  50,  46}, { -16+38, 78+45}}, //5
 	{YCN_ArcMain_Pixel, { 51,  89,  50,  46}, { -16+38, 78+45}}, //6
