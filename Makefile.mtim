@@ -62,3 +62,6 @@ iso/characters/ycn/main.arc: iso/characters/ycn/idle0.tim iso/characters/ycn/idl
 
 # Lord X
 iso/characters/lordx/main.arc: iso/characters/lordx/idle0.tim iso/characters/lordx/idle1.tim iso/characters/lordx/idle2.tim iso/characters/lordx/idle3.tim iso/characters/lordx/idle4.tim iso/characters/lordx/idle5.tim iso/characters/lordx/left0.tim iso/characters/lordx/left1.tim iso/characters/lordx/left2.tim iso/characters/lordx/left3.tim iso/characters/lordx/down0.tim iso/characters/lordx/down1.tim iso/characters/lordx/down2.tim iso/characters/lordx/down3.tim iso/characters/lordx/up0.tim iso/characters/lordx/up1.tim iso/characters/lordx/up2.tim iso/characters/lordx/up3.tim iso/characters/lordx/right0.tim iso/characters/lordx/right1.tim iso/characters/lordx/right2.tim iso/characters/lordx/right3.tim 
+
+# Sonic Playable
+iso/characters/sonic/main.arc: iso/characters/sonic/down.tim
