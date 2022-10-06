@@ -24,6 +24,8 @@ static const XA_TrackDef xa_tracks[] = {
 	{FL_Cycles, XA_LENGTH(15540)}, //XA_Tutorial
 	//WEEK1B.XA
 	{FL_FOF, XA_LENGTH(22000)}, //XA_Dadbattle
+	//WEEK1B.XA
+	{FL_RAB, XA_LENGTH(16400)}, //XA_Dadbattle
 };
 
 static const char *xa_paths[] = {
@@ -33,6 +35,7 @@ static const char *xa_paths[] = {
 	"\\MUSIC\\TT-FE.XA;1", //XA_Week1B
 	"\\MUSIC\\CYCLES.XA;1", //XA_Week1B
 	"\\MUSIC\\FOF.XA;1", //XA_Week1B
+	"\\MUSIC\\RAB.XA;1", //XA_Week1B
 	NULL,
 };
 

@@ -6,6 +6,7 @@ all: \
 	iso/songs/cycles.xa \
 	iso/songs/fate-exec.xa \
 	iso/songs/fight-or-flight.xa \
+	iso/songs/round-a-bout.xa \
 
 iso/%.xa: iso/%.ogg
 	tools/psxavenc/psxavenc -f 37800 -t xa -b 4 -c 2 -F 1 -C 0 $< $@ 
@@ -33,3 +34,6 @@ iso/songs/fate-exec.xa: iso/songs/fate/Inst.xa iso/songs/execution/Inst.xa
 
 # Fight or flight
 iso/songs/fight-or-flight.xa: iso/songs/fight-or-flight/Inst.xa iso/songs/fight-or-flight/Voices.xa
+
+# Round A Bout
+iso/songs/round-a-bout.xa: iso/songs/round-a-bout/Inst.xa iso/songs/round-a-bout/Voices.xa

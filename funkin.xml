@@ -63,6 +63,9 @@
 				<!-- LordX assets -->
 				<file name = "lordx.arc" type = "data" source = "iso/characters/lordx/main.arc"/>
 				
+				<!-- Needlemouse assets -->
+				<file name = "nmouse.arc" type = "data" source = "iso/characters/nmouse/main.arc"/>
+				
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/characters/gf/main.arc"/>
 				<file name = "gftut.arc" type = "data" source = "iso/characters/gf/tut.arc"/>
@@ -89,6 +92,8 @@
 				<file name = "1.8.cht" type = "data" source = "iso/songs/cycles-encore/cycles-encore.json.cht"/>
                 <!-- fight-or-flight charts -->
                 <file name = "1.9.cht" type = "data" source = "iso/songs/fight-or-flight/fight-or-flight-hard.json.cht"/>
+				<!-- round-a-bout charts -->
+                <file name = "1.10.cht" type = "data" source = "iso/songs/round-a-bout/round-a-bout.json.cht"/>
 			</dir>
 			
 			<!-- Music -->
@@ -104,6 +109,8 @@
 				<file name = "cycles.xa" type = "xa" source = "iso/songs/cycles.xa"/>
 				<dummy sectors="128"/>
 				<file name = "fof.xa" type = "xa" source = "iso/songs/fight-or-flight.xa"/>
+				<dummy sectors="128"/>
+				<file name = "rab.xa" type = "xa" source = "iso/songs/round-a-bout.xa"/>
 				<dummy sectors="128"/>
 			</dir>
 			

@@ -4,6 +4,7 @@ all: \
 	iso/characters/sonicexe/main.arc \
 	iso/characters/ycn/main.arc \
 	iso/characters/lordx/main.arc \
+	iso/characters/nmouse/main.arc \
 	\
 	iso/characters/gf/main.arc \
 	iso/characters/gf/tut.arc \
@@ -64,4 +65,7 @@ iso/characters/ycn/main.arc: iso/characters/ycn/idle0.tim iso/characters/ycn/idl
 iso/characters/lordx/main.arc: iso/characters/lordx/idle0.tim iso/characters/lordx/idle1.tim iso/characters/lordx/idle2.tim iso/characters/lordx/idle3.tim iso/characters/lordx/idle4.tim iso/characters/lordx/idle5.tim iso/characters/lordx/left0.tim iso/characters/lordx/left1.tim iso/characters/lordx/left2.tim iso/characters/lordx/left3.tim iso/characters/lordx/down0.tim iso/characters/lordx/down1.tim iso/characters/lordx/down2.tim iso/characters/lordx/down3.tim iso/characters/lordx/up0.tim iso/characters/lordx/up1.tim iso/characters/lordx/up2.tim iso/characters/lordx/up3.tim iso/characters/lordx/right0.tim iso/characters/lordx/right1.tim iso/characters/lordx/right2.tim iso/characters/lordx/right3.tim 
 
 # Sonic Playable
-iso/characters/sonic/main.arc: iso/characters/sonic/down.tim
+iso/characters/sonic/main.arc: iso/characters/sonic/up.tim
+
+# Needlemouse
+iso/characters/nmouse/main.arc: iso/characters/nmouse/idle0.tim iso/characters/nmouse/idle1.tim iso/characters/nmouse/idle2.tim iso/characters/nmouse/idle3.tim iso/characters/nmouse/idle4.tim iso/characters/nmouse/idle5.tim iso/characters/nmouse/idle6.tim iso/characters/nmouse/idle7.tim iso/characters/nmouse/idle8.tim iso/characters/nmouse/idle9.tim iso/characters/nmouse/left0.tim iso/characters/nmouse/left1.tim iso/characters/nmouse/left2.tim iso/characters/nmouse/left3.tim iso/characters/nmouse/left4.tim iso/characters/nmouse/down0.tim iso/characters/nmouse/down1.tim iso/characters/nmouse/down2.tim iso/characters/nmouse/down3.tim iso/characters/nmouse/down4.tim iso/characters/nmouse/up0.tim iso/characters/nmouse/up1.tim iso/characters/nmouse/up2.tim iso/characters/nmouse/up3.tim iso/characters/nmouse/up4.tim iso/characters/nmouse/right0.tim iso/characters/nmouse/right1.tim iso/characters/nmouse/right2.tim iso/characters/nmouse/right3.tim iso/characters/nmouse/right4.tim

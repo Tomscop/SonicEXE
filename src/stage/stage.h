@@ -39,6 +39,7 @@ typedef enum
 	StageId_Cycles,
 	StageId_CyclesEncore,
 	StageId_FightOrFlight,
+	StageId_RoundABout,
 	
 	StageId_Max
 } StageId;

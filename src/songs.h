@@ -141,4 +141,20 @@
 		"Fight Or Flight",
 		
 		StageId_FightOrFlight, 0
-	}
+	},
+	{ //StageId_RoundABout
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_NMouse_New, FIXED_DEC(-95,1), FIXED_DEC(110,1)},
+		{Char_GF_New,    FIXED_DEC(0,1),   FIXED_DEC(-10,1)},
+		
+		//Stage background
+		Back_Trichael_New,
+		
+		//Song info
+		1, 10,
+		XA_RoundABout, 0,
+		"Round A Bout",
+		
+		StageId_RoundABout, 0
+	},
