@@ -704,15 +704,28 @@ void Menu_Tick(void)
 			} menu_options[] = {
 				//{StageId_4_4, 0xFFFC96D7, "TEST"},
 				{StageId_TooSlow, 0xFF9271FD, "TOO SLOW"},
-				{StageId_TooSlowEncore, 0xFF9271FD, "TOO SLOW ENCORE"},
 				{StageId_YouCantRun, 0xFF9271FD, "YOU CAN'T RUN"},
-				{StageId_YouCantRunEncore, 0xFF9271FD, "YOU CAN'T RUN ENCORE"},
 				{StageId_TripleTrouble, 0xFF9271FD, "TRIPLE TROUBLE"},
-				{StageId_FinalEscape, 0xFF9271FD, "FINAL ESCAPE"},
+				
+				{StageId_TooSlowEncore, 0xFF9271FD, "TOO SLOW ENCORE"},
+				{StageId_YouCantRunEncore, 0xFF9271FD, "YOU CAN'T RUN ENCORE"},
+				
+				{StageId_Endless, 0xFF9271FD, "ENDLESS"},
+				{StageId_EndlessOG, 0xFF9271FD, "ENDLESS OG"},
+				{StageId_EndlessEncore, 0xFF9271FD, "ENDLESS ENCORE"},
+				
 				{StageId_Cycles, 0xFF9271FD, "CYCLES"},
-				{StageId_CyclesEncore, 0xFF9271FD, "CYCLES ENCORE"},
-				{StageId_FightOrFlight, 0xFF9271FD, "FIGHT OR FLIGHT"},
-				{StageId_RoundABout, 0xFF9271FD, "ROUND A BOUT"},
+				{StageId_Execution, 0xFF9271FD, "EXECUTION"},
+				
+				{StageId_Sunshine, 0xFF9271FD, "SUNSHINE"},
+				{StageId_Soulless, 0xFF9271FD, "SOULLESS"},
+				
+				{StageId_Chaos, 0xFF9271FD, "CHAOS"},
+				
+				{StageId_Prey, 0xFF9271FD, "PREY"},
+				{StageId_Fight_Or_Flight, 0xFF9271FD, "FIGHT OR FLIGHT"},
+				
+				{StageId_Round_A_Bout, 0xFF9271FD, "ROUND-A-BOUT"}
 			};
 			
 			//Initialize page

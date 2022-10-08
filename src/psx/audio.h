@@ -7,11 +7,22 @@
 typedef enum
 {
 	FL_Menu,
+	
 	FL_TooSlow,
 	FL_YouCantRun,
-	FL_TT_FE,
-	FL_Cycles,
-	FL_FOF,
+	FL_TripleTrouble,
+	
+	FL_Endless,
+	FL_EndlessOG,
+	
+	FL_Cyc_Exec,
+	
+	FL_Sun_Soul,
+	
+	FL_Chaos,
+	
+	FL_Pry_FOF,
+	
 	FL_RAB,
 	
 	XA_Max,
@@ -30,14 +41,24 @@ typedef enum
 	XA_YouCantRunEncore,
 	
 	XA_TripleTrouble,
-	XA_FinalEscape,
+	
+	XA_Endless,
+	XA_EndlessEncore,
+	
+	XA_EndlessOG,
 	
 	XA_Cycles,
-	XA_CyclesEncore,
-
-	XA_FightOrFlight,
+	XA_Execution,
 	
-	XA_RoundABout,
+	XA_Sunshine,
+	XA_Soulless,
+	
+	XA_Chaos,
+	
+	XA_Prey,
+	XA_Fight_Or_Flight,
+	
+	XA_Round_A_Bout,
 	
 	XA_TrackMax,
 } XA_Track;

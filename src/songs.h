@@ -1,3 +1,5 @@
+	//Story Songs
+	
 	{ //StageId_TooSlow
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
@@ -12,23 +14,7 @@
 		XA_TooSlow, 0,
 		"Too Slow",
 		
-		StageId_TooSlow, 0
-	},
-	{ //StageId_TooSlowEncore
-		//Characters
-		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
-		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
-		
-		//Stage background
-		Back_GH_New,
-		
-		//Song info
-		1, 2,
-		XA_TooSlowEncore, 2,
-		"Too Slow Encore",
-		
-		StageId_TooSlowEncore, 0
+		StageId_YouCantRun, 0
 	},
 	{ //StageId_YouCantRun
 		//Characters
@@ -40,27 +26,11 @@
 		Back_YCR_New,
 		
 		//Song info
-		1, 3,
+		1, 2,
 		XA_YouCantRun, 0,
 		"You Can't Run",
 		
-		StageId_YouCantRun, 0
-	},
-	{ //StageId_YouCantRunEncore
-		//Characters
-		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
-		{Char_YCN_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
-		
-		//Stage background
-		Back_YCR_New,
-		
-		//Song info
-		1, 4,
-		XA_YouCantRunEncore, 2,
-		"You Can't Run Encore",
-		
-		StageId_YouCantRunEncore, 0
+		StageId_TripleTrouble, 0
 	},
 	{ //StageId_TripleTrouble
 		//Characters
@@ -72,13 +42,16 @@
 		Back_YCR_New,
 		
 		//Song info
-		1, 5,
+		1, 3,
 		XA_TripleTrouble, 0,
 		"Triple Trouble",
 		
 		StageId_TripleTrouble, 0
 	},
-	{ //StageId_FinalEscape
+	
+	//Story Encore Songs
+	
+	{ //StageId_TooSlowEncore
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
@@ -88,61 +61,197 @@
 		Back_GH_New,
 		
 		//Song info
-		1, 6,
-		XA_FinalEscape, 2,
-		"Final Escape",
+		2, 1,
+		XA_TooSlowEncore, 2,
+		"Too Slow Encore",
 		
-		StageId_FinalEscape, 0
+		StageId_YouCantRunEncore, 0
 	},
+	{ //StageId_YouCantRunEncore
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_YCN_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		
+		//Stage background
+		Back_YCR_New,
+		
+		//Song info
+		2, 2,
+		XA_YouCantRunEncore, 2,
+		"You Can't Run Encore",
+		
+		StageId_YouCantRunEncore, 0
+	},
+	
+	//Free Play Songs
+	
+	{ //StageId_Endless
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		
+		//Stage background
+		Back_GH_New,
+		
+		//Song info
+		99, 1,
+		XA_Endless, 0,
+		"Endless",
+		
+		StageId_Endless, 0
+	},
+	{ //StageId_EndlessOG
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		
+		//Stage background
+		Back_GH_New,
+		
+		//Song info
+		99, 2,
+		XA_EndlessOG, 0,
+		"Endless OG",
+		
+		StageId_EndlessOG, 0
+	},
+	{ //StageId_EndlessEncore
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		
+		//Stage background
+		Back_GH_New,
+		
+		//Song info
+		99, 3,
+		XA_EndlessEncore, 2,
+		"Endless Encore",
+		
+		StageId_EndlessEncore, 0
+	},
+
 	{ //StageId_Cycles
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
-		{Char_LordX_New, FIXED_DEC(-95,1), FIXED_DEC(110,1)},
-		{NULL,    FIXED_DEC(0,1),   FIXED_DEC(-10,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Trichael_New,
+		Back_GH_New,
 		
 		//Song info
-		1, 7,
+		99, 4,
 		XA_Cycles, 0,
 		"Cycles",
 		
 		StageId_Cycles, 0
 	},
-	{ //StageId_CyclesEncore
+	{ //StageId_Execution
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
-		{Char_LordX_New, FIXED_DEC(-95,1), FIXED_DEC(110,1)},
-		{NULL,    FIXED_DEC(0,1),   FIXED_DEC(-10,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Trichael_New,
+		Back_GH_New,
 		
 		//Song info
-		1, 8,
-		XA_CyclesEncore, 2,
-		"Cycles Encore",
+		99, 5,
+		XA_Execution, 2,
+		"Execution",
 		
-		StageId_CyclesEncore, 0
-	},
-	{ //StageId_FightOrFlight
+		StageId_Execution, 0
+	},	
+
+	{ //StageId_Sunshine
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
-		{Char_LordX_New, FIXED_DEC(-95,1), FIXED_DEC(110,1)},
-		{NULL,    FIXED_DEC(0,1),   FIXED_DEC(-10,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Trichael_New,
+		Back_GH_New,
 		
 		//Song info
-		1, 9,
-		XA_FightOrFlight, 0,
-		"Fight Or Flight",
+		99, 6,
+		XA_Sunshine, 0,
+		"Sunshine",
 		
-		StageId_FightOrFlight, 0
+		StageId_Sunshine, 0
 	},
-	{ //StageId_RoundABout
+	{ //StageId_Soulless
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		
+		//Stage background
+		Back_GH_New,
+		
+		//Song info
+		99, 7,
+		XA_Soulless, 2,
+		"Soulless",
+		
+		StageId_Soulless, 0
+	},
+	
+	{ //StageId_Chaos
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		
+		//Stage background
+		Back_GH_New,
+		
+		//Song info
+		99, 8,
+		XA_Chaos, 0,
+		"Chaos",
+		
+		StageId_Chaos, 0
+	},
+
+	{ //StageId_Prey
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		
+		//Stage background
+		Back_GH_New,
+		
+		//Song info
+		99, 9,
+		XA_Prey, 0,
+		"Prey",
+		
+		StageId_Prey, 0
+	},
+	{ //StageId_Fight_Or_Flight
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		
+		//Stage background
+		Back_GH_New,
+		
+		//Song info
+		99, 10,
+		XA_Fight_Or_Flight, 2,
+		"Fight or Flight",
+		
+		StageId_Fight_Or_Flight, 0
+	},
+	
+	{ //StageId_Round_A_Bout
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_NMouse_New, FIXED_DEC(-95,1), FIXED_DEC(110,1)},
@@ -152,9 +261,9 @@
 		Back_Trichael_New,
 		
 		//Song info
-		1, 10,
-		XA_RoundABout, 0,
+		99, 11,
+		XA_Round_A_Bout, 0,
 		"Round A Bout",
 		
-		StageId_RoundABout, 0
-	},
+		StageId_Round_A_Bout, 0
+	}

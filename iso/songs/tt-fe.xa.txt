@@ -1,4 +1,0 @@
-1 xa triple-trouble/Merged.xa 1 0
-1 xa triple-trouble/Inst.xa 1 1
-1 xa final-escape/Merged.xa 1 2
-1 xa final-escape/Inst.xa 1 3

@@ -1,4 +1,0 @@
-1 xa fight-or-flight/Voices.xa 1 0
-1 xa fight-or-flight/Inst.xa 1 1
-1 null
-1 null

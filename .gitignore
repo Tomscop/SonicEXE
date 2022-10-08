@@ -41,3 +41,8 @@ build/
 
 # Big Chungus
 .DS_Store
+
+# Don't remove these bitch
+!makefile.cht
+!makefile.tim
+!makefile.xa

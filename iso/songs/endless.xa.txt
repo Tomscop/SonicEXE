@@ -1,0 +1,4 @@
+1 xa endless/Merged.xa 1 0
+1 xa endless/Inst.xa 1 1
+1 xa endless-encore/Merged.xa 1 2
+1 xa endless-encore/Inst.xa 1 3
