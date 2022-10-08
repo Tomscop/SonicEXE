@@ -5,6 +5,7 @@ SRCS = src/main.c \
 	   \
 	   \
        src/characters/bf/bf.c \
+       src/characters/starvedtails/stails.c \
 	   \
 	   \
        src/characters/sonicexe/sonicexe.c \
@@ -21,6 +22,7 @@ SRCS = src/main.c \
        src/stages/gh/gh.c \
        src/stages/ycr/ycr.c \
        src/stages/trichael/trichael.c \
+       src/stages/starved/starved.c \
 	   \
 	   \
        \

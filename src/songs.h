@@ -90,7 +90,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
 		Back_GH_New,
@@ -106,7 +106,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
 		Back_GH_New,
@@ -122,7 +122,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
 		Back_GH_New,
@@ -139,7 +139,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
 		Back_GH_New,
@@ -155,7 +155,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
 		Back_GH_New,
@@ -172,7 +172,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
 		Back_GH_New,
@@ -188,7 +188,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
 		Back_GH_New,
@@ -205,7 +205,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
 		Back_GH_New,
@@ -222,7 +222,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
 		Back_GH_New,
@@ -236,12 +236,12 @@
 	},
 	{ //StageId_Fight_Or_Flight
 		//Characters
-		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_stails_New,    FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
-		Back_GH_New,
+		Back_Starved_New,
 		
 		//Song info
 		99, 10,

@@ -68,6 +68,7 @@ static const u8 note_anims[4][3] = {
 
 //Stage definitions
 #include "../characters/bf/bf.h"
+#include "../characters/starvedtails/stails.h"
 
 #include "../characters/sonicexe/sonicexe.h"
 #include "../characters/ycn/ycn.h"
@@ -79,6 +80,7 @@ static const u8 note_anims[4][3] = {
 #include "../stages/gh/gh.h"
 #include "../stages/ycr/ycr.h"
 #include "../stages/trichael/trichael.h"
+#include "../stages/starved/starved.h"
 
 static const StageDef stage_defs[StageId_Max] = {
 	#include "../songs.h"

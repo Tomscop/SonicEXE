@@ -203,20 +203,6 @@ void Char_BF_Tick(Character *character)
 		     character->animatable.anim != PlayerAnim_RightMiss) &&
 			(stage.song_step & 0x7) == 0)
 			character->set_anim(character, CharAnim_Idle);
-		
-		//Stage specific animations
-		if (stage.note_scroll >= 0)
-		{
-			switch (stage.stage_id)
-			{
-				//case StageId_1_4: //Tutorial peace
-				//	if (stage.song_step > 64 && stage.song_step < 192 && (stage.song_step & 0x3F) == 60)
-				//		character->set_anim(character, PlayerAnim_Peace);
-				//	break;
-				default:
-					break;
-			}
-		}
 	}
 	
 	//Retry screen

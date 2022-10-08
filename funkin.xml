@@ -46,6 +46,7 @@
 			<dir name = "stages">
 				<file name = "gh.arc" type = "data" source = "iso/stages/gh/back.arc"/>
 				<file name = "ycr.arc" type = "data" source = "iso/stages/ycr/back.arc"/>
+				<file name = "starved.arc" type = "data" source = "iso/stages/starved/back.arc"/>
 				<file name = "trichael.arc" type = "data" source = "iso/stages/trichael/back.arc"/>
 			</dir>
 			
@@ -65,6 +66,9 @@
 				
 				<!-- Needlemouse assets -->
 				<file name = "nmouse.arc" type = "data" source = "iso/characters/nmouse/main.arc"/>
+				
+				<!-- Needlemouse assets -->
+				<file name = "stails.arc" type = "data" source = "iso/characters/starvedtails/main.arc"/>
 				
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/characters/gf/main.arc"/>
