@@ -250,7 +250,6 @@
 		
 		StageId_Fight_Or_Flight, 0
 	},
-	
 	{ //StageId_Round_A_Bout
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
@@ -261,7 +260,7 @@
 		Back_Trichael_New,
 		
 		//Song info
-		99, 11,
+		99, 12,
 		XA_Round_A_Bout, 0,
 		"Round A Bout",
 		

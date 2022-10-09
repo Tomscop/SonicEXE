@@ -99,11 +99,11 @@
 				
 				<!-- Free Play -->
 				
-				<!-- Too Slow -->
+				<!-- Endless -->
 				<file name = "99.1.cht" type = "data" source = "iso/songs/endless/endless.json.cht"/>
-				<!-- You Can't Run -->
+				<!-- Endless OG -->
 				<file name = "99.2.cht" type = "data" source = "iso/songs/endless-og/endless-og.json.cht"/>
-				<!-- Triple Trouble -->
+				<!-- Endless Encore -->
 				<file name = "99.3.cht" type = "data" source = "iso/songs/endless-encore/endless-encore.json.cht"/>
 				
 				<!-- Cycles -->
@@ -113,7 +113,6 @@
 				
 				<!-- Sunshine -->
                 <file name = "99.6.cht" type = "data" source = "iso/songs/sunshine/sunshine.json.cht"/>
-				
 				<!-- Soulless -->
                 
 				
@@ -121,13 +120,24 @@
                 <file name = "99.8.cht" type = "data" source = "iso/songs/chaos/chaos.json.cht"/>
 				
 				<!-- Prey -->
-				
-				
+				<file name = "99.9.cht" type = "data" source = "iso/songs/prey/prey.json.cht"/>
 				<!-- Fight or Flight -->
                 <file name = "99.10.cht" type = "data" source = "iso/songs/fight-or-flight/fight-or-flight.json.cht"/>
 				
+				<!-- Substantial -->
+                
+				
 				<!-- Round a Bout -->
-                <file name = "99.11.cht" type = "data" source = "iso/songs/round-a-bout/round-a-bout.json.cht"/>
+                <file name = "99.12.cht" type = "data" source = "iso/songs/round-a-bout/round-a-bout.json.cht"/>
+				
+				<!-- Milk -->
+                
+				
+				<!-- Too Fest -->
+				
+				
+				<!-- Personel -->
+				<file name = "99.15.cht" type = "data" source = "iso/songs/personel/personel.json.cht"/>
 				
 			</dir>
 			
