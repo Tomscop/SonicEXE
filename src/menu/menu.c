@@ -862,7 +862,8 @@ void Menu_Tick(void)
 				{OptType_Boolean, "MIDDLESCROLL", &stage.middlescroll, {.spec_boolean = {0}}},
 				{OptType_Boolean, "INSTAKILL", &stage.instakill, {.spec_boolean = {0}}},
 				{OptType_Boolean, "WIDESCREEN", &stage.widescreen, {.spec_boolean = {0}}},
-				{OptType_Boolean, "CAM FOLLOW CHAR", &stage.followcamera, {.spec_boolean = {0}}}
+				{OptType_Boolean, "CAM FOLLOW CHAR", &stage.followcamera, {.spec_boolean = {0}}},
+				{OptType_Boolean, "BOTPLAY", &stage.botplay, {.spec_boolean = {0}}}
 			};
 			
 			//Initialize page

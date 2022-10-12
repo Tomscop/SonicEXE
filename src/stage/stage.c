@@ -403,7 +403,7 @@ static void Stage_SustainCheck(PlayerState *this, u8 type)
 static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 {
 	//Handle player note presses
-	#ifndef STAGE_PERFECT
+	if (stage.botplay == 0) {
 		if (playing)
 		{
 			u8 i = (this->character == stage.opponent) ? NOTE_FLAG_OPPONENT : 0;
@@ -434,9 +434,9 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 			this->pad_held = this->character->pad_held = 0;
 			this->pad_press = 0;
 		}
-	#endif
+	}
 	
-	#ifdef STAGE_PERFECT
+	if (stage.botplay == 1) {
 		//Do perfect note checks
 		if (playing)
 		{
@@ -497,7 +497,7 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 			this->pad_held = this->character->pad_held = 0;
 			this->pad_press = 0;
 		}
-	#endif
+	}
 }
 
 //Stage drawing functions
@@ -1443,6 +1443,15 @@ void Stage_Tick(void)
 			//	FIXED_DEC(-111,1),
 			//	FontAlign_Right
 			//);
+			
+			if (stage.botplay)
+			{
+				//Draw botplay
+				RECT bot_src = {169, 224, 37, 10};
+				RECT_FIXED bot_dst = {FIXED_DEC(-36,1), FIXED_DEC(-58,1), FIXED_DEC(74,1), FIXED_DEC(20,1)};
+
+				Stage_DrawTex(&stage.tex_hud0, &bot_src, &bot_dst, stage.bump);
+			}
 			
 			//Clear per-frame flags
 			stage.flag &= ~(STAGE_FLAG_JUST_STEP | STAGE_FLAG_SCORE_REFRESH);

@@ -9,33 +9,33 @@ typedef struct
 static const XA_TrackDef xa_tracks[] = {
 	//MENU.XA
 	{FL_Menu, XA_LENGTH(6119)}, //XA_GettinFreaky
-	{FL_Menu, XA_LENGTH(1918)},  //XA_GameOver
+	{FL_Menu, XA_LENGTH(1920)},  //XA_GameOver
 	//TOOSLOW.XA
 	{FL_TooSlow, XA_LENGTH(18830)}, //XA_TooSlow
 	{FL_TooSlow, XA_LENGTH(18216)}, //XA_TooSlowEncore
 	//YCR.XA
-	{FL_YouCantRun, XA_LENGTH(15943)}, //XA_YouCantRun
-	{FL_YouCantRun, XA_LENGTH(20900)}, //XA_YouCantRunEncore
+	{FL_YouCantRun, XA_LENGTH(15942)}, //XA_YouCantRun
+	{FL_YouCantRun, XA_LENGTH(20921)}, //XA_YouCantRunEncore
 	//TRIPLETROUB.XA
 	{FL_TripleTrouble, XA_LENGTH(50710)}, //XA_TripleTrouble
 	//ENDLESS.XA
-	{FL_Endless, XA_LENGTH(15231)}, //XA_Endless
-	{FL_Endless, XA_LENGTH(15540)}, //XA_EndlessEncore
+	{FL_Endless, XA_LENGTH(16954)}, //XA_Endless
+	{FL_Endless, XA_LENGTH(15645)}, //XA_EndlessEncore
 	//ENDLESSOG.XA
-	{FL_EndlessOG, XA_LENGTH(15231)}, //XA_EndlessOG
+	{FL_EndlessOG, XA_LENGTH(17032)}, //XA_EndlessOG
 	//CYC-EXEC.XA
-	{FL_Cyc_Exec, XA_LENGTH(15231)}, //XA_Cycles
-	{FL_Cyc_Exec, XA_LENGTH(15540)}, //XA_Execution
+	{FL_Cyc_Exec, XA_LENGTH(15230)}, //XA_Cycles
+	{FL_Cyc_Exec, XA_LENGTH(12158)}, //XA_Execution
 	//SUN-SOUL.XA
-	{FL_Sun_Soul, XA_LENGTH(15231)}, //XA_Sunshine
-	{FL_Sun_Soul, XA_LENGTH(15540)}, //XA_Soulless
+	{FL_Sun_Soul, XA_LENGTH(18342)}, //XA_Sunshine
+	{FL_Sun_Soul, XA_LENGTH(19800)}, //XA_Soulless
 	//CHAOS.XA
-	{FL_Chaos, XA_LENGTH(22000)}, //XA_Chaos
+	{FL_Chaos, XA_LENGTH(15751)}, //XA_Chaos
 	//PRY-FOF.XA
-	{FL_Pry_FOF, XA_LENGTH(22000)}, //XA_Prey
-	{FL_Pry_FOF, XA_LENGTH(22000)}, //XA_Fight_Or_Flight
+	{FL_Pry_FOF, XA_LENGTH(29045)}, //XA_Prey
+	{FL_Pry_FOF, XA_LENGTH(21990)}, //XA_Fight_Or_Flight
 	//RAB.XA
-	{FL_RAB, XA_LENGTH(16400)}, //XA_Round_A_Bout
+	{FL_RAB, XA_LENGTH(16401)}, //XA_Round_A_Bout
 };
 
 static const char *xa_paths[] = {
