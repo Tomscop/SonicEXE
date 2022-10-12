@@ -46,7 +46,7 @@ iso/characters/gf/tut.arc: iso/characters/gf/tut0.tim iso/characters/gf/tut1.tim
 iso/stages/stage1/back.arc: iso/stages/stage1/back0.tim iso/stages/stage1/back1.tim
 
 # GH
-iso/stages/gh/back.arc: iso/stages/gh/0.tim iso/stages/gh/1.tim iso/stages/gh/2.tim iso/stages/gh/3.tim
+iso/stages/GH/back.arc: iso/stages/GH/0.tim iso/stages/GH/1.tim iso/stages/GH/2.tim iso/stages/GH/3.tim
 
 # Trichael
 iso/stages/trichael/back.arc: iso/stages/trichael/0.tim iso/stages/trichael/1.tim
