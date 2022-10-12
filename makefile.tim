@@ -1,21 +1,4 @@
 all: \
-	iso/characters/bf/main.arc \
-	iso/characters/starvedtails/main.arc \
-	\
-	iso/characters/sonicexe/main.arc \
-	iso/characters/ycn/main.arc \
-	iso/characters/lordx/main.arc \
-	iso/characters/nmouse/main.arc \
-	\
-	iso/characters/gf/main.arc \
-	iso/characters/gf/tut.arc \
-	iso/characters/gf/speaker.tim \
-	\
-	iso/stages/gh/back.arc \
-	iso/stages/ycr/back.arc \
-	iso/stages/trichael/back.arc \
-	iso/stages/starved/back.arc \
-	\
 	iso/images/menu/menu.arc \
 	iso/images/menu/loading.tim \
 	iso/images/font/boldfont.tim \
@@ -25,6 +8,24 @@ all: \
 	iso/images/hud0.tim \
 	iso/images/hud1.tim \
 	iso/images/note.tim \
+	\
+	iso/characters/bf/main.arc \
+	iso/characters/starvedtails/main.arc \
+	\
+	iso/characters/gf/main.arc \
+	iso/characters/gf/tut.arc \
+	iso/characters/gf/speaker.tim \
+	\
+	iso/characters/sonicexe/main.arc \
+	iso/characters/ycn/main.arc \
+	iso/characters/lordx/main.arc \
+	iso/characters/nmouse/main.arc \
+	\
+	iso/stages/GH/back.arc \
+	iso/stages/YCR/back.arc \
+	iso/stages/Trichael/back.arc \
+	iso/stages/Starved/back.arc \
+	\
 
 iso/%.tim: iso/%.png
 	tools/funkintimconv/funkintimconv $@ $<
@@ -42,23 +43,8 @@ iso/characters/bf/main.arc: iso/characters/bf/bf0.tim iso/characters/bf/bf1.tim 
 iso/characters/gf/main.arc: iso/characters/gf/gf0.tim iso/characters/gf/gf1.tim iso/characters/gf/gf2.tim
 iso/characters/gf/tut.arc: iso/characters/gf/tut0.tim iso/characters/gf/tut1.tim
 
-# Stage1
-iso/stages/stage1/back.arc: iso/stages/stage1/back0.tim iso/stages/stage1/back1.tim
-
-# GH
-iso/stages/GH/back.arc: iso/stages/GH/0.tim iso/stages/GH/1.tim iso/stages/GH/2.tim iso/stages/GH/3.tim
-
-# Trichael
-iso/stages/trichael/back.arc: iso/stages/trichael/0.tim iso/stages/trichael/1.tim
-
-# Starved
-iso/stages/starved/back.arc: iso/stages/starved/0.tim iso/stages/starved/1.tim
-
 # SonicEXE
 iso/characters/sonicexe/main.arc: iso/characters/sonicexe/idle0.tim iso/characters/sonicexe/idle1.tim iso/characters/sonicexe/idle2.tim iso/characters/sonicexe/left0.tim iso/characters/sonicexe/left1.tim iso/characters/sonicexe/down0.tim iso/characters/sonicexe/down1.tim iso/characters/sonicexe/down2.tim iso/characters/sonicexe/down3.tim iso/characters/sonicexe/up0.tim iso/characters/sonicexe/up1.tim iso/characters/sonicexe/up2.tim iso/characters/sonicexe/up3.tim iso/characters/sonicexe/right0.tim iso/characters/sonicexe/right1.tim iso/characters/sonicexe/laugh0.tim iso/characters/sonicexe/laugh1.tim
-
-# YCR Stage
-iso/stages/ycr/back.arc: iso/stages/ycr/0.tim iso/stages/ycr/1.tim iso/stages/ycr/2.tim
 
 # You Can't Run
 iso/characters/ycn/main.arc: iso/characters/ycn/idle0.tim iso/characters/ycn/idle1.tim iso/characters/ycn/left0.tim iso/characters/ycn/left1.tim iso/characters/ycn/left2.tim iso/characters/ycn/down0.tim iso/characters/ycn/down1.tim iso/characters/ycn/down2.tim iso/characters/ycn/up0.tim iso/characters/ycn/up1.tim iso/characters/ycn/up2.tim iso/characters/ycn/right0.tim iso/characters/ycn/right1.tim iso/characters/ycn/right2.tim iso/characters/ycn/midle0.tim iso/characters/ycn/midle1.tim iso/characters/ycn/mleft0.tim iso/characters/ycn/mleft1.tim iso/characters/ycn/mleft2.tim iso/characters/ycn/mdown0.tim iso/characters/ycn/mdown1.tim iso/characters/ycn/mdown2.tim iso/characters/ycn/mup0.tim iso/characters/ycn/mup1.tim iso/characters/ycn/mup2.tim iso/characters/ycn/mright0.tim iso/characters/ycn/mright1.tim iso/characters/ycn/mright2.tim iso/characters/ycn/laugh0.tim iso/characters/ycn/laugh1.tim iso/characters/ycn/laugh2.tim iso/characters/ycn/scream0.tim iso/characters/ycn/scream1.tim iso/characters/ycn/scream2.tim iso/characters/ycn/scream3.tim iso/characters/ycn/justdie0.tim iso/characters/ycn/justdie1.tim iso/characters/ycn/justdie2.tim iso/characters/ycn/justdie3.tim iso/characters/ycn/justdie4.tim iso/characters/ycn/justdie5.tim iso/characters/ycn/pixel.tim 
@@ -75,3 +61,17 @@ iso/characters/nmouse/main.arc: iso/characters/nmouse/idle0.tim iso/characters/n
 # Starved Tails
 iso/characters/starvedtails/main.arc: iso/characters/starvedtails/idle0.tim iso/characters/starvedtails/idle1.tim iso/characters/starvedtails/idle2.tim iso/characters/starvedtails/left0.tim iso/characters/starvedtails/left1.tim iso/characters/starvedtails/down0.tim iso/characters/starvedtails/down1.tim iso/characters/starvedtails/up0.tim iso/characters/starvedtails/up1.tim iso/characters/starvedtails/up2.tim iso/characters/starvedtails/up3.tim iso/characters/starvedtails/right0.tim iso/characters/starvedtails/right1.tim iso/characters/starvedtails/leftm0.tim iso/characters/starvedtails/downm0.tim iso/characters/starvedtails/upm0.tim iso/characters/starvedtails/upm1.tim iso/characters/starvedtails/rightm0.tim
 
+# Stage1
+iso/stages/stage1/back.arc: iso/stages/stage1/back0.tim iso/stages/stage1/back1.tim
+
+# GH
+iso/stages/GH/back.arc: iso/stages/GH/0.tim iso/stages/GH/1.tim iso/stages/GH/2.tim iso/stages/GH/3.tim
+
+# YCR Stage
+iso/stages/YCR/back.arc: iso/stages/YCR/0.tim iso/stages/YCR/1.tim iso/stages/YCR/2.tim
+
+# Trichael
+iso/stages/Trichael/back.arc: iso/stages/Trichael/0.tim iso/stages/Trichael/1.tim
+
+# Starved
+iso/stages/Starved/back.arc: iso/stages/Starved/0.tim iso/stages/Starved/1.tim
