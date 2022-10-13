@@ -10,7 +10,8 @@ all: \
 	iso/images/note.tim \
 	\
 	iso/characters/bf/main.arc \
-	iso/characters/bfe/main.arc \
+	iso/characters/bf/endless.arc \
+	iso/characters/ebf/main.arc \
 	iso/characters/starvedtails/main.arc \
 	\
 	iso/characters/gf/main.arc \
@@ -39,6 +40,7 @@ iso/images/menu/menu.arc: iso/images/menu/back.tim iso/images/menu/ng.tim iso/im
 
 # BF
 iso/characters/bf/main.arc: iso/characters/bf/bf0.tim iso/characters/bf/bf1.tim iso/characters/bf/bf2.tim iso/characters/bf/bf3.tim iso/characters/bf/bf4.tim iso/characters/bf/bf5.tim iso/characters/bf/bf6.tim iso/characters/bf/dead0.tim iso/characters/bf/dead1.tim iso/characters/bf/dead2.tim iso/characters/bf/retry.tim
+iso/characters/bf/endless.arc: iso/characters/bf/ebf0.tim iso/characters/bf/ebf1.tim iso/characters/bf/ebf2.tim iso/characters/bf/ebf3.tim iso/characters/bf/ebf4.tim iso/characters/bf/ebf5.tim iso/characters/bf/ebf6.tim iso/characters/bf/dead0.tim iso/characters/bf/dead1.tim iso/characters/bf/dead2.tim iso/characters/bf/retry.tim
 
 # BF Encore
 iso/characters/bfe/main.arc: iso/characters/bfe/idle0.tim iso/characters/bfe/idle1.tim iso/characters/bfe/idle2.tim iso/characters/bfe/idle3.tim iso/characters/bfe/idle4.tim iso/characters/bfe/left0.tim iso/characters/bfe/left1.tim iso/characters/bfe/left2.tim iso/characters/bfe/left3.tim iso/characters/bfe/leftm0.tim iso/characters/bfe/leftm1.tim iso/characters/bfe/leftm2.tim iso/characters/bfe/down0.tim iso/characters/bfe/down1.tim iso/characters/bfe/down2.tim iso/characters/bfe/down3.tim iso/characters/bfe/downm0.tim iso/characters/bfe/downm1.tim iso/characters/bfe/downm2.tim iso/characters/bfe/up0.tim iso/characters/bfe/up1.tim iso/characters/bfe/up2.tim iso/characters/bfe/up3.tim iso/characters/bfe/upm0.tim iso/characters/bfe/upm1.tim iso/characters/bfe/upm2.tim iso/characters/bfe/right0.tim iso/characters/bfe/right1.tim iso/characters/bfe/right2.tim iso/characters/bfe/right3.tim iso/characters/bfe/rightm0.tim iso/characters/bfe/rightm1.tim iso/characters/bfe/rightm2.tim iso/characters/bfe/dead0.tim iso/characters/bfe/dead1.tim iso/characters/bfe/dead2.tim iso/characters/bfe/retry.tim

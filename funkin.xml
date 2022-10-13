@@ -54,6 +54,7 @@
 			<dir name = "char">
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/characters/bf/main.arc"/>
+				<file name = "ebf.arc" type = "data" source = "iso/characters/bf/endless.arc"/>
 				
 				<!-- Boyfriend Encore assets -->
 				<file name = "bfe.arc" type = "data" source = "iso/characters/bfe/main.arc"/>

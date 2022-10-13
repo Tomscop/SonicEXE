@@ -372,27 +372,54 @@ Character *Char_BF_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(1,1);
 	
 	//Load art
-	this->arc_main = IO_Read("\\CHAR\\BF.ARC;1");
-	this->arc_dead = NULL;
-	//IO_FindFile(&this->file_dead_arc, "\\CHAR\\BFDEAD.ARC;1");
+	if ((stage.stage_id != StageId_Endless) && (stage.stage_id != StageId_EndlessOG))
+	{
+		this->arc_main = IO_Read("\\CHAR\\BF.ARC;1");
+		this->arc_dead = NULL;
+		//IO_FindFile(&this->file_dead_arc, "\\CHAR\\BFDEAD.ARC;1");
 	
-	const char **pathp = (const char *[]){
-		"bf0.tim",   //BF_ArcMain_BF0
-		"bf1.tim",   //BF_ArcMain_BF1
-		"bf2.tim",   //BF_ArcMain_BF2
-		"bf3.tim",   //BF_ArcMain_BF3
-		"bf4.tim",   //BF_ArcMain_BF4
-		"bf5.tim",   //BF_ArcMain_BF5
-		"bf6.tim",   //BF_ArcMain_BF6
-		"dead0.tim", //BF_ArcMain_Dead0
-		"dead1.tim", //BF_ArcDead_Dead1
-		"dead2.tim", //BF_ArcDead_Dead2
-		"retry.tim", //BF_ArcDead_Retry
-		NULL
-	};
-	IO_Data *arc_ptr = this->arc_ptr;
-	for (; *pathp != NULL; pathp++)
-		*arc_ptr++ = Archive_Find(this->arc_main, *pathp);
+		const char **pathp = (const char *[]){
+			"bf0.tim",   //BF_ArcMain_BF0
+			"bf1.tim",   //BF_ArcMain_BF1
+			"bf2.tim",   //BF_ArcMain_BF2
+			"bf3.tim",   //BF_ArcMain_BF3
+			"bf4.tim",   //BF_ArcMain_BF4
+			"bf5.tim",   //BF_ArcMain_BF5
+			"bf6.tim",   //BF_ArcMain_BF6
+			"dead0.tim", //BF_ArcMain_Dead0
+			"dead1.tim", //BF_ArcDead_Dead1
+			"dead2.tim", //BF_ArcDead_Dead2
+			"retry.tim", //BF_ArcDead_Retry
+			NULL
+		};
+		IO_Data *arc_ptr = this->arc_ptr;
+		for (; *pathp != NULL; pathp++)
+			*arc_ptr++ = Archive_Find(this->arc_main, *pathp);
+	}
+	else
+	{
+		this->arc_main = IO_Read("\\CHAR\\EBF.ARC;1");
+		this->arc_dead = NULL;
+		//IO_FindFile(&this->file_dead_arc, "\\CHAR\\BFDEAD.ARC;1");
+	
+		const char **pathp = (const char *[]){
+			"ebf0.tim",   //BF_ArcMain_BF0
+			"ebf1.tim",   //BF_ArcMain_BF1
+			"ebf2.tim",   //BF_ArcMain_BF2
+			"ebf3.tim",   //BF_ArcMain_BF3
+			"ebf4.tim",   //BF_ArcMain_BF4
+			"ebf5.tim",   //BF_ArcMain_BF5
+			"ebf6.tim",   //BF_ArcMain_BF6
+			"dead0.tim", //BF_ArcMain_Dead0
+			"dead1.tim", //BF_ArcDead_Dead1
+			"dead2.tim", //BF_ArcDead_Dead2
+			"retry.tim", //BF_ArcDead_Retry
+			NULL
+		};
+		IO_Data *arc_ptr = this->arc_ptr;
+		for (; *pathp != NULL; pathp++)
+			*arc_ptr++ = Archive_Find(this->arc_main, *pathp);
+	}
 	
 	//Initialize render state
 	this->tex_id = this->frame = 0xFF;
