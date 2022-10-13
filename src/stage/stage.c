@@ -68,14 +68,15 @@ static const u8 note_anims[4][3] = {
 
 //Stage definitions
 #include "../characters/bf/bf.h"
+#include "../characters/bfe/bfe.h"
 #include "../characters/starvedtails/stails.h"
+
+#include "../characters/gf/gf.h"
 
 #include "../characters/sonicexe/sonicexe.h"
 #include "../characters/ycn/ycn.h"
 #include "../characters/lordx/lordx.h"
 #include "../characters/nmouse/nmouse.h"
-
-#include "../characters/gf/gf.h"
 
 #include "../stages/gh/gh.h"
 #include "../stages/ycr/ycr.h"

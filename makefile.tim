@@ -10,6 +10,7 @@ all: \
 	iso/images/note.tim \
 	\
 	iso/characters/bf/main.arc \
+	iso/characters/bfe/main.arc \
 	iso/characters/starvedtails/main.arc \
 	\
 	iso/characters/gf/main.arc \
@@ -39,6 +40,12 @@ iso/images/menu/menu.arc: iso/images/menu/back.tim iso/images/menu/ng.tim iso/im
 # BF
 iso/characters/bf/main.arc: iso/characters/bf/bf0.tim iso/characters/bf/bf1.tim iso/characters/bf/bf2.tim iso/characters/bf/bf3.tim iso/characters/bf/bf4.tim iso/characters/bf/bf5.tim iso/characters/bf/bf6.tim iso/characters/bf/dead0.tim iso/characters/bf/dead1.tim iso/characters/bf/dead2.tim iso/characters/bf/retry.tim
 
+# BF Encore
+iso/characters/bfe/main.arc: iso/characters/bfe/idle0.tim iso/characters/bfe/idle1.tim iso/characters/bfe/idle2.tim iso/characters/bfe/idle3.tim iso/characters/bfe/idle4.tim iso/characters/bfe/left0.tim iso/characters/bfe/left1.tim iso/characters/bfe/left2.tim iso/characters/bfe/left3.tim iso/characters/bfe/leftm0.tim iso/characters/bfe/leftm1.tim iso/characters/bfe/leftm2.tim iso/characters/bfe/down0.tim iso/characters/bfe/down1.tim iso/characters/bfe/down2.tim iso/characters/bfe/down3.tim iso/characters/bfe/downm0.tim iso/characters/bfe/downm1.tim iso/characters/bfe/downm2.tim iso/characters/bfe/up0.tim iso/characters/bfe/up1.tim iso/characters/bfe/up2.tim iso/characters/bfe/up3.tim iso/characters/bfe/upm0.tim iso/characters/bfe/upm1.tim iso/characters/bfe/upm2.tim iso/characters/bfe/right0.tim iso/characters/bfe/right1.tim iso/characters/bfe/right2.tim iso/characters/bfe/right3.tim iso/characters/bfe/rightm0.tim iso/characters/bfe/rightm1.tim iso/characters/bfe/rightm2.tim iso/characters/bfe/dead0.tim iso/characters/bfe/dead1.tim iso/characters/bfe/dead2.tim iso/characters/bfe/retry.tim
+
+# Starved Tails
+iso/characters/starvedtails/main.arc: iso/characters/starvedtails/idle0.tim iso/characters/starvedtails/idle1.tim iso/characters/starvedtails/idle2.tim iso/characters/starvedtails/left0.tim iso/characters/starvedtails/left1.tim iso/characters/starvedtails/down0.tim iso/characters/starvedtails/down1.tim iso/characters/starvedtails/up0.tim iso/characters/starvedtails/up1.tim iso/characters/starvedtails/up2.tim iso/characters/starvedtails/up3.tim iso/characters/starvedtails/right0.tim iso/characters/starvedtails/right1.tim iso/characters/starvedtails/leftm0.tim iso/characters/starvedtails/downm0.tim iso/characters/starvedtails/upm0.tim iso/characters/starvedtails/upm1.tim iso/characters/starvedtails/rightm0.tim
+
 # GF
 iso/characters/gf/main.arc: iso/characters/gf/gf0.tim iso/characters/gf/gf1.tim iso/characters/gf/gf2.tim
 iso/characters/gf/tut.arc: iso/characters/gf/tut0.tim iso/characters/gf/tut1.tim
@@ -57,9 +64,6 @@ iso/characters/sonic/main.arc: iso/characters/sonic/up.tim
 
 # Needlemouse
 iso/characters/nmouse/main.arc: iso/characters/nmouse/idle0.tim iso/characters/nmouse/idle1.tim iso/characters/nmouse/idle2.tim iso/characters/nmouse/idle3.tim iso/characters/nmouse/idle4.tim iso/characters/nmouse/idle5.tim iso/characters/nmouse/idle6.tim iso/characters/nmouse/idle7.tim iso/characters/nmouse/idle8.tim iso/characters/nmouse/idle9.tim iso/characters/nmouse/left0.tim iso/characters/nmouse/left1.tim iso/characters/nmouse/left2.tim iso/characters/nmouse/left3.tim iso/characters/nmouse/left4.tim iso/characters/nmouse/down0.tim iso/characters/nmouse/down1.tim iso/characters/nmouse/down2.tim iso/characters/nmouse/down3.tim iso/characters/nmouse/down4.tim iso/characters/nmouse/up0.tim iso/characters/nmouse/up1.tim iso/characters/nmouse/up2.tim iso/characters/nmouse/up3.tim iso/characters/nmouse/up4.tim iso/characters/nmouse/right0.tim iso/characters/nmouse/right1.tim iso/characters/nmouse/right2.tim iso/characters/nmouse/right3.tim iso/characters/nmouse/right4.tim
-
-# Starved Tails
-iso/characters/starvedtails/main.arc: iso/characters/starvedtails/idle0.tim iso/characters/starvedtails/idle1.tim iso/characters/starvedtails/idle2.tim iso/characters/starvedtails/left0.tim iso/characters/starvedtails/left1.tim iso/characters/starvedtails/down0.tim iso/characters/starvedtails/down1.tim iso/characters/starvedtails/up0.tim iso/characters/starvedtails/up1.tim iso/characters/starvedtails/up2.tim iso/characters/starvedtails/up3.tim iso/characters/starvedtails/right0.tim iso/characters/starvedtails/right1.tim iso/characters/starvedtails/leftm0.tim iso/characters/starvedtails/downm0.tim iso/characters/starvedtails/upm0.tim iso/characters/starvedtails/upm1.tim iso/characters/starvedtails/rightm0.tim
 
 # Stage1
 iso/stages/stage1/back.arc: iso/stages/stage1/back0.tim iso/stages/stage1/back1.tim

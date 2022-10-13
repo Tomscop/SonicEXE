@@ -94,7 +94,7 @@ static const CharFrame char_nmouse_frame[] = {
 };
 
 static const Animation char_nmouse_anim[CharAnim_Max] = {
-	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
+	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ASCR_BACK, 1}}, //CharAnim_Idle
 	{2, (const u8[]){ 10, 11, 12, 13, 14, ASCR_BACK, 0}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
 	{2, (const u8[]){ 15, 16, 17, 18, 19, ASCR_BACK, 0}},         //CharAnim_Down

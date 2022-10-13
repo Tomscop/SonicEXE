@@ -55,6 +55,17 @@
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/characters/bf/main.arc"/>
 				
+				<!-- Boyfriend Encore assets -->
+				<file name = "bfe.arc" type = "data" source = "iso/characters/bfe/main.arc"/>
+				
+				<!-- Starved Tails assets -->
+				<file name = "stails.arc" type = "data" source = "iso/characters/starvedtails/main.arc"/>
+				
+				<!-- Girlfriend assets -->
+				<file name = "gf.arc" type = "data" source = "iso/characters/gf/main.arc"/>
+				<file name = "gftut.arc" type = "data" source = "iso/characters/gf/tut.arc"/>
+				<file name = "speaker.tim" type = "data" source = "iso/characters/gf/speaker.tim"/>
+				
 				<!-- SonicEXE assets -->
 				<file name = "sonicexe.arc" type = "data" source = "iso/characters/sonicexe/main.arc"/>
 				
@@ -66,14 +77,6 @@
 				
 				<!-- Needlemouse assets -->
 				<file name = "nmouse.arc" type = "data" source = "iso/characters/nmouse/main.arc"/>
-				
-				<!-- Needlemouse assets -->
-				<file name = "stails.arc" type = "data" source = "iso/characters/starvedtails/main.arc"/>
-				
-				<!-- Girlfriend assets -->
-				<file name = "gf.arc" type = "data" source = "iso/characters/gf/main.arc"/>
-				<file name = "gftut.arc" type = "data" source = "iso/characters/gf/tut.arc"/>
-				<file name = "speaker.tim" type = "data" source = "iso/characters/gf/speaker.tim"/>
 			</dir>
 			
 			<!-- Songs -->

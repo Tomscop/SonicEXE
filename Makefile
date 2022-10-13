@@ -5,17 +5,18 @@ SRCS = src/main.c \
 	   \
 	   \
        src/characters/bf/bf.c \
+	   src/characters/bfe/bfe.c \
        src/characters/starvedtails/stails.c \
+	   \
+	   \
+	   src/characters/gf/gf.c \
+       src/characters/gf/speaker.c \
 	   \
 	   \
        src/characters/sonicexe/sonicexe.c \
        src/characters/ycn/ycn.c \
        src/characters/lordx/lordx.c \
        src/characters/nmouse/nmouse.c \
-	   \
-	   \
-       src/characters/gf/gf.c \
-       src/characters/gf/speaker.c \
 	   \
 	   \
 	   \
