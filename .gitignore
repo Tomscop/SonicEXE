@@ -38,6 +38,7 @@ build/
 *.arc
 *.xa
 *.cht
+*.vag
 
 # Big Chungus
 .DS_Store
@@ -46,3 +47,4 @@ build/
 !makefile.cht
 !makefile.tim
 !makefile.xa
+!makefile.vag
