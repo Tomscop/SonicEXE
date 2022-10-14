@@ -21,7 +21,7 @@ iso/%.xa:
 	tools/xainterleave/xainterleave $@ $^
 
 # Menu
-iso/music/menu.xa: iso/music/menuscreen.xa iso/music/gameover.xa
+iso/music/menu.xa: iso/music/menuscreen.xa iso/music/gameover.xa iso/music/storymode.xa
 
 # Too Slow
 iso/songs/tooslow.xa: iso/songs/too-slow/Inst.xa iso/songs/too-slow/Merged.xa iso/songs/too-slow-encore/Inst.xa iso/songs/too-slow-encore/Merged.xa

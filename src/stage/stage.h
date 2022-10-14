@@ -171,8 +171,14 @@ typedef struct
 typedef struct
 {
 	//Stage settings
-	boolean ghost, downscroll, middlescroll, expsync, botplay;
-	boolean widescreen, instakill, followcamera;
+	boolean downscroll, middlescroll, ghost, splash;
+	boolean flashing, camerazoom, botplay;
+	
+	//Song settings
+	boolean instakill;
+	
+	
+	boolean expsync;
 	s32 mode;
 	
 	u32 offset;

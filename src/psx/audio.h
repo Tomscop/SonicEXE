@@ -33,6 +33,7 @@ typedef enum
 	
 	XA_GettinFreaky,
 	XA_GameOver,
+	XA_StoryMode,
 	
 	XA_TooSlow,
 	XA_TooSlowEncore,

@@ -10,9 +10,11 @@ typedef enum
 	MenuPage_Title,
 	MenuPage_Main,
 	MenuPage_Story,
+	MenuPage_Encore,
 	MenuPage_Freeplay,
-	MenuPage_Mods,
+	MenuPage_SoundTest,
 	MenuPage_Options,
+	MenuPage_Extras,
 	
 	MenuPage_Stage, //Changes game loop
 } MenuPage;

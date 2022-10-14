@@ -144,7 +144,6 @@ void Font_CDR_DrawCol(struct FontData *this, const char *text, s32 x, s32 y, Fon
 			alignoffset = alignoffset;
 			break;
 	}
-	FntPrint("width: %d", alignoffset);
 	
 	//Draw string character by character
 	u8 c;

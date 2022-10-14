@@ -37,7 +37,7 @@ iso/%.arc:
 	tools/funkinarcpak/funkinarcpak $@ $^
 
 # Menu
-iso/images/menu/menu.arc: iso/images/menu/title.tim iso/images/menu/menu.tim
+iso/images/menu/menu.arc: iso/images/menu/title.tim iso/images/menu/menu.tim iso/images/menu/optionsbg.tim
 
 # Menu Background
 iso/images/menu/menuback.arc: iso/images/menu/m0.tim iso/images/menu/m1.tim iso/images/menu/m2.tim iso/images/menu/m3.tim

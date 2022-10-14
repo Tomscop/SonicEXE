@@ -190,9 +190,14 @@
 			
 			<!-- Sound -->
 			<dir name = "sounds">
+				<file name = "menulaug.vag" type = "data" source = "iso/sounds/menulaugh.ogg.vag"/>
+				
 				<file name = "micdrop.vag" type = "data" source = "iso/sounds/fnf_loss_sfx.wav.vag"/>
 				<file name = "hitsta1.vag" type = "data" source = "iso/sounds/hitStatic1.ogg.vag"/>
 				<file name = "gamoend.vag" type = "data" source = "iso/sounds/gameoverend.wav.vag"/>
+				
+				<file name = "scroll.vag" type = "data" source = "iso/sounds/scrollMenu.ogg.vag"/>
+				<file name = "select.vag" type = "data" source = "iso/sounds/confirmMenu.ogg.vag"/>
 			</dir>
 			
 			<!-- Dummy sectors -->

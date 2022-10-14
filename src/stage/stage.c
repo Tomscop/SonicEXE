@@ -826,9 +826,6 @@ static void Stage_DrawNotes(void)
 						note_dst.w = note_src.w << FIXED_SHIFT;
 						note_dst.h = (note_src.h << FIXED_SHIFT);
 						
-						if(stage.widescreen)
-							note_dst.w = note_dst.w * 0.815;
-						
 						if (stage.downscroll)
 						{
 							note_dst.y = -note_dst.y;
@@ -856,9 +853,6 @@ static void Stage_DrawNotes(void)
 						note_dst.w = note_src.w << FIXED_SHIFT;
 						note_dst.h = (next_y - y) - clip;
 						
-						if(stage.widescreen)
-							note_dst.w = note_dst.w * 0.815;
-						
 						if (stage.downscroll)
 							note_dst.y = -note_dst.y - note_dst.h;
 						Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -881,9 +875,6 @@ static void Stage_DrawNotes(void)
 				note_dst.y = y - FIXED_DEC(16,1);
 				note_dst.w = note_src.w << FIXED_SHIFT;
 				note_dst.h = note_src.h << FIXED_SHIFT;
-				
-				if(stage.widescreen)
-					note_dst.w = note_dst.w * 0.815;
 				
 				if (stage.downscroll)
 					note_dst.y = -note_dst.y - note_dst.h;
@@ -940,9 +931,6 @@ static void Stage_DrawNotes(void)
 				note_dst.w = note_src.w << FIXED_SHIFT;
 				note_dst.h = note_src.h << FIXED_SHIFT;
 				
-				if(stage.widescreen)
-					note_dst.w = note_dst.w * 0.815;
-				
 				if (stage.downscroll)
 					note_dst.y = -note_dst.y - note_dst.h;
 				Stage_DrawTex(&stage.tex_note, &note_src, &note_dst, stage.bump);
@@ -963,9 +951,6 @@ static void Stage_DrawNotes(void)
 				note_dst.y = y - FIXED_DEC(16,1);
 				note_dst.w = note_src.w << FIXED_SHIFT;
 				note_dst.h = note_src.h << FIXED_SHIFT;
-				
-				if(stage.widescreen)
-					note_dst.w = note_dst.w * 0.815;
 				
 				if (stage.downscroll)
 					note_dst.y = -note_dst.y - note_dst.h;
@@ -1178,24 +1163,9 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	-60,
 	-26
 	};
-
-	fixed_t note_xwidedef[8] = {
-	30,
-	30 + (28 * 1),
-	30 + (28 * 2),
-	30 + (28 * 3),
-	-131,
-	-131 + (28 * 1),
-	-131 + (28 * 2),
-	-131 + (28 * 3)
-	};
-
-	if(stage.widescreen)
-		for (int i = 0; i < 8; ++i)
-			note_x[i] = FIXED_DEC(note_xwidedef[i],1);
-	else
-		for (int i = 0; i < 8; ++i)
-			note_x[i] = FIXED_DEC(note_xdef[i],1);
+	
+	for (int i = 0; i < 8; ++i)
+		note_x[i] = FIXED_DEC(note_xdef[i],1);
 	for (int i = 0; i < 8; ++i)
 		note_y[i] = FIXED_DEC(note_ydef[i],1);
 	
@@ -1715,9 +1685,6 @@ void Stage_Tick(void)
 			//Draw note HUD
 			RECT note_src = {0, 0, 32, 32};
 			RECT_FIXED note_dst = {0, 0, FIXED_DEC(32,1), FIXED_DEC(32,1)};
-			
-			if(stage.widescreen)
-				note_dst.w = note_dst.w * 0.815;
 			
 			for (u8 i = 0; i < 4; i++)
 			{

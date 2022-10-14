@@ -96,7 +96,7 @@ void Events()
 		You_Cant_Run_Encore();
 	if (stage.stage_id == StageId_TooSlow)
 		Too_Slow();
-	if(stage.followcamera && !(stage.stage_id == StageId_YouCantRunEncore))
+	if(!(stage.stage_id == StageId_YouCantRunEncore))
 		FollowCharCamera();
 }
 

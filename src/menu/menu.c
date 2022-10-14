@@ -25,6 +25,7 @@ typedef char MenuStr[MENUSTR_CHARS + 1];
 static struct
 {
 	//Menu state
+	u32 sound[3];
 	u8 page, next_page;
 	boolean page_swap;
 	u8 select, next_select;
@@ -61,12 +62,13 @@ static struct
 	} page_param;
 	
 	//Menu assets
-	Gfx_Tex tex_back, tex_ng, tex_story, tex_title;
-	Gfx_Tex tex_menu;
+	Gfx_Tex tex_back, tex_title, tex_menu, tex_backopt;
 	FontData font_bold, font_arial;
 	
 	IO_Data back_arc;
 	u8 backanim, backspeed;
+	boolean music2;
+	u8 options;
 	
 	Character *gf; //Title Girlfriend
 } menu;
@@ -105,87 +107,6 @@ static const char *Menu_LowerIf(const char *text, boolean lower)
 	return menu_text_buffer;
 }
 
-static void Menu_DrawBack(boolean flash, s32 scroll, u8 r0, u8 g0, u8 b0, u8 r1, u8 g1, u8 b1)
-{
-	RECT back_src = {0, 0, 255, 255};
-	RECT back_dst = {0, -scroll - SCREEN_WIDEADD2, SCREEN_WIDTH, SCREEN_WIDTH * 4 / 5};
-	
-	if (flash || (animf_count & 4) == 0)
-		Gfx_DrawTexCol(&menu.tex_back, &back_src, &back_dst, r0, g0, b0);
-	else
-		Gfx_DrawTexCol(&menu.tex_back, &back_src, &back_dst, r1, g1, b1);
-}
-
-static void Menu_DifficultySelector(s32 x, s32 y)
-{
-	//Change difficulty
-	if (menu.next_page == menu.page && Trans_Idle())
-	{
-		if (pad_state.press & PAD_LEFT)
-		{
-			if (menu.page_param.stage.diff > StageDiff_Easy)
-				menu.page_param.stage.diff--;
-			else
-				menu.page_param.stage.diff = StageDiff_Hard;
-		}
-		if (pad_state.press & PAD_RIGHT)
-		{
-			if (menu.page_param.stage.diff < StageDiff_Hard)
-				menu.page_param.stage.diff++;
-			else
-				menu.page_param.stage.diff = StageDiff_Easy;
-		}
-	}
-	
-	//Draw difficulty arrows
-	static const RECT arrow_src[2][2] = {
-		{{224, 64, 16, 32}, {224, 96, 16, 32}}, //left
-		{{240, 64, 16, 32}, {240, 96, 16, 32}}, //right
-	};
-	
-	Gfx_BlitTex(&menu.tex_story, &arrow_src[0][(pad_state.held & PAD_LEFT) != 0], x - 40 - 16, y - 16);
-	Gfx_BlitTex(&menu.tex_story, &arrow_src[1][(pad_state.held & PAD_RIGHT) != 0], x + 40, y - 16);
-	
-	//Draw difficulty
-	static const RECT diff_srcs[] = {
-		{  0, 96, 64, 18},
-		{ 64, 96, 80, 18},
-		{144, 96, 64, 18},
-	};
-	
-	const RECT *diff_src = &diff_srcs[menu.page_param.stage.diff];
-	Gfx_BlitTex(&menu.tex_story, diff_src, x - (diff_src->w >> 1), y - 9 + ((pad_state.press & (PAD_LEFT | PAD_RIGHT)) != 0));
-}
-
-static void Menu_DrawWeek(const char *week, s32 x, s32 y)
-{
-	//Draw label
-	if (week == NULL)
-	{
-		//Tutorial
-		RECT label_src = {0, 0, 112, 32};
-		Gfx_BlitTex(&menu.tex_story, &label_src, x, y);
-	}
-	else
-	{
-		//Week
-		RECT label_src = {0, 32, 80, 32};
-		Gfx_BlitTex(&menu.tex_story, &label_src, x, y);
-		
-		//Number
-		x += 80;
-		for (; *week != '\0'; week++)
-		{
-			//Draw number
-			u8 i = *week - '0';
-			
-			RECT num_src = {128 + ((i & 3) << 5), ((i >> 2) << 5), 32, 32};
-			Gfx_BlitTex(&menu.tex_story, &num_src, x, y);
-			x += 32;
-		}
-	}
-}
-
 //Menu functions
 void Menu_Load(MenuPage page)
 {
@@ -193,6 +114,7 @@ void Menu_Load(MenuPage page)
 	IO_Data menu_arc = IO_Read("\\MENU\\MENU.ARC;1");
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
 	Gfx_LoadTex(&menu.tex_menu, Archive_Find(menu_arc, "menu.tim"), 0);
+	Gfx_LoadTex(&menu.tex_backopt, Archive_Find(menu_arc, "optionsbg.tim"), 0);
 	Mem_Free(menu_arc);
 	
 	menu.back_arc = IO_Read("\\MENU\\BACK.ARC;1");
@@ -207,6 +129,7 @@ void Menu_Load(MenuPage page)
 	{
 		case MenuPage_Opening:
 			//Do this here so timing is less reliant on VSync
+			menu.music2 = false;
 			break;
 		default:
 			break;
@@ -218,8 +141,30 @@ void Menu_Load(MenuPage page)
 	
 	stage.song_step = 0;
 	
+	//Load sfx
+	Audio_ClearAlloc();
+	CdlFILE file;
+
+	IO_FindFile(&file, "\\SOUNDS\\SCROLL.VAG;1");
+   	u32 *data = IO_ReadFile(&file);
+    menu.sound[0] = Audio_LoadVAGData(data, file.size);
+    Mem_Free(data);
+	
+	IO_FindFile(&file, "\\SOUNDS\\SELECT.VAG;1");
+   	data = IO_ReadFile(&file);
+    menu.sound[1] = Audio_LoadVAGData(data, file.size);
+    Mem_Free(data);
+	
+	IO_FindFile(&file, "\\SOUNDS\\MENULAUG.VAG;1");
+   	data = IO_ReadFile(&file);
+    menu.sound[2] = Audio_LoadVAGData(data, file.size);
+    Mem_Free(data);
+	
 	//Play menu music
-	Audio_PlayXA_Track(XA_GettinFreaky, 0x40, 0, 1);
+	if(menu.music2)
+		Audio_PlayXA_Track(XA_StoryMode, 0x40, 2, 1);
+	else
+		Audio_PlayXA_Track(XA_GettinFreaky, 0x40, 0, 1);
 	Audio_WaitPlayXA();
 	
 	//Set background colour
@@ -274,15 +219,16 @@ void Menu_Tick(void)
 		{
 			menu.page = menu.next_page = MenuPage_Title;
 			menu.page_swap = true;
+			stage.splash = true;
+			stage.camerazoom = true;
 		}
 	//Fallthrough
 		case MenuPage_Title:
 		{
-			if (pad_state.press & PAD_TRIANGLE)
+			if(menu.music2)
 			{
-				stage.widescreen = true;
-				stage.ghost = true;
-				stage.downscroll = true;
+				Audio_PlayXA_Track(XA_GettinFreaky, 0x40, 0, 1);
+				menu.music2 = false;
 			}
 			
 			//Initialize page
@@ -308,6 +254,7 @@ void Menu_Tick(void)
 			
 			if ((pad_state.press & PAD_START) && menu.next_page == menu.page && Trans_Idle())
 			{
+				Audio_PlaySound(menu.sound[2], 0x3fff);
 				menu.trans_time = FIXED_UNIT;
 				menu.page_state.title.fade = FIXED_DEC(255,1);
 				menu.page_state.title.fadespd = FIXED_DEC(300,1);
@@ -361,6 +308,12 @@ void Menu_Tick(void)
 				"EXTRAS",
 			};
 			
+			if (!menu.music2)
+			{
+				menu.music2 = true;
+				Audio_PlayXA_Track(XA_StoryMode, 0x40, 2, 1);
+			}
+			
 			//Handle option and selection
 			if (menu.trans_time > 0 && (menu.trans_time -= timer_dt) <= 0)
 				Trans_Start();
@@ -370,6 +323,7 @@ void Menu_Tick(void)
 				//Change option
 				if (pad_state.press & PAD_UP)
 				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
 					if (menu.select > 0)
 						menu.select--;
 					else
@@ -377,6 +331,7 @@ void Menu_Tick(void)
 				}
 				if (pad_state.press & PAD_DOWN)
 				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
 					if (menu.select < COUNT_OF(menu_options) - 1)
 						menu.select++;
 					else
@@ -386,16 +341,26 @@ void Menu_Tick(void)
 				//Select option if cross is pressed
 				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
+					Audio_PlaySound(menu.sound[1], 0x3fff);
 					switch (menu.select)
 					{
 						case 0: //Story Mode
 							menu.next_page = MenuPage_Story;
 							break;
+						case 1: //Encore
+							menu.next_page = MenuPage_Encore;
+							break;
 						case 2: //Freeplay
 							menu.next_page = MenuPage_Freeplay;
 							break;
+						case 3: //Sound Test
+							menu.next_page = MenuPage_SoundTest;
+							break;
 						case 4: //Options
 							menu.next_page = MenuPage_Options;
+							break;
+						case 5: //Extras
+							menu.next_page = MenuPage_Extras;
 							break;
 					}
 					menu.next_select = 0;
@@ -414,8 +379,11 @@ void Menu_Tick(void)
 			u8 menu_buttons = 0;
 			while(menu_buttons < 6)
 			{
-				RECT story_src = {(menu.select == menu_buttons) ? 101 : 0, 0 + (23 * menu_buttons), 101, 23};
-				Gfx_BlitTex(&menu.tex_menu, &story_src, (SCREEN_WIDTH - 160) + (10 * menu_buttons), 40 + (28 * menu_buttons));
+				if ((menu.next_page == menu.page) || (menu.select == menu_buttons))
+				{
+					RECT story_src = {(menu.select == menu_buttons) ? 101 : 0, 0 + (23 * menu_buttons), 101, 23};
+					Gfx_BlitTex(&menu.tex_menu, &story_src, (SCREEN_WIDTH - 156) + (10 * menu_buttons), 40 + (28 * menu_buttons));
+				}
 				menu_buttons += 1;
 			}
 			
@@ -445,127 +413,6 @@ void Menu_Tick(void)
 		}
 		case MenuPage_Story:
 		{
-			static const struct
-			{
-				const char *week;
-				StageId stage;
-				const char *name;
-				const char *tracks[3];
-			} menu_options[] = {
-				{NULL, StageId_TooSlow, "TUTORIAL", {"TUTORIAL", NULL, NULL}},
-				{"1", StageId_TooSlow, "DADDY DEAREST", {"BOPEEBO", "FRESH", "DADBATTLE"}}
-			};
-			
-			//Initialize page
-			if (menu.page_swap)
-			{
-				menu.scroll = 0;
-				menu.page_param.stage.diff = StageDiff_Normal;
-				menu.page_state.title.fade = FIXED_DEC(0,1);
-				menu.page_state.title.fadespd = FIXED_DEC(0,1);
-			}
-			
-			//Draw white fade
-			if (menu.page_state.title.fade > 0)
-			{
-				static const RECT flash = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
-				u8 flash_col = menu.page_state.title.fade >> FIXED_SHIFT;
-				Gfx_BlendRect(&flash, flash_col, flash_col, flash_col, 1);
-				menu.page_state.title.fade -= FIXED_MUL(menu.page_state.title.fadespd, timer_dt);
-			}
-			
-			//Draw difficulty selector
-			Menu_DifficultySelector(SCREEN_WIDTH - 75, 80);
-			
-			//Handle option and selection
-			if (menu.trans_time > 0 && (menu.trans_time -= timer_dt) <= 0)
-				Trans_Start();
-			
-			if (menu.next_page == menu.page && Trans_Idle())
-			{
-				//Change option
-				if (pad_state.press & PAD_UP)
-				{
-					if (menu.select > 0)
-						menu.select--;
-					else
-						menu.select = COUNT_OF(menu_options) - 1;
-				}
-				if (pad_state.press & PAD_DOWN)
-				{
-					if (menu.select < COUNT_OF(menu_options) - 1)
-						menu.select++;
-					else
-						menu.select = 0;
-				}
-				
-				//Select option if cross is pressed
-				if (pad_state.press & (PAD_START | PAD_CROSS))
-				{
-					menu.next_page = MenuPage_Stage;
-					menu.page_param.stage.id = menu_options[menu.select].stage;
-					menu.page_param.stage.story = true;
-					menu.trans_time = FIXED_UNIT;
-					menu.page_state.title.fade = FIXED_DEC(255,1);
-					menu.page_state.title.fadespd = FIXED_DEC(510,1);
-				}
-				
-				//Return to main menu if circle is pressed
-				if (pad_state.press & PAD_CIRCLE)
-				{
-					menu.next_page = MenuPage_Main;
-					menu.next_select = 0; //Story Mode
-					Trans_Start();
-				}
-			}
-			
-			//Draw week name and tracks
-			menu.font_bold.draw(&menu.font_bold,
-				menu_options[menu.select].name,
-				SCREEN_WIDTH - 16,
-				24,
-				FontAlign_Right
-			);
-			
-			const char * const *trackp = menu_options[menu.select].tracks;
-			for (size_t i = 0; i < COUNT_OF(menu_options[menu.select].tracks); i++, trackp++)
-			{
-				if (*trackp != NULL)
-					menu.font_bold.draw(&menu.font_bold,
-						*trackp,
-						SCREEN_WIDTH - 16,
-						SCREEN_HEIGHT - (4 * 24) + (i * 24),
-						FontAlign_Right
-					);
-			}
-			
-			//Draw upper strip
-			RECT name_bar = {0, 16, SCREEN_WIDTH, 32};
-			Gfx_DrawRect(&name_bar, 249, 207, 81);
-			
-			//Draw options
-			s32 next_scroll = menu.select * FIXED_DEC(48,1);
-			menu.scroll += (next_scroll - menu.scroll) >> 3;
-			
-			if (menu.next_page == menu.page || menu.next_page == MenuPage_Main)
-			{
-				//Draw all options
-				for (u8 i = 0; i < COUNT_OF(menu_options); i++)
-				{
-					s32 y = 64 + (i * 48) - (menu.scroll >> FIXED_SHIFT);
-					if (y <= 16)
-						continue;
-					if (y >= SCREEN_HEIGHT)
-						break;
-					Menu_DrawWeek(menu_options[i].week, 48, y);
-				}
-			}
-			else if (animf_count & 2)
-			{
-				//Draw selected option
-				Menu_DrawWeek(menu_options[menu.select].week, 48, 64 + (menu.select * 48) - (menu.scroll >> FIXED_SHIFT));
-			}
-			
 			break;
 		}
 		case MenuPage_Freeplay:
@@ -620,15 +467,13 @@ void Menu_Tick(void)
 				FontAlign_Left
 			);
 			
-			//Draw difficulty selector
-			Menu_DifficultySelector(SCREEN_WIDTH - 100, SCREEN_HEIGHT2 - 48);
-			
 			//Handle option and selection
 			if (menu.next_page == menu.page && Trans_Idle())
 			{
 				//Change option
 				if (pad_state.press & PAD_UP)
 				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
 					if (menu.select > 0)
 						menu.select--;
 					else
@@ -636,6 +481,7 @@ void Menu_Tick(void)
 				}
 				if (pad_state.press & PAD_DOWN)
 				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
 					if (menu.select < COUNT_OF(menu_options) - 1)
 						menu.select++;
 					else
@@ -645,6 +491,7 @@ void Menu_Tick(void)
 				//Select option if cross is pressed
 				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
+					Audio_PlaySound(menu.sound[1], 0x3fff);
 					menu.next_page = MenuPage_Stage;
 					menu.page_param.stage.id = menu_options[menu.select].stage;
 					menu.page_param.stage.story = false;
@@ -654,6 +501,7 @@ void Menu_Tick(void)
 				//Return to main menu if circle is pressed
 				if (pad_state.press & PAD_CIRCLE)
 				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
 					menu.next_page = MenuPage_Main;
 					menu.next_select = 2; //Freeplay
 					Trans_Start();
@@ -683,159 +531,214 @@ void Menu_Tick(void)
 			}
 			
 			//Draw background
-			fixed_t tgt_r = (fixed_t)((menu_options[menu.select].col >> 16) & 0xFF) << FIXED_SHIFT;
-			fixed_t tgt_g = (fixed_t)((menu_options[menu.select].col >>  8) & 0xFF) << FIXED_SHIFT;
-			fixed_t tgt_b = (fixed_t)((menu_options[menu.select].col >>  0) & 0xFF) << FIXED_SHIFT;
-			
-			menu.page_state.freeplay.back_r += (tgt_r - menu.page_state.freeplay.back_r) >> 4;
-			menu.page_state.freeplay.back_g += (tgt_g - menu.page_state.freeplay.back_g) >> 4;
-			menu.page_state.freeplay.back_b += (tgt_b - menu.page_state.freeplay.back_b) >> 4;
-			
-			Menu_DrawBack(
-				true,
-				8,
-				menu.page_state.freeplay.back_r >> (FIXED_SHIFT + 1),
-				menu.page_state.freeplay.back_g >> (FIXED_SHIFT + 1),
-				menu.page_state.freeplay.back_b >> (FIXED_SHIFT + 1),
-				0, 0, 0
-			);
+			RECT back_src = {0, 0, 256, 256};
+			RECT back_dst = {0, 0, 320, 240};
+			Gfx_DrawTex(&menu.tex_backopt, &back_src, &back_dst);
 			break;
-		}
-		case MenuPage_Mods:
-		{
-
 		}
 		case MenuPage_Options:
 		{
-			static const char *gamemode_strs[] = {"NORMAL", "SWAP", "MULTIPLAYER"};
-			static const struct
-			{
-				enum
-				{
-					OptType_Boolean,
-					OptType_Enum,
-				} type;
-				const char *text;
-				void *value;
-				union
-				{
-					struct
-					{
-						int a;
-					} spec_boolean;
-					struct
-					{
-						s32 max;
-						const char **strs;
-					} spec_enum;
-				} spec;
-			} menu_options[] = {
-				{OptType_Enum,    "GAMEMODE", &stage.mode, {.spec_enum = {COUNT_OF(gamemode_strs), gamemode_strs}}},
-				{OptType_Boolean, "GHOST TAP ", &stage.ghost, {.spec_boolean = {0}}},
-				{OptType_Boolean, "DOWNSCROLL", &stage.downscroll, {.spec_boolean = {0}}},
-				{OptType_Boolean, "MIDDLESCROLL", &stage.middlescroll, {.spec_boolean = {0}}},
-				{OptType_Boolean, "INSTAKILL", &stage.instakill, {.spec_boolean = {0}}},
-				{OptType_Boolean, "WIDESCREEN", &stage.widescreen, {.spec_boolean = {0}}},
-				{OptType_Boolean, "CAM FOLLOW CHAR", &stage.followcamera, {.spec_boolean = {0}}},
-				{OptType_Boolean, "BOTPLAY", &stage.botplay, {.spec_boolean = {0}}}
-			};
-			
 			//Initialize page
 			if (menu.page_swap)
-				menu.scroll = COUNT_OF(menu_options) * FIXED_DEC(24 + SCREEN_HEIGHT2,1);
+				menu.options = 0;
 			
-			//Draw page label
-			menu.font_bold.draw(&menu.font_bold,
-				"OPTIONS",
-				16,
-				SCREEN_HEIGHT - 32,
-				FontAlign_Left
-			);
-			
-			//Handle option and selection
-			if (menu.next_page == menu.page && Trans_Idle())
+			if (menu.options == 0)
 			{
-				//Change option
-				if (pad_state.press & PAD_UP)
+				static const char *main_options[] = {
+					"CONTROLS",
+					"PREFERENCES",
+					"LOAD AND SAVE",
+				};
+				
+				//Handle option and selection
+				if (menu.next_page == menu.page && Trans_Idle())
 				{
-					if (menu.select > 0)
-						menu.select--;
-					else
-						menu.select = COUNT_OF(menu_options) - 1;
-				}
-				if (pad_state.press & PAD_DOWN)
-				{
-					if (menu.select < COUNT_OF(menu_options) - 1)
-						menu.select++;
-					else
-						menu.select = 0;
+					//Change option
+					if (pad_state.press & PAD_UP)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select > 0)
+							menu.select--;
+						else
+							menu.select = COUNT_OF(main_options) - 1;
+					}
+					if (pad_state.press & PAD_DOWN)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select < COUNT_OF(main_options) - 1)
+							menu.select++;
+						else
+							menu.select = 0;
+					}
 				}
 				
-				//Handle option changing
-				switch (menu_options[menu.select].type)
+				//Select option if cross is pressed
+				if (pad_state.press & (PAD_START | PAD_CROSS))
 				{
-					case OptType_Boolean:
-						if (pad_state.press & (PAD_CROSS | PAD_LEFT | PAD_RIGHT))
-							*((boolean*)menu_options[menu.select].value) ^= 1;
-						break;
-					case OptType_Enum:
-						if (pad_state.press & PAD_LEFT)
-							if (--*((s32*)menu_options[menu.select].value) < 0)
-								*((s32*)menu_options[menu.select].value) = menu_options[menu.select].spec.spec_enum.max - 1;
-						if (pad_state.press & PAD_RIGHT)
-							if (++*((s32*)menu_options[menu.select].value) >= menu_options[menu.select].spec.spec_enum.max)
-								*((s32*)menu_options[menu.select].value) = 0;
-						break;
+					Audio_PlaySound(menu.sound[0], 0x3fff);
+					switch (menu.select)
+					{
+						case 0:
+							break;
+						case 1:
+							menu.options = 1;
+							menu.select = 0;
+							break;
+					}
 				}
 				
 				//Return to main menu if circle is pressed
 				if (pad_state.press & PAD_CIRCLE)
 				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
 					menu.next_page = MenuPage_Main;
 					menu.next_select = 4; //Options
 					Trans_Start();
 				}
+				
+				//Draw options
+				for (u8 i = 0; i < COUNT_OF(main_options); i++)
+				{
+					//Draw text
+					char text[0x80];
+					sprintf(text, "%s", main_options[i]);
+					menu.font_bold.draw(&menu.font_bold,
+						Menu_LowerIf(text, menu.select != i),
+						SCREEN_WIDTH2,
+						SCREEN_HEIGHT2 + (i * 24) - (COUNT_OF(main_options) * 12),
+						FontAlign_Center
+					);
+				}
 			}
 			
-			//Draw options
-			s32 next_scroll = menu.select * FIXED_DEC(24,1);
-			menu.scroll += (next_scroll - menu.scroll) >> 4;
-			
-			for (u8 i = 0; i < COUNT_OF(menu_options); i++)
+			if (menu.options == 1)
 			{
-				//Get position on screen
-				s32 y = (i * 24) - 8 - (menu.scroll >> FIXED_SHIFT);
-				if (y <= -SCREEN_HEIGHT2 - 8)
-					continue;
-				if (y >= SCREEN_HEIGHT2 + 8)
-					break;
-				
-				//Draw text
-				char text[0x80];
-				switch (menu_options[i].type)
+				static const char *gamemode_strs[] = {"NORMAL", "SWAP", "MULTIPLAYER"};
+				static const struct
 				{
-					case OptType_Boolean:
-						sprintf(text, "%s %s", menu_options[i].text, *((boolean*)menu_options[i].value) ? "ON" : "OFF");
-						break;
-					case OptType_Enum:
-						sprintf(text, "%s %s", menu_options[i].text, menu_options[i].spec.spec_enum.strs[*((s32*)menu_options[i].value)]);
-						break;
+					enum
+					{
+						OptType_Boolean,
+						OptType_Scroll,
+						OptType_Enum,
+					} type;
+					const char *text;
+					void *value;
+					union
+					{
+						struct
+						{
+							int a;
+						} spec_boolean;
+						struct
+						{
+							s32 max;
+							const char **strs;
+						} spec_enum;
+					} spec;
+				} menu_options[] = {
+					{OptType_Enum,    "GAMEMODE", &stage.mode, {.spec_enum = {COUNT_OF(gamemode_strs), gamemode_strs}}},
+					{OptType_Scroll,  "SCROLL", &stage.downscroll, {.spec_boolean = {0}}},
+					{OptType_Boolean, "MIDDLESCROLL", &stage.middlescroll, {.spec_boolean = {0}}},
+					{OptType_Boolean, "GHOST TAP", &stage.ghost, {.spec_boolean = {0}}},
+					{OptType_Boolean, "NOTE SPLASHES", &stage.splash, {.spec_boolean = {0}}},
+					{OptType_Boolean, "FLASHING LIGHTS", &stage.flashing, {.spec_boolean = {0}}},
+					{OptType_Boolean, "CAMERA ZOOMS", &stage.camerazoom, {.spec_boolean = {0}}},
+					{OptType_Boolean, "BOTPLAY", &stage.botplay, {.spec_boolean = {0}}}
+				};
+			
+				//Handle option and selection
+				if (menu.next_page == menu.page && Trans_Idle())
+				{
+					//Change option
+					if (pad_state.press & PAD_UP)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select > 0)
+							menu.select--;
+						else
+							menu.select = COUNT_OF(menu_options) - 1;
+					}
+					if (pad_state.press & PAD_DOWN)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select < COUNT_OF(menu_options) - 1)
+							menu.select++;
+						else
+							menu.select = 0;
+					}
+					
+					//Handle option changing
+					switch (menu_options[menu.select].type)
+					{
+						case OptType_Boolean:
+							if (pad_state.press & (PAD_CROSS | PAD_LEFT | PAD_RIGHT))
+							{
+								Audio_PlaySound(menu.sound[0], 0x3fff);
+								*((boolean*)menu_options[menu.select].value) ^= 1;
+							}
+							break;
+						case OptType_Enum:
+							if (pad_state.press & PAD_LEFT)
+							{
+								Audio_PlaySound(menu.sound[0], 0x3fff);
+								if (--*((s32*)menu_options[menu.select].value) < 0)
+									*((s32*)menu_options[menu.select].value) = menu_options[menu.select].spec.spec_enum.max - 1;
+							}
+							if (pad_state.press & PAD_RIGHT)
+							{
+								Audio_PlaySound(menu.sound[0], 0x3fff);
+								if (++*((s32*)menu_options[menu.select].value) >= menu_options[menu.select].spec.spec_enum.max)
+									*((s32*)menu_options[menu.select].value) = 0;
+							}
+							break;
+						case OptType_Scroll:
+							if (pad_state.press & (PAD_CROSS | PAD_LEFT | PAD_RIGHT))
+							{
+								Audio_PlaySound(menu.sound[0], 0x3fff);
+								*((boolean*)menu_options[menu.select].value) ^= 1;
+							}
+							break;
+					}
+					//Return to main menu if circle is pressed
+					if (pad_state.press & PAD_CIRCLE)
+					{
+						menu.options = 0;
+						menu.select = 1;
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+					}
 				}
-				menu.font_bold.draw(&menu.font_bold,
-					Menu_LowerIf(text, menu.select != i),
-					48 + (y >> 2),
-					SCREEN_HEIGHT2 + y - 8,
-					FontAlign_Left
-				);
+				
+				//Draw options
+				for (u8 i = 0; i < COUNT_OF(menu_options); i++)
+				{
+					//Draw text
+					char text[0x80];
+					switch (menu_options[i].type)
+					{
+						case OptType_Boolean:
+							sprintf(text, "%s %s", menu_options[i].text, *((boolean*)menu_options[i].value) ? "ON" : "OFF");
+							break;
+						case OptType_Scroll:
+							sprintf(text, "%s %s", menu_options[i].text, *((boolean*)menu_options[i].value) ? "DOWN" : "UP");
+							break;
+						case OptType_Enum:
+							sprintf(text, "%s %s", menu_options[i].text, menu_options[i].spec.spec_enum.strs[*((s32*)menu_options[i].value)]);
+							break;
+					}
+					menu.font_bold.draw(&menu.font_bold,
+						Menu_LowerIf(text, menu.select != i),
+						SCREEN_WIDTH2,
+						SCREEN_HEIGHT2 + (i * 24) - (COUNT_OF(menu_options) * 12),
+						FontAlign_Center
+					);
+				}
 			}
 			
 			//Draw background
-			Menu_DrawBack(
-				true,
-				8,
-				253 >> 1, 113 >> 1, 155 >> 1,
-				0, 0, 0
-			);
+			RECT back_src = {0, 0, 256, 256};
+			RECT back_dst = {0, 0, 320, 240};
+			Gfx_DrawTex(&menu.tex_backopt, &back_src, &back_dst);
 			break;
 		}
 		case MenuPage_Stage:

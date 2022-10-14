@@ -10,6 +10,7 @@ static const XA_TrackDef xa_tracks[] = {
 	//MENU.XA
 	{FL_Menu, XA_LENGTH(6119)}, //XA_GettinFreaky
 	{FL_Menu, XA_LENGTH(1920)},  //XA_GameOver
+	{FL_Menu, XA_LENGTH(7540)}, //XA_GettinFreaky
 	//TOOSLOW.XA
 	{FL_TooSlow, XA_LENGTH(18830)}, //XA_TooSlow
 	{FL_TooSlow, XA_LENGTH(18216)}, //XA_TooSlowEncore
@@ -71,6 +72,7 @@ static const XA_Mp3 xa_mp3s[] = {
 	//MENU.XA
 	{"freakymenu", false},
 	{"gameover", false},
+	{"storymode", false},
 	//TOOSLOW.XA
 	{"tooslow", true},
 	{"tooslowencore", true},
