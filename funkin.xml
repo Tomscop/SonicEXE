@@ -189,9 +189,9 @@
 			
 			<!-- Sound -->
 			<dir name = "sounds">
-				<file name = "micdrop.vag" type = "data" source = "iso/sounds/fnf_loss_sfx.vag"/>
-				<file name = "hitsta1.vag" type = "data" source = "iso/sounds/hitstatic1.vag"/>
-				<file name = "gamoend.vag" type = "data" source = "iso/sounds/gameoverend.vag"/>
+				<file name = "micdrop.vag" type = "data" source = "iso/sounds/fnf_loss_sfx.wav.vag"/>
+				<file name = "hitsta1.vag" type = "data" source = "iso/sounds/hitStatic1.ogg.vag"/>
+				<file name = "gamoend.vag" type = "data" source = "iso/sounds/gameoverend.wav.vag"/>
 			</dir>
 			
 			<!-- Dummy sectors -->
