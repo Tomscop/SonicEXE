@@ -28,7 +28,8 @@ static struct
 	u32 sound[3];
 	u8 page, next_page;
 	boolean page_swap;
-	u8 select, next_select;
+	u8 select, select2, next_select;
+	u8 diff;
 	s16 animcounter;
 	
 	fixed_t scroll;
@@ -63,6 +64,7 @@ static struct
 	
 	//Menu assets
 	Gfx_Tex tex_back, tex_title, tex_menu, tex_backopt;
+	Gfx_Tex tex_story;
 	FontData font_bold, font_arial;
 	
 	IO_Data back_arc;
@@ -113,6 +115,7 @@ void Menu_Load(MenuPage page)
 	//Load menu assets
 	IO_Data menu_arc = IO_Read("\\MENU\\MENU.ARC;1");
 	Gfx_LoadTex(&menu.tex_title, Archive_Find(menu_arc, "title.tim"), 0);
+	Gfx_LoadTex(&menu.tex_story, Archive_Find(menu_arc, "story.tim"), 0);
 	Gfx_LoadTex(&menu.tex_menu, Archive_Find(menu_arc, "menu.tim"), 0);
 	Gfx_LoadTex(&menu.tex_backopt, Archive_Find(menu_arc, "optionsbg.tim"), 0);
 	Mem_Free(menu_arc);
@@ -413,6 +416,178 @@ void Menu_Tick(void)
 		}
 		case MenuPage_Story:
 		{
+			if (menu.next_page == menu.page && Trans_Idle())
+			{
+				//Change option
+				if (pad_state.press & PAD_UP)
+				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
+					if (menu.select2 > 0)
+						menu.select2--;
+					else
+						menu.select2 = 1;
+				}
+				if (pad_state.press & PAD_DOWN)
+				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
+					if (menu.select2 < 1)
+						menu.select2++;
+					else
+						menu.select2 = 0;
+				}
+				
+				if(menu.select2 == 0)
+				{
+					//Change option
+					if (pad_state.press & PAD_LEFT)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select > 0)
+							menu.select--;
+						else
+							menu.select = 2;
+					}
+					if (pad_state.press & PAD_RIGHT)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select < 2)
+							menu.select++;
+						else
+							menu.select = 0;
+					}
+				}
+				if(menu.select2 == 1)
+				{
+					//Change option
+					if (pad_state.press & PAD_LEFT)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.diff > 0)
+							menu.diff--;
+						else
+							menu.diff = 2;
+					}
+					if (pad_state.press & PAD_RIGHT)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.diff < 2)
+							menu.diff++;
+						else
+							menu.diff = 0;
+					}
+				}
+			}
+			
+			//Draw Arrows
+			u8 drawarrows = 2;
+			while(drawarrows > 0)
+			{
+				RECT arrows_src[3] = 
+				{
+					{ 82, 191, 14, 23},
+					{ 56, 191, 12, 23},
+					{ 68, 191, 14, 23}
+				};
+				
+				//Song Selection
+				u8 frames = 2;
+				
+				if(drawarrows == 1)
+				{
+					if(menu.select2 == 0)
+					{
+						frames = 0;
+					}
+				}
+				else
+				{
+					if(menu.select2 == 0)
+					{
+						frames = 0;
+					}
+				}
+				
+				RECT arrow_dst = {72, 61, arrows_src[frames].w, arrows_src[frames].h};
+				
+				if(drawarrows == 1)
+				{
+					arrow_dst.x = 248;
+					arrow_dst.w = -arrow_dst.w;
+				}
+				
+				Gfx_DrawTex(&menu.tex_story, &arrows_src[frames], &arrow_dst);
+				
+				//Difficulty Selection
+				frames = 2;
+				
+				if(drawarrows == 1)
+				{
+					if(menu.select2 == 1)
+					{
+						frames = 0;
+					}
+				}
+				else
+				{
+					if(menu.select2 == 1)
+					{
+						frames = 0;
+					}
+				}
+				
+				RECT arrow2_dst = {97, 210, arrows_src[frames].w, arrows_src[frames].h};
+				
+				if(drawarrows == 1)
+				{
+					arrow2_dst.x = 226;
+					arrow2_dst.w = -arrow2_dst.w;
+				}
+				
+				Gfx_DrawTex(&menu.tex_story, &arrows_src[frames], &arrow2_dst);
+				
+				drawarrows -= 1;
+			}
+			
+			//Draw difficulties
+			RECT diffs_src[3] = 
+			{
+				{  0, 172, 51, 18},
+				{ 52, 172, 79, 18},
+				{  0, 191, 55, 18}
+			};
+			
+			Gfx_BlitTex(&menu.tex_story, &diffs_src[menu.diff], SCREEN_WIDTH2 - diffs_src[menu.diff].w / 2 + 4, 213);
+			
+			//Draw Art
+			RECT art_src = {143, menu.select * 59, 113, 58};
+			Gfx_BlitTex(&menu.tex_story, &art_src, 104, 45);
+			
+			//Draw Selection Background
+			RECT story_src = {0, 0, 142, 171};
+			Gfx_BlitTex(&menu.tex_story, &story_src, SCREEN_WIDTH2 - story_src.w / 2, 34);
+			
+			//Draw Background
+			static const char *back_files[] = {
+				"s0.tim",
+				"s05.tim",
+				"s1.tim",
+				"s15.tim",
+			};
+			
+			Gfx_LoadTex(&menu.tex_back, Archive_Find(menu.back_arc, back_files[menu.backanim]), 0);
+			RECT back_src = {0, 0, 256, 256};
+			RECT back_dst = {0, 0, 320, 240};
+			Gfx_DrawTex(&menu.tex_back, &back_src, &back_dst);
+			if(menu.backspeed > 0)
+				menu.backspeed -= 1;
+			else
+			{
+				menu.backspeed = 2;
+				if(menu.backanim < 3)
+					menu.backanim += 1;
+				else
+					menu.backanim = 0;
+			}
 			break;
 		}
 		case MenuPage_Freeplay:
