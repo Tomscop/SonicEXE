@@ -1343,7 +1343,7 @@ void Stage_Tick(void)
 			Trans_Start();
 		}
 	}
-	else
+	else if(stage.state != StageState_Continued)
 	{
 		//Return to menu when start is pressed
 		if (pad_state.press & PAD_START)
@@ -1351,6 +1351,7 @@ void Stage_Tick(void)
 			stage.state = StageState_Continued;
 			Audio_PlaySound(stage.sound[2], 0x3fff);
 			stage.continflash = 252;
+			Audio_StopXA();
 		}
 	}
 	
@@ -1875,14 +1876,17 @@ void Stage_Tick(void)
 		}
 		case StageState_Continued:
 		{
-			if(stage.continflash > 0)
+			if(stage.continflash > 4)
+			{
 				stage.continflash -= 4;
+				Gfx_SetClear(stage.continflash, 0, 0);
+			}
 			else if (!(stage.trans == StageTrans_Reload))
 			{
 				stage.trans = StageTrans_Reload;
 				Trans_Start();
+				Gfx_SetClear(0, 0, 0);
 			}
-			Gfx_SetClear(stage.continflash, 0, 0);
 			
 			break;
 		}

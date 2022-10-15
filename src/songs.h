@@ -30,7 +30,7 @@
 		1, 2,
 		XA_YouCantRun, 0,
 		"You Can't Run",
-		false, NULL,
+		false, "",
 		
 		StageId_TripleTrouble, 0
 	},
@@ -47,7 +47,7 @@
 		1, 3,
 		XA_TripleTrouble, 0,
 		"Triple Trouble",
-		false, NULL,
+		false, "",
 		
 		StageId_TripleTrouble, 0
 	},
@@ -67,7 +67,7 @@
 		2, 1,
 		XA_TooSlowEncore, 2,
 		"Too Slow Encore",
-		false, NULL,
+		false, "",
 		
 		StageId_YouCantRun, 0
 	},
@@ -87,7 +87,7 @@
 		99, 1,
 		XA_Endless, 0,
 		"Endless",
-		false, NULL,
+		false, "",
 		
 		StageId_Endless, 0
 	},
@@ -104,7 +104,7 @@
 		99, 2,
 		XA_EndlessOG, 0,
 		"Endless OG",
-		false, NULL,
+		false, "",
 		
 		StageId_EndlessOG, 0
 	},
@@ -122,7 +122,7 @@
 		99, 4,
 		XA_Cycles, 0,
 		"Cycles",
-		false, NULL,
+		false, "",
 		
 		StageId_Cycles, 0
 	},
@@ -139,7 +139,7 @@
 		99, 5,
 		XA_Execution, 2,
 		"Execution",
-		false, NULL,
+		false, "",
 		
 		StageId_Execution, 0
 	},	
@@ -157,7 +157,7 @@
 		99, 6,
 		XA_Sunshine, 0,
 		"Sunshine",
-		false, NULL,
+		false, "",
 		
 		StageId_Sunshine, 0
 	},
@@ -174,7 +174,7 @@
 		99, 7,
 		XA_Soulless, 2,
 		"Soulless",
-		false, NULL,
+		false, "",
 		
 		StageId_Soulless, 0
 	},
@@ -192,7 +192,7 @@
 		99, 8,
 		XA_Chaos, 0,
 		"Chaos",
-		false, NULL,
+		false, "",
 		
 		StageId_Chaos, 0
 	},
@@ -210,7 +210,7 @@
 		99, 9,
 		XA_Prey, 0,
 		"Prey",
-		false, NULL,
+		false, "",
 		
 		StageId_Prey, 0
 	},
@@ -227,7 +227,7 @@
 		99, 10,
 		XA_Fight_Or_Flight, 2,
 		"Fight or Flight",
-		false, NULL,
+		false, "",
 		
 		StageId_Fight_Or_Flight, 0
 	},
@@ -244,7 +244,7 @@
 		99, 12,
 		XA_Round_A_Bout, 0,
 		"Round A Bout",
-		false, NULL,
+		false, "",
 		
 		StageId_Round_A_Bout, 0
 	}
