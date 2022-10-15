@@ -15,6 +15,7 @@ all: \
 	iso/characters/bf/endless.arc \
 	iso/characters/bfe/main.arc \
 	iso/characters/starvedtails/main.arc \
+	iso/characters/bfn/main.arc \
 	\
 	iso/characters/gf/main.arc \
 	iso/characters/gf/tut.arc \
@@ -56,6 +57,8 @@ iso/characters/bfe/main.arc: iso/characters/bfe/idle0.tim iso/characters/bfe/idl
 # Starved Tails
 iso/characters/starvedtails/main.arc: iso/characters/starvedtails/idle0.tim iso/characters/starvedtails/idle1.tim iso/characters/starvedtails/idle2.tim iso/characters/starvedtails/left0.tim iso/characters/starvedtails/left1.tim iso/characters/starvedtails/down0.tim iso/characters/starvedtails/down1.tim iso/characters/starvedtails/up0.tim iso/characters/starvedtails/up1.tim iso/characters/starvedtails/up2.tim iso/characters/starvedtails/up3.tim iso/characters/starvedtails/right0.tim iso/characters/starvedtails/right1.tim iso/characters/starvedtails/leftm0.tim iso/characters/starvedtails/downm0.tim iso/characters/starvedtails/upm0.tim iso/characters/starvedtails/upm1.tim iso/characters/starvedtails/rightm0.tim
 
+# BF NMouse
+iso/characters/bfn/main.arc: iso/characters/bfn/bfn0.tim iso/characters/bfn/bfn1.tim iso/characters/bfn/bfn2.tim iso/characters/bfn/bfn3.tim iso/characters/bfn/bfn4.tim iso/characters/bfn/bfn5.tim iso/characters/bfn/bfn6.tim iso/characters/bfn/bfn7.tim iso/characters/bfn/bfn8.tim iso/characters/bfn/bfn9.tim iso/characters/bfn/bfn10.tim iso/characters/bfn/bfn11.tim iso/characters/bfn/bfn12.tim iso/characters/bfn/bfn13.tim iso/characters/bfn/bfn14.tim iso/characters/bfn/bfn15.tim iso/characters/bfn/dead0.tim iso/characters/bfn/dead1.tim iso/characters/bfn/dead2.tim iso/characters/bfn/retry.tim
 # GF
 iso/characters/gf/main.arc: iso/characters/gf/gf0.tim iso/characters/gf/gf1.tim iso/characters/gf/gf2.tim
 iso/characters/gf/tut.arc: iso/characters/gf/tut0.tim iso/characters/gf/tut1.tim

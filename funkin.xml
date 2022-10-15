@@ -67,6 +67,9 @@
 				<!-- Starved Tails assets -->
 				<file name = "stails.arc" type = "data" source = "iso/characters/starvedtails/main.arc"/>
 				
+				<!-- Boyfriend NMouse assets -->
+				<file name = "bfn.arc" type = "data" source = "iso/characters/bfn/main.arc"/>
+				
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/characters/gf/main.arc"/>
 				<file name = "gftut.arc" type = "data" source = "iso/characters/gf/tut.arc"/>
