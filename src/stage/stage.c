@@ -1398,7 +1398,6 @@ void Stage_Tick(void)
 				break;
 		}
 	}
-	FntPrint("%d",stage.continflash);
 	switch (stage.state)
 	{
 		case StageState_Play:
