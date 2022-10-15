@@ -92,12 +92,8 @@ void Events()
 {
 	Flash_tick();
 	Static_tick();
-	if (stage.stage_id == StageId_YouCantRunEncore)
-		You_Cant_Run_Encore();
 	if (stage.stage_id == StageId_TooSlow)
 		Too_Slow();
-	if(!(stage.stage_id == StageId_YouCantRunEncore))
-		FollowCharCamera();
 }
 
 void LoadEvents()

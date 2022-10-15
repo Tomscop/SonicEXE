@@ -39,12 +39,10 @@ typedef enum
 	XA_TooSlowEncore,
 	
 	XA_YouCantRun,
-	XA_YouCantRunEncore,
 	
 	XA_TripleTrouble,
 	
 	XA_Endless,
-	XA_EndlessEncore,
 	
 	XA_EndlessOG,
 	

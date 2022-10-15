@@ -37,12 +37,10 @@ typedef enum
 	
 	//Story Encore Songs
 	StageId_TooSlowEncore,
-	StageId_YouCantRunEncore,
 	
 	//Free Play Songs
 	StageId_Endless,
 	StageId_EndlessOG,
-	StageId_EndlessEncore,
 	
 	StageId_Cycles,
 	StageId_Execution,

@@ -16,12 +16,10 @@ static const XA_TrackDef xa_tracks[] = {
 	{FL_TooSlow, XA_LENGTH(18216)}, //XA_TooSlowEncore
 	//YCR.XA
 	{FL_YouCantRun, XA_LENGTH(15942)}, //XA_YouCantRun
-	{FL_YouCantRun, XA_LENGTH(20921)}, //XA_YouCantRunEncore
 	//TRIPLETROUB.XA
 	{FL_TripleTrouble, XA_LENGTH(50710)}, //XA_TripleTrouble
 	//ENDLESS.XA
 	{FL_Endless, XA_LENGTH(16954)}, //XA_Endless
-	{FL_Endless, XA_LENGTH(15645)}, //XA_EndlessEncore
 	//ENDLESSOG.XA
 	{FL_EndlessOG, XA_LENGTH(17032)}, //XA_EndlessOG
 	//CYC-EXEC.XA
@@ -78,7 +76,6 @@ static const XA_Mp3 xa_mp3s[] = {
 	{"tooslowencore", true},
 	//YCR.XA
 	{"youcantrun", true},
-	{"youcantrunencore", true},
 	//TRIPLETROUB.XA
 	{"tripletrouble", true},
 	//ENDLESS.XA

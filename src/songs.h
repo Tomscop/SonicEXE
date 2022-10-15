@@ -65,23 +65,7 @@
 		XA_TooSlowEncore, 2,
 		"Too Slow Encore",
 		
-		StageId_YouCantRunEncore, 0
-	},
-	{ //StageId_YouCantRunEncore
-		//Characters
-		{Char_BFE_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
-		{Char_YCN_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
-		
-		//Stage background
-		Back_YCR_New,
-		
-		//Song info
-		2, 2,
-		XA_YouCantRunEncore, 2,
-		"You Can't Run Encore",
-		
-		StageId_YouCantRunEncore, 0
+		StageId_YouCantRun, 0
 	},
 	
 	//Free Play Songs
@@ -117,22 +101,6 @@
 		"Endless OG",
 		
 		StageId_EndlessOG, 0
-	},
-	{ //StageId_EndlessEncore
-		//Characters
-		{Char_BFE_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
-		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
-		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
-		
-		//Stage background
-		Back_GH_New,
-		
-		//Song info
-		99, 3,
-		XA_EndlessEncore, 2,
-		"Endless Encore",
-		
-		StageId_EndlessEncore, 0
 	},
 
 	{ //StageId_Cycles

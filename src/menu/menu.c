@@ -429,11 +429,9 @@ void Menu_Tick(void)
 				{StageId_TripleTrouble, 0xFF9271FD, "TRIPLE TROUBLE"},
 				
 				{StageId_TooSlowEncore, 0xFF9271FD, "TOO SLOW ENCORE"},
-				{StageId_YouCantRunEncore, 0xFF9271FD, "YOU CAN'T RUN ENCORE"},
 				
 				{StageId_Endless, 0xFF9271FD, "ENDLESS"},
 				{StageId_EndlessOG, 0xFF9271FD, "ENDLESS OG"},
-				{StageId_EndlessEncore, 0xFF9271FD, "ENDLESS ENCORE"},
 				
 				{StageId_Cycles, 0xFF9271FD, "CYCLES"},
 				{StageId_Execution, 0xFF9271FD, "EXECUTION"},

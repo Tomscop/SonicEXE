@@ -27,13 +27,12 @@ iso/music/menu.xa: iso/music/menuscreen.xa iso/music/gameover.xa iso/music/story
 iso/songs/tooslow.xa: iso/songs/too-slow/Inst.xa iso/songs/too-slow/Merged.xa iso/songs/too-slow-encore/Inst.xa iso/songs/too-slow-encore/Merged.xa
 
 # You Can't Run
-iso/songs/youcantrun.xa: iso/songs/you-cant-run/Inst.xa iso/songs/you-cant-run/Merged.xa iso/songs/you-cant-run-encore/Inst.xa iso/songs/you-cant-run-encore/Merged.xa
-
+iso/songs/youcantrun.xa: iso/songs/you-cant-run/Inst.xa iso/songs/you-cant-run/Merged.xa
 # Triple Trouble
 iso/songs/tripletro.xa: iso/songs/triple-trouble/Inst.xa iso/songs/triple-trouble/Merged.xa
 
 # Endless  Endless Encore
-iso/songs/endless.xa: iso/songs/endless/Inst.xa iso/songs/endless/Merged.xa iso/songs/endless-encore/Inst.xa iso/songs/endless-encore/Merged.xa
+iso/songs/endless.xa: iso/songs/endless/Inst.xa iso/songs/endless/Merged.xa
 
 # Endless OG
 iso/songs/endlessog.xa: iso/songs/endless-og/Inst.xa iso/songs/endless-og/Merged.xa
