@@ -1398,18 +1398,18 @@ void Stage_Tick(void)
 				break;
 		}
 	}
-	
+	FntPrint("%d",stage.continflash);
 	switch (stage.state)
 	{
 		case StageState_Play:
 		{
 			Events();
-			//stage.font_cdr.draw(&stage.font_cdr,
-			//	stage.credits,
-			//	FIXED_DEC(-157,1),
-			//	FIXED_DEC(-111,1),
-			//	FontAlign_Right
-			//);
+			stage.font_cdr.draw(&stage.font_cdr,
+				stage.credits,
+				FIXED_DEC(-159,1),
+				FIXED_DEC(108,1),
+				FontAlign_Left
+			);
 			
 			if (stage.botplay)
 			{
@@ -1876,12 +1876,12 @@ void Stage_Tick(void)
 		}
 		case StageState_Continued:
 		{
-			if(stage.continflash > 4)
+			if(stage.continflash > 0)
 			{
 				stage.continflash -= 4;
 				Gfx_SetClear(stage.continflash, 0, 0);
 			}
-			else if (!(stage.trans == StageTrans_Reload))
+			else if (Trans_Idle())
 			{
 				stage.trans = StageTrans_Reload;
 				Trans_Start();
