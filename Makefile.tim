@@ -12,7 +12,7 @@ all: \
 	\
 	iso/characters/bf/main.arc \
 	iso/characters/bf/endless.arc \
-	iso/characters/ebf/main.arc \
+	iso/characters/bfe/main.arc \
 	iso/characters/starvedtails/main.arc \
 	\
 	iso/characters/gf/main.arc \
