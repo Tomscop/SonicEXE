@@ -8,6 +8,7 @@ all: \
 	iso/images/events/static.tim \
 	iso/images/hud0.tim \
 	iso/images/hud1.tim \
+	iso/images/startscreens/strscr.arc \
 	iso/images/note.tim \
 	\
 	iso/characters/bf/main.arc \
@@ -41,6 +42,9 @@ iso/images/menu/menu.arc: iso/images/menu/title.tim iso/images/menu/menu.tim iso
 
 # Menu Background
 iso/images/menu/menuback.arc: iso/images/menu/m0.tim iso/images/menu/m1.tim iso/images/menu/m2.tim iso/images/menu/m3.tim iso/images/story/s0.tim iso/images/story/s05.tim iso/images/story/s1.tim iso/images/story/s15.tim
+
+# Start Screens
+iso/images/startscreens/strscr.arc: iso/images/startscreens/tooslow.tim
 
 # BF
 iso/characters/bf/main.arc: iso/characters/bf/bf0.tim iso/characters/bf/bf1.tim iso/characters/bf/bf2.tim iso/characters/bf/bf3.tim iso/characters/bf/bf4.tim iso/characters/bf/bf5.tim iso/characters/bf/bf6.tim iso/characters/bf/dead0.tim iso/characters/bf/dead1.tim iso/characters/bf/dead2.tim iso/characters/bf/retry.tim

@@ -92,6 +92,7 @@ void Events()
 {
 	Flash_tick();
 	Static_tick();
+	FollowCharCamera();
 	if (stage.stage_id == StageId_TooSlow)
 		Too_Slow();
 }

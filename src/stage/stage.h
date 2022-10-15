@@ -111,6 +111,7 @@ typedef struct
 	//Mus file
 	u8 music_track, music_channel;
 	const char credits[40];
+	boolean tim; const char timfile[12];
 	
 	StageId next_stage;
 	u8 next_load;
@@ -175,7 +176,6 @@ typedef struct
 	//Song settings
 	boolean instakill;
 	
-	
 	boolean expsync;
 	s32 mode;
 	
@@ -187,7 +187,7 @@ typedef struct
 	FontData font_cdr;
 	
 	//HUD textures
-	Gfx_Tex tex_hud0, tex_hud1, tex_note;
+	Gfx_Tex tex_hud0, tex_hud1, tex_note, tex_strscr;
 	
 	//Stage data
 	const StageDef *stage_def;
@@ -251,8 +251,10 @@ typedef struct
 		StageState_DeadLoad,   //Wait for said data to be read
 		StageState_DeadDrop,   //Mic drop
 		StageState_DeadRetry,  //Retry prompt
-		StageState_DeadDecide, //Decided
+		StageState_Continued,  //Continued (and laugh of course)
 	} state;
+	
+	u8 continflash;
 	
 	u8 note_swap;
 	
