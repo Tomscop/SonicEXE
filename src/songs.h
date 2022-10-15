@@ -233,7 +233,7 @@
 	},
 	{ //StageId_Round_A_Bout
 		//Characters
-		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_BFN_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_NMouse_New, FIXED_DEC(-95,1), FIXED_DEC(110,1)},
 		{Char_GF_New,    FIXED_DEC(0,1),   FIXED_DEC(-10,1)},
 		

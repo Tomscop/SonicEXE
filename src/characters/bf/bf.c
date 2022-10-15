@@ -108,20 +108,20 @@ static const CharFrame char_bf_frame[] = {
 	{BF_ArcMain_BF6, {  0, 108,  99, 108}, { 42, 101}}, //26 right miss 1
 	{BF_ArcMain_BF6, {100, 109, 101, 108}, { 43, 101}}, //27 right miss 2
 
-	{BF_ArcMain_Dead0, {  0,   0, 128, 128}, { 53,  98}}, //23 dead0 0
-	{BF_ArcMain_Dead0, {128,   0, 128, 128}, { 53,  98}}, //24 dead0 1
-	{BF_ArcMain_Dead0, {  0, 128, 128, 128}, { 53,  98}}, //25 dead0 2
-	{BF_ArcMain_Dead0, {128, 128, 128, 128}, { 53,  98}}, //26 dead0 3
+	{BF_ArcMain_Dead0, {  0,   0, 128, 128}, { 53,  98}}, //28 dead0 0
+	{BF_ArcMain_Dead0, {128,   0, 128, 128}, { 53,  98}}, //29 dead0 1
+	{BF_ArcMain_Dead0, {  0, 128, 128, 128}, { 53,  98}}, //30 dead0 2
+	{BF_ArcMain_Dead0, {128, 128, 128, 128}, { 53,  98}}, //31 dead0 3
 	
-	{BF_ArcDead_Dead1, {  0,   0, 128, 128}, { 53,  98}}, //27 dead1 0
-	{BF_ArcDead_Dead1, {128,   0, 128, 128}, { 53,  98}}, //28 dead1 1
-	{BF_ArcDead_Dead1, {  0, 128, 128, 128}, { 53,  98}}, //29 dead1 2
-	{BF_ArcDead_Dead1, {128, 128, 128, 128}, { 53,  98}}, //30 dead1 3
+	{BF_ArcDead_Dead1, {  0,   0, 128, 128}, { 53,  98}}, //32 dead1 0
+	{BF_ArcDead_Dead1, {128,   0, 128, 128}, { 53,  98}}, //33 dead1 1
+	{BF_ArcDead_Dead1, {  0, 128, 128, 128}, { 53,  98}}, //34 dead1 2
+	{BF_ArcDead_Dead1, {128, 128, 128, 128}, { 53,  98}}, //35 dead1 3
 	
-	{BF_ArcDead_Dead2, {  0,   0, 128, 128}, { 53,  98}}, //31 dead2 body twitch 0
-	{BF_ArcDead_Dead2, {128,   0, 128, 128}, { 53,  98}}, //32 dead2 body twitch 1
-	{BF_ArcDead_Dead2, {  0, 128, 128, 128}, { 53,  98}}, //33 dead2 balls twitch 0
-	{BF_ArcDead_Dead2, {128, 128, 128, 128}, { 53,  98}}, //34 dead2 balls twitch 1
+	{BF_ArcDead_Dead2, {  0,   0, 128, 128}, { 53,  98}}, //36 dead2 body twitch 0
+	{BF_ArcDead_Dead2, {128,   0, 128, 128}, { 53,  98}}, //37 dead2 body twitch 1
+	{BF_ArcDead_Dead2, {  0, 128, 128, 128}, { 53,  98}}, //38 dead2 balls twitch 0
+	{BF_ArcDead_Dead2, {128, 128, 128, 128}, { 53,  98}}, //39 dead2 balls twitch 1
 };
 
 static const Animation char_bf_anim[PlayerAnim_Max] = {

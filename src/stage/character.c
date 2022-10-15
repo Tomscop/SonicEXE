@@ -30,14 +30,14 @@ void Character_Init(Character *this, fixed_t x, fixed_t y)
 void Character_DrawParallax(Character *this, Gfx_Tex *tex, const CharFrame *cframe, fixed_t parallax)
 {
 	//Draw character
-	fixed_t x = this->x - FIXED_MUL(stage.camera.x, parallax) - FIXED_DEC(cframe->off[0],1);
-	fixed_t y = this->y - FIXED_MUL(stage.camera.y, parallax) - FIXED_DEC(cframe->off[1],1);
+	fixed_t x = this->x - FIXED_MUL(stage.camera.x, parallax) - FIXED_MUL(cframe->off[0] << FIXED_SHIFT, this->size);
+	fixed_t y = this->y - FIXED_MUL(stage.camera.y, parallax) -  FIXED_MUL(cframe->off[1] << FIXED_SHIFT, this->size);
 	
 	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
 	RECT_FIXED dst = {x, y, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
 	
-	dst.w = dst.w * FIXED_MUL(this->size,1);
-	dst.h = dst.h * FIXED_MUL(this->size,1);
+	dst.w = FIXED_MUL(dst.w, this->size);
+	dst.h = FIXED_MUL(dst.h, this->size);
 	
 	Stage_DrawTex(tex, &src, &dst, stage.camera.bzoom);
 }
