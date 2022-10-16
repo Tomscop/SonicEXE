@@ -12,6 +12,7 @@ SRCS = src/main.c \
 	   \
 	   src/characters/gf/gf.c \
        src/characters/gf/speaker.c \
+	   src/characters/gfn/gfn.c \
 	   \
 	   \
        src/characters/sonicexe/sonicexe.c \

@@ -235,7 +235,7 @@
 		//Characters
 		{Char_BFN_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{Char_NMouse_New, FIXED_DEC(-95,1), FIXED_DEC(110,1)},
-		{Char_GF_New,    FIXED_DEC(0,1),   FIXED_DEC(-10,1)},
+		{Char_GFN_New,    FIXED_DEC(0,1),   FIXED_DEC(-10,1)},
 		
 		//Stage background
 		Back_Trichael_New,

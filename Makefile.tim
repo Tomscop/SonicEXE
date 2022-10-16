@@ -20,6 +20,7 @@ all: \
 	iso/characters/gf/main.arc \
 	iso/characters/gf/tut.arc \
 	iso/characters/gf/speaker.tim \
+	iso/characters/gfn/main.arc \
 	\
 	iso/characters/sonicexe/main.arc \
 	iso/characters/ycn/main.arc \
@@ -59,9 +60,13 @@ iso/characters/starvedtails/main.arc: iso/characters/starvedtails/idle0.tim iso/
 
 # BF NMouse
 iso/characters/bfn/main.arc: iso/characters/bfn/bfn0.tim iso/characters/bfn/bfn1.tim iso/characters/bfn/bfn2.tim iso/characters/bfn/bfn3.tim iso/characters/bfn/bfn4.tim iso/characters/bfn/bfn5.tim iso/characters/bfn/bfn6.tim iso/characters/bfn/bfn7.tim iso/characters/bfn/bfn8.tim iso/characters/bfn/bfn9.tim iso/characters/bfn/bfn10.tim iso/characters/bfn/bfn11.tim iso/characters/bfn/bfn12.tim iso/characters/bfn/bfn13.tim iso/characters/bfn/bfn14.tim iso/characters/bfn/bfn15.tim iso/characters/bfn/dead0.tim iso/characters/bfn/dead1.tim iso/characters/bfn/dead2.tim iso/characters/bfn/retry.tim
+
 # GF
 iso/characters/gf/main.arc: iso/characters/gf/gf0.tim iso/characters/gf/gf1.tim iso/characters/gf/gf2.tim
 iso/characters/gf/tut.arc: iso/characters/gf/tut0.tim iso/characters/gf/tut1.tim
+
+# GF NMouse
+iso/characters/gfn/main.arc: iso/characters/gfn/gfn0.tim iso/characters/gfn/gfn1.tim iso/characters/gfn/gfn2.tim iso/characters/gfn/gfn3.tim iso/characters/gfn/gfn4.tim iso/characters/gfn/gfn5.tim
 
 # SonicEXE
 iso/characters/sonicexe/main.arc: iso/characters/sonicexe/idle0.tim iso/characters/sonicexe/idle1.tim iso/characters/sonicexe/idle2.tim iso/characters/sonicexe/left0.tim iso/characters/sonicexe/left1.tim iso/characters/sonicexe/down0.tim iso/characters/sonicexe/down1.tim iso/characters/sonicexe/down2.tim iso/characters/sonicexe/down3.tim iso/characters/sonicexe/up0.tim iso/characters/sonicexe/up1.tim iso/characters/sonicexe/up2.tim iso/characters/sonicexe/up3.tim iso/characters/sonicexe/right0.tim iso/characters/sonicexe/right1.tim iso/characters/sonicexe/laugh0.tim iso/characters/sonicexe/laugh1.tim
