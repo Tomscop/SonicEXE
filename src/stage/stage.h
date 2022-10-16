@@ -152,6 +152,7 @@ typedef struct
 	
 	boolean refresh_miss;
 	s32 miss;
+	u16 antispam;
 	
 	boolean refresh_accuracy;
 	s32 min_accuracy;

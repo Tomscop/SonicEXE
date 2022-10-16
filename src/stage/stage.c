@@ -247,7 +247,7 @@ static u8 Stage_HitNote(PlayerState *this, u8 type, fixed_t offset)
 	
 	//Restore vocals and health
 	Stage_StartVocal();
-	this->health += 800;
+	this->health += 800 - this->antispam;
 	this->refresh_accuracy = true;
 	this->max_accuracy += 3;
 	
@@ -376,6 +376,10 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 		this->score -= 1;
 		this->refresh_score = true;
 	}
+	else
+	{
+		this->antispam += 400;
+	}
 }
 
 static void Stage_SustainCheck(PlayerState *this, u8 type)
@@ -437,6 +441,11 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 			this->pad_press = 0;
 		}
 	}
+	
+	if (this->antispam > 0)
+		this->antispam -= 50;
+	
+	FntPrint("%d",this->antispam);
 	
 	if (stage.botplay == 1) {
 		//Do perfect note checks
