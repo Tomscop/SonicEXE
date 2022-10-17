@@ -75,6 +75,9 @@
 				<file name = "gftut.arc" type = "data" source = "iso/characters/gf/tut.arc"/>
 				<file name = "speaker.tim" type = "data" source = "iso/characters/gf/speaker.tim"/>
 				
+				<!-- Girlfriend NMouse assets -->
+				<file name = "gfn.arc" type = "data" source = "iso/characters/gfn/main.arc"/>
+				
 				<!-- SonicEXE assets -->
 				<file name = "sonicexe.arc" type = "data" source = "iso/characters/sonicexe/main.arc"/>
 				

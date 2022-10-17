@@ -73,6 +73,7 @@ static const u8 note_anims[4][3] = {
 #include "../characters/bfn/bfn.h"
 
 #include "../characters/gf/gf.h"
+#include "../characters/gfn/gfn.h"
 
 #include "../characters/sonicexe/sonicexe.h"
 #include "../characters/ycn/ycn.h"
@@ -295,9 +296,12 @@ static void Stage_MissNote(PlayerState *this, u8 type)
 	if (this->combo)
 	{
 		//Kill combo
-		if (stage.gf != NULL && this->combo > 5)
-			stage.gf->set_anim(stage.gf, CharAnim_DownAlt); //Cry if we lost a large combo
-		this->combo = 0;
+		if (stage.stage_id != StageId_Round_A_Bout)
+		{
+			if (stage.gf != NULL && this->combo > 5)
+				stage.gf->set_anim(stage.gf, CharAnim_DownAlt); //Cry if we lost a large combo
+			this->combo = 0;
+		}
 		
 		//Create combo object telling of our lost combo
 		Obj_Combo *combo = Obj_Combo_New(
