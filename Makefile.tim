@@ -28,6 +28,7 @@ all: \
 	iso/characters/ycn/main.arc \
 	iso/characters/lordx/main.arc \
 	iso/characters/nmouse/main.arc \
+	iso/characters/sarah/main.arc \
 	\
 	iso/stages/GH/back.arc \
 	iso/stages/YCR/back.arc \
@@ -86,6 +87,9 @@ iso/characters/sonic/main.arc: iso/characters/sonic/up.tim
 
 # Needlemouse
 iso/characters/nmouse/main.arc: iso/characters/nmouse/idle0.tim iso/characters/nmouse/idle1.tim iso/characters/nmouse/idle2.tim iso/characters/nmouse/idle3.tim iso/characters/nmouse/idle4.tim iso/characters/nmouse/idle5.tim iso/characters/nmouse/idle6.tim iso/characters/nmouse/idle7.tim iso/characters/nmouse/idle8.tim iso/characters/nmouse/idle9.tim iso/characters/nmouse/left0.tim iso/characters/nmouse/left1.tim iso/characters/nmouse/left2.tim iso/characters/nmouse/left3.tim iso/characters/nmouse/left4.tim iso/characters/nmouse/down0.tim iso/characters/nmouse/down1.tim iso/characters/nmouse/down2.tim iso/characters/nmouse/down3.tim iso/characters/nmouse/down4.tim iso/characters/nmouse/up0.tim iso/characters/nmouse/up1.tim iso/characters/nmouse/up2.tim iso/characters/nmouse/up3.tim iso/characters/nmouse/up4.tim iso/characters/nmouse/right0.tim iso/characters/nmouse/right1.tim iso/characters/nmouse/right2.tim iso/characters/nmouse/right3.tim iso/characters/nmouse/right4.tim
+
+# Sarah
+iso/characters/sarah/main.arc: iso/characters/sarah/idle0.tim iso/characters/sarah/idle1.tim iso/characters/sarah/idle2.tim iso/characters/sarah/idle3.tim iso/characters/sarah/idle4.tim iso/characters/sarah/idle5.tim iso/characters/sarah/idle6.tim iso/characters/sarah/idle7.tim iso/characters/sarah/idle8.tim iso/characters/sarah/idle9.tim iso/characters/sarah/left0.tim iso/characters/sarah/left1.tim iso/characters/sarah/left2.tim iso/characters/sarah/left3.tim iso/characters/sarah/left4.tim iso/characters/sarah/down0.tim iso/characters/sarah/down1.tim iso/characters/sarah/down2.tim iso/characters/sarah/down3.tim iso/characters/sarah/down4.tim iso/characters/sarah/up0.tim iso/characters/sarah/up1.tim iso/characters/sarah/up2.tim iso/characters/sarah/up3.tim iso/characters/sarah/up4.tim iso/characters/sarah/right0.tim iso/characters/sarah/right1.tim iso/characters/sarah/right2.tim iso/characters/sarah/right3.tim iso/characters/sarah/right4.tim
 
 # Stage1
 iso/stages/stage1/back.arc: iso/stages/stage1/back0.tim iso/stages/stage1/back1.tim
