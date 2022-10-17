@@ -9,6 +9,7 @@
 #include "../psx/pad.h"
 #include "../psx/archive.h"
 #include "../psx/mutil.h"
+#include "../psx/save.h"
 
 #include "../fonts/font.h"
 #include "../psx/trans.h"
@@ -222,8 +223,6 @@ void Menu_Tick(void)
 		{
 			menu.page = menu.next_page = MenuPage_Title;
 			menu.page_swap = true;
-			stage.splash = true;
-			stage.camerazoom = true;
 		}
 	//Fallthrough
 		case MenuPage_Title:
@@ -720,7 +719,8 @@ void Menu_Tick(void)
 				static const char *main_options[] = {
 					"CONTROLS",
 					"PREFERENCES",
-					"LOAD AND SAVE",
+					"MEMORY CARD",
+					"MOD OPTIONS",
 				};
 				
 				//Handle option and selection
@@ -757,6 +757,10 @@ void Menu_Tick(void)
 							menu.options = 1;
 							menu.select = 0;
 							break;
+						case 2:
+							menu.options = 2;
+							menu.select = 0;
+							break;
 					}
 				}
 				
@@ -786,7 +790,79 @@ void Menu_Tick(void)
 			
 			if (menu.options == 1)
 			{
-				static const char *gamemode_strs[] = {"NORMAL", "SWAP", "MULTIPLAYER"};
+				static const char *main_options[] = {
+					"NOTE COLORS",
+					"ADJUST COMBO",
+					"GRAPHICS",
+					"VISUALS AND UI",
+					"GAMEPLAY",
+				};
+				
+				//Handle option and selection
+				if (menu.next_page == menu.page && Trans_Idle())
+				{
+					//Change option
+					if (pad_state.press & PAD_UP)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select > 0)
+							menu.select--;
+						else
+							menu.select = COUNT_OF(main_options) - 1;
+					}
+					if (pad_state.press & PAD_DOWN)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select < COUNT_OF(main_options) - 1)
+							menu.select++;
+						else
+							menu.select = 0;
+					}
+				}
+				
+				//Select option if cross is pressed
+				if (pad_state.press & (PAD_START | PAD_CROSS))
+				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
+					switch (menu.select)
+					{
+						case 0:
+							break;
+						case 3:
+							menu.options = 13;
+							menu.select = 0;
+							break;
+						case 4:
+							menu.options = 14;
+							menu.select = 0;
+							break;
+					}
+				}
+				
+				if (pad_state.press & PAD_CIRCLE)
+				{
+					menu.options = 0;
+					menu.select = 1;
+					Audio_PlaySound(menu.sound[0], 0x3fff);
+				}
+				
+				//Draw options
+				for (u8 i = 0; i < COUNT_OF(main_options); i++)
+				{
+					//Draw text
+					char text[0x80];
+					sprintf(text, "%s", main_options[i]);
+					menu.font_bold.draw(&menu.font_bold,
+						Menu_LowerIf(text, menu.select != i),
+						SCREEN_WIDTH2,
+						SCREEN_HEIGHT2 + (i * 24) - (COUNT_OF(main_options) * 12),
+						FontAlign_Center
+					);
+				}
+			}
+			
+			if (menu.options == 13)
+			{
 				static const struct
 				{
 					enum
@@ -810,14 +886,12 @@ void Menu_Tick(void)
 						} spec_enum;
 					} spec;
 				} menu_options[] = {
-					{OptType_Enum,    "GAMEMODE", &stage.mode, {.spec_enum = {COUNT_OF(gamemode_strs), gamemode_strs}}},
-					{OptType_Scroll,  "SCROLL", &stage.downscroll, {.spec_boolean = {0}}},
-					{OptType_Boolean, "MIDDLESCROLL", &stage.middlescroll, {.spec_boolean = {0}}},
-					{OptType_Boolean, "GHOST TAP", &stage.ghost, {.spec_boolean = {0}}},
-					{OptType_Boolean, "NOTE SPLASHES", &stage.splash, {.spec_boolean = {0}}},
-					{OptType_Boolean, "FLASHING LIGHTS", &stage.flashing, {.spec_boolean = {0}}},
-					{OptType_Boolean, "CAMERA ZOOMS", &stage.camerazoom, {.spec_boolean = {0}}},
-					{OptType_Boolean, "BOTPLAY", &stage.botplay, {.spec_boolean = {0}}}
+					{OptType_Boolean, "NOTE SPLASHES", &stage.prefs.splash, {.spec_boolean = {0}}},
+					{OptType_Boolean, "HIDE HUD", &stage.prefs.hidehud, {.spec_boolean = {0}}},
+					{OptType_Boolean, "TIME BAR", &stage.prefs.timebar, {.spec_boolean = {0}}},
+					{OptType_Boolean, "FLASHING LIGHTS", &stage.prefs.flashing, {.spec_boolean = {0}}},
+					{OptType_Boolean, "CAMERA ZOOMS", &stage.prefs.camerazoom, {.spec_boolean = {0}}},
+					{OptType_Boolean, "COMBO STACKING", &stage.prefs.combostack, {.spec_boolean = {0}}}
 				};
 			
 				//Handle option and selection
@@ -876,8 +950,8 @@ void Menu_Tick(void)
 					//Return to main menu if circle is pressed
 					if (pad_state.press & PAD_CIRCLE)
 					{
-						menu.options = 0;
-						menu.select = 1;
+						menu.options = 1;
+						menu.select = 3;
 						Audio_PlaySound(menu.sound[0], 0x3fff);
 					}
 				}
@@ -903,6 +977,199 @@ void Menu_Tick(void)
 						Menu_LowerIf(text, menu.select != i),
 						SCREEN_WIDTH2,
 						SCREEN_HEIGHT2 + (i * 24) - (COUNT_OF(menu_options) * 12),
+						FontAlign_Center
+					);
+				}
+			}
+			
+			if (menu.options == 14)
+			{
+				static const char *gamemode_strs[] = {"NORMAL", "SWAP", "MULTIPLAYER"};
+				static const struct
+				{
+					enum
+					{
+						OptType_Boolean,
+						OptType_Scroll,
+						OptType_Enum,
+					} type;
+					const char *text;
+					void *value;
+					union
+					{
+						struct
+						{
+							int a;
+						} spec_boolean;
+						struct
+						{
+							s32 max;
+							const char **strs;
+						} spec_enum;
+					} spec;
+				} menu_options[] = {
+					{OptType_Enum,    "GAMEMODE", &stage.prefs.mode, {.spec_enum = {COUNT_OF(gamemode_strs), gamemode_strs}}},
+					{OptType_Scroll,  "SCROLL", &stage.prefs.downscroll, {.spec_boolean = {0}}},
+					{OptType_Boolean, "MIDDLESCROLL", &stage.prefs.middlescroll, {.spec_boolean = {0}}},
+					{OptType_Boolean, "GHOST TAP", &stage.prefs.ghost, {.spec_boolean = {0}}},
+					{OptType_Boolean, "BOTPLAY", &stage.prefs.botplay, {.spec_boolean = {0}}}
+				};
+			
+				//Handle option and selection
+				if (menu.next_page == menu.page && Trans_Idle())
+				{
+					//Change option
+					if (pad_state.press & PAD_UP)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select > 0)
+							menu.select--;
+						else
+							menu.select = COUNT_OF(menu_options) - 1;
+					}
+					if (pad_state.press & PAD_DOWN)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select < COUNT_OF(menu_options) - 1)
+							menu.select++;
+						else
+							menu.select = 0;
+					}
+					
+					//Handle option changing
+					switch (menu_options[menu.select].type)
+					{
+						case OptType_Boolean:
+							if (pad_state.press & (PAD_CROSS | PAD_LEFT | PAD_RIGHT))
+							{
+								Audio_PlaySound(menu.sound[0], 0x3fff);
+								*((boolean*)menu_options[menu.select].value) ^= 1;
+							}
+							break;
+						case OptType_Enum:
+							if (pad_state.press & PAD_LEFT)
+							{
+								Audio_PlaySound(menu.sound[0], 0x3fff);
+								if (--*((s32*)menu_options[menu.select].value) < 0)
+									*((s32*)menu_options[menu.select].value) = menu_options[menu.select].spec.spec_enum.max - 1;
+							}
+							if (pad_state.press & PAD_RIGHT)
+							{
+								Audio_PlaySound(menu.sound[0], 0x3fff);
+								if (++*((s32*)menu_options[menu.select].value) >= menu_options[menu.select].spec.spec_enum.max)
+									*((s32*)menu_options[menu.select].value) = 0;
+							}
+							break;
+						case OptType_Scroll:
+							if (pad_state.press & (PAD_CROSS | PAD_LEFT | PAD_RIGHT))
+							{
+								Audio_PlaySound(menu.sound[0], 0x3fff);
+								*((boolean*)menu_options[menu.select].value) ^= 1;
+							}
+							break;
+					}
+					//Return to main menu if circle is pressed
+					if (pad_state.press & PAD_CIRCLE)
+					{
+						menu.options = 1;
+						menu.select = 4;
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+					}
+				}
+				
+				//Draw options
+				for (u8 i = 0; i < COUNT_OF(menu_options); i++)
+				{
+					//Draw text
+					char text[0x80];
+					switch (menu_options[i].type)
+					{
+						case OptType_Boolean:
+							sprintf(text, "%s %s", menu_options[i].text, *((boolean*)menu_options[i].value) ? "ON" : "OFF");
+							break;
+						case OptType_Scroll:
+							sprintf(text, "%s %s", menu_options[i].text, *((boolean*)menu_options[i].value) ? "DOWN" : "UP");
+							break;
+						case OptType_Enum:
+							sprintf(text, "%s %s", menu_options[i].text, menu_options[i].spec.spec_enum.strs[*((s32*)menu_options[i].value)]);
+							break;
+					}
+					menu.font_bold.draw(&menu.font_bold,
+						Menu_LowerIf(text, menu.select != i),
+						SCREEN_WIDTH2,
+						SCREEN_HEIGHT2 + (i * 24) - (COUNT_OF(menu_options) * 12),
+						FontAlign_Center
+					);
+				}
+			}
+			
+			if (menu.options == 2)
+			{
+				static const char *main_options[] = {
+					"CARD LOAD",
+					"CARD SAVE",
+					"RESET ALL DEFAULT"
+				};
+				
+				//Handle option and selection
+				if (menu.next_page == menu.page && Trans_Idle())
+				{
+					//Change option
+					if (pad_state.press & PAD_UP)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select > 0)
+							menu.select--;
+						else
+							menu.select = COUNT_OF(main_options) - 1;
+					}
+					if (pad_state.press & PAD_DOWN)
+					{
+						Audio_PlaySound(menu.sound[0], 0x3fff);
+						if (menu.select < COUNT_OF(main_options) - 1)
+							menu.select++;
+						else
+							menu.select = 0;
+					}
+				}
+				
+				//Select option if cross is pressed
+				if (pad_state.press & (PAD_START | PAD_CROSS))
+				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
+					switch (menu.select)
+					{
+						case 0:
+							break;
+						case 1:
+							writeSaveFile();
+							Audio_PlaySound(menu.sound[1], 0x3fff);
+							break;
+						case 2:
+							defaultSettings();
+							writeSaveFile();
+							Audio_PlaySound(menu.sound[1], 0x3fff);
+							break;
+					}
+				}
+				
+				if (pad_state.press & PAD_CIRCLE)
+				{
+					menu.options = 0;
+					menu.select = 2;
+					Audio_PlaySound(menu.sound[0], 0x3fff);
+				}
+				
+				//Draw options
+				for (u8 i = 0; i < COUNT_OF(main_options); i++)
+				{
+					//Draw text
+					char text[0x80];
+					sprintf(text, "%s", main_options[i]);
+					menu.font_bold.draw(&menu.font_bold,
+						Menu_LowerIf(text, menu.select != i),
+						SCREEN_WIDTH2,
+						SCREEN_HEIGHT2 + (i * 24) - (COUNT_OF(main_options) * 12),
 						FontAlign_Center
 					);
 				}

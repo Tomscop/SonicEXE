@@ -1,4 +1,4 @@
 make -f Makefile.tools
-make -f Makefile.assets -j6
+make -f Makefile.assets -j8
 make
 mkpsxiso -y funkin.xml

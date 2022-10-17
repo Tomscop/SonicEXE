@@ -170,15 +170,20 @@ typedef struct
 
 typedef struct
 {
-	//Stage settings
-	boolean downscroll, middlescroll, ghost, splash;
-	boolean flashing, camerazoom, botplay;
+	struct
+	{
+		//Visuals & UI settings
+		boolean splash, hidehud, timebar, flashing, camerazoom, combostack;
+		
+		//Gameplay settings
+		s32 mode;
+		boolean downscroll, middlescroll, ghost, botplay;
+	} prefs;
 	
 	//Song settings
 	boolean instakill;
 	
 	boolean expsync;
-	s32 mode;
 	
 	u32 offset;
 	
@@ -255,7 +260,7 @@ typedef struct
 		StageState_Continued,  //Continued (and laugh of course)
 	} state;
 	
-	u8 continflash;
+
 	
 	u8 note_swap;
 	
@@ -263,9 +268,9 @@ typedef struct
 	ObjectList objlist_splash, objlist_fg, objlist_bg;
 	
 	//Animations
-	fixed_t iconangle;
-	boolean iconanim;
-	boolean iconact;
+	u8 continflash;
+	u16 startscreen;
+	
 } Stage;
 
 extern Stage stage;

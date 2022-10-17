@@ -130,7 +130,7 @@ Obj_Combo *Obj_Combo_New(fixed_t x, fixed_t y, u8 hit_type, u16 combo)
 	//if (stage.stage_id >= StageId_6_1 && stage.stage_id <= StageId_6_3)
 	//Regular combo
 	this->obj.tick = Obj_Combo_Tick;
-	if ((x >= 0) ^ (stage.mode < StageMode_2P))
+	if ((x >= 0) ^ (stage.prefs.mode < StageMode_2P))
 		this->x = FIXED_DEC(-112,1) - FIXED_DEC(SCREEN_WIDEADD,4);
 	else
 		this->x = FIXED_DEC(30,1) + FIXED_DEC(SCREEN_WIDEADD,4);
