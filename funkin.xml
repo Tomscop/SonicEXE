@@ -86,6 +86,9 @@
 				
 				<!-- Needlemouse assets -->
 				<file name = "nmouse.arc" type = "data" source = "iso/characters/nmouse/main.arc"/>
+				
+				<!-- Sanic assets -->
+				<file name = "sanic.arc" type = "data" source = "iso/characters/sanic/main.arc"/>
 			</dir>
 			
 			<!-- Songs -->
