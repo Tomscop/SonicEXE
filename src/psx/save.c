@@ -63,6 +63,7 @@ void defaultSettings()
 	stage.prefs.downscroll = false;
 	stage.prefs.middlescroll = false;
 	stage.prefs.ghost = false;
+	stage.prefs.vibrate = false;
 	stage.prefs.botplay = false;
 }
 

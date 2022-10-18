@@ -91,6 +91,8 @@ int main(int argc, char **argv)
 			#endif
 		#endif
 		
+		FntPrint("%d",pad_state.held);
+		
 		//Tick and draw game
 		switch (gameloop)
 		{

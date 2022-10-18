@@ -179,7 +179,7 @@ typedef struct
 		
 		//Gameplay settings
 		s32 mode;
-		boolean downscroll, middlescroll, ghost, botplay;
+		boolean downscroll, middlescroll, ghost, vibrate, botplay;
 	} prefs;
 	
 	//Song settings

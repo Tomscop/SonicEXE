@@ -752,6 +752,8 @@ void Menu_Tick(void)
 					switch (menu.select)
 					{
 						case 0:
+							menu.options = 9;
+							menu.select = 0;
 							break;
 						case 1:
 							menu.options = 1;
@@ -786,6 +788,13 @@ void Menu_Tick(void)
 						FontAlign_Center
 					);
 				}
+			}
+			
+			if (menu.options == 9)
+			{
+				RECT keys_src = {  0, 197, 173, 28};
+			
+				Gfx_BlitTex(&menu.tex_menu, &keys_src, SCREEN_WIDTH2 - keys_src.w / 2, 20);
 			}
 			
 			if (menu.options == 1)
@@ -1012,6 +1021,7 @@ void Menu_Tick(void)
 					{OptType_Scroll,  "SCROLL", &stage.prefs.downscroll, {.spec_boolean = {0}}},
 					{OptType_Boolean, "MIDDLESCROLL", &stage.prefs.middlescroll, {.spec_boolean = {0}}},
 					{OptType_Boolean, "GHOST TAP", &stage.prefs.ghost, {.spec_boolean = {0}}},
+					{OptType_Boolean, "VIBRATION", &stage.prefs.vibrate, {.spec_boolean = {0}}},
 					{OptType_Boolean, "BOTPLAY", &stage.prefs.botplay, {.spec_boolean = {0}}}
 				};
 			
