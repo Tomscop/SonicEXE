@@ -90,6 +90,9 @@
 				<!-- Needlemouse assets -->
 				<file name = "nmouse.arc" type = "data" source = "iso/characters/nmouse/main.arc"/>
 				
+				<!-- Sarah assets -->
+				<file name = "sarah.arc" type = "data" source = "iso/characters/sarah/main.arc"/>
+				
 				<!-- Sanic assets -->
 				<file name = "sanic.arc" type = "data" source = "iso/characters/sanic/main.arc"/>
 			</dir>

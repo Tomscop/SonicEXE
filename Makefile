@@ -19,6 +19,7 @@ SRCS = src/main.c \
        src/characters/ycn/ycn.c \
        src/characters/lordx/lordx.c \
        src/characters/nmouse/nmouse.c \
+	   src/characters/sarah/sarah.c \
        src/characters/sanic/sanic.c \
 	   \
 	   \
@@ -57,6 +58,7 @@ SRCS = src/main.c \
        src/psx/pad.c \
        src/psx/timer.c \
        src/psx/movie.c \
+       src/psx/save.c \
        mips/common/crt0/crt0.s
 
 CPPFLAGS += -Wall -Wextra -pedantic -mno-check-zero-division
@@ -65,7 +67,7 @@ LDFLAGS += -Wl,--start-group
 LDFLAGS += -lapi
 #LDFLAGS += -lc
 LDFLAGS += -lc2
-#LDFLAGS += -lcard
+LDFLAGS += -lcard
 LDFLAGS += -lcd
 #LDFLAGS += -lcomb
 LDFLAGS += -lds
@@ -76,7 +78,7 @@ LDFLAGS += -lgpu
 #LDFLAGS += -lgun
 #LDFLAGS += -lhmd
 #LDFLAGS += -lmath
-#LDFLAGS += -lmcrd
+LDFLAGS += -lmcrd
 #LDFLAGS += -lmcx
 LDFLAGS += -lpad
 LDFLAGS += -lpress

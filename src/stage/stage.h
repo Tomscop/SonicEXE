@@ -22,10 +22,12 @@
 #define STAGE_FLAG_SCORE_REFRESH (1 << 2) //Score text should be refreshed
 
 #define STAGE_LOAD_PLAYER     (1 << 0) //Reload player character
+#define STAGE_LOAD_PLAYER2    (1 << 1) //Reload 2nd player character
 #define STAGE_LOAD_OPPONENT   (1 << 1) //Reload opponent character
-#define STAGE_LOAD_GIRLFRIEND (1 << 2) //Reload girlfriend character
-#define STAGE_LOAD_STAGE      (1 << 3) //Reload stage
-#define STAGE_LOAD_FLAG       (1 << 7)
+#define STAGE_LOAD_OPPONENT2  (1 << 2) //Reload 2nd opponent character
+#define STAGE_LOAD_GIRLFRIEND (1 << 3) //Reload girlfriend character
+#define STAGE_LOAD_STAGE      (1 << 4) //Reload stage
+#define STAGE_LOAD_FLAG       (1 << 5)
 
 //Stage enums
 typedef enum
@@ -99,7 +101,7 @@ typedef struct
 	{
 		Character* (*new)();
 		fixed_t x, y;
-	} pchar, ochar, gchar;
+	} pchar, pchar2, ochar, ochar2, gchar;
 	
 	//Stage background
 	StageBack* (*back)();
@@ -170,15 +172,20 @@ typedef struct
 
 typedef struct
 {
-	//Stage settings
-	boolean downscroll, middlescroll, ghost, splash;
-	boolean flashing, camerazoom, botplay;
+	struct
+	{
+		//Visuals & UI settings
+		boolean splash, hidehud, timebar, flashing, camerazoom, combostack;
+		
+		//Gameplay settings
+		s32 mode;
+		boolean downscroll, middlescroll, ghost, botplay;
+	} prefs;
 	
 	//Song settings
 	boolean instakill;
 	
 	boolean expsync;
-	s32 mode;
 	
 	u32 offset;
 	
@@ -222,7 +229,9 @@ typedef struct
 	StageBack *back;
 	
 	Character *player;
+	Character *player2;
 	Character *opponent;
+	Character *opponent2;
 	Character *gf;
 	
 	boolean hidegf;
@@ -240,6 +249,9 @@ typedef struct
 	
 	s16 song_step;
 	
+	char* player2sing;
+	char* oppo2sing;
+	
 	u8 gf_speed; //Typically 4 steps, changes in Fresh
 	
 	PlayerState player_state[2];
@@ -255,7 +267,7 @@ typedef struct
 		StageState_Continued,  //Continued (and laugh of course)
 	} state;
 	
-	u8 continflash;
+
 	
 	u8 note_swap;
 	
@@ -263,9 +275,9 @@ typedef struct
 	ObjectList objlist_splash, objlist_fg, objlist_bg;
 	
 	//Animations
-	fixed_t iconangle;
-	boolean iconanim;
-	boolean iconact;
+	u8 continflash;
+	u16 startscreen;
+	
 } Stage;
 
 extern Stage stage;
