@@ -3,7 +3,9 @@
 	{ //StageId_TooSlow
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
@@ -20,7 +22,9 @@
 	{ //StageId_YouCantRun
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_YCN_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
@@ -37,7 +41,9 @@
 	{ //StageId_TripleTrouble
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
@@ -57,7 +63,9 @@
 	{ //StageId_TooSlowEncore
 		//Characters
 		{Char_BFE_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
@@ -77,7 +85,9 @@
 	{ //StageId_Endless
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
@@ -94,7 +104,9 @@
 	{ //StageId_EndlessOG
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
@@ -112,7 +124,9 @@
 	{ //StageId_Cycles
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_LordX_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
@@ -129,7 +143,9 @@
 	{ //StageId_Execution
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_LordX_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
@@ -147,7 +163,9 @@
 	{ //StageId_Sunshine
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
@@ -164,7 +182,9 @@
 	{ //StageId_Soulless
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
@@ -182,7 +202,9 @@
 	{ //StageId_Chaos
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
@@ -200,7 +222,9 @@
 	{ //StageId_Prey
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
@@ -217,7 +241,9 @@
 	{ //StageId_Fight_Or_Flight
 		//Characters
 		{Char_stails_New,    FIXED_DEC(0,1),  FIXED_DEC(0,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
 		//Stage background
@@ -234,7 +260,9 @@
 	{ //StageId_Round_A_Bout
 		//Characters
 		{Char_BFN_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_NMouse_New, FIXED_DEC(-95,1), FIXED_DEC(110,1)},
+		{Char_Sarah_New,     FIXED_DEC(-95,1),  FIXED_DEC(90,1)},
 		{Char_GFN_New,    FIXED_DEC(0,1),   FIXED_DEC(-10,1)},
 		
 		//Stage background
