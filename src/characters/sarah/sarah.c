@@ -52,22 +52,22 @@ typedef struct
 
 //Sarah character definitions
 static const CharFrame char_sarah_frame[] = {
-	{Sarah_ArcMain_Idle0, {  0,  0, 89,163}, { 63,163}}, //0 idle 1
-	{Sarah_ArcMain_Idle0, { 90,  0, 89,163}, { 63,163}}, //1 idle 2
-	{Sarah_ArcMain_Idle1, {  0,  0, 88,163}, { 63,163}}, //2 idle 3
-	{Sarah_ArcMain_Idle1, { 90,  0, 91,163}, { 63,163}}, //3 idle 4
-	{Sarah_ArcMain_Idle2, {  0,  0, 92,163}, { 63,163}}, //4 idle 5
-	{Sarah_ArcMain_Idle2, { 93,  0, 95,163}, { 63,163}}, //5 idle 6
-	{Sarah_ArcMain_Idle3, {  0,  0, 94,163}, { 63,163}}, //6 idle 7
-	{Sarah_ArcMain_Idle3, { 95,  0, 92,163}, { 63,163}}, //7 idle 8
-	{Sarah_ArcMain_Idle4, {  0,  0, 92,163}, { 63,163}}, //8 idle 9
-	{Sarah_ArcMain_Idle4, { 93,  0, 93,163}, { 63,163}}, //9 idle 10
+	{Sarah_ArcMain_Idle0, {  0,  0, 89,160}, { 63,163}}, //0 idle 1
+	{Sarah_ArcMain_Idle0, { 90,  0, 89,160}, { 63,163}}, //1 idle 2
+	{Sarah_ArcMain_Idle1, {  0,  0, 88,156}, { 63,163}}, //2 idle 3
+	{Sarah_ArcMain_Idle1, { 90,  0, 91,156}, { 63,163}}, //3 idle 4
+	{Sarah_ArcMain_Idle2, {  0,  0, 92,157}, { 63,163}}, //4 idle 5
+	{Sarah_ArcMain_Idle2, { 93,  0, 95,157}, { 63,163}}, //5 idle 6
+	{Sarah_ArcMain_Idle3, {  0,  0, 94,156}, { 63,163}}, //6 idle 7
+	{Sarah_ArcMain_Idle3, { 95,  0, 92,156}, { 63,163}}, //7 idle 8
+	{Sarah_ArcMain_Idle4, {  0,  0, 92,153}, { 63,163}}, //8 idle 9
+	{Sarah_ArcMain_Idle4, { 93,  0, 93,153}, { 63,163}}, //9 idle 10
 	
-	{Sarah_ArcMain_Left0, {  0,  0,167,163}, { 63,163}}, //10 left 1
-	{Sarah_ArcMain_Left1, {  0,  0,167,163}, { 63,163}}, //11 left 2
-	{Sarah_ArcMain_Left2, {  0,  0,167,163}, { 63,163}}, //12 left 3
-	{Sarah_ArcMain_Left3, {  0,  0,167,163}, { 63,163}}, //13 left 4
-	{Sarah_ArcMain_Left4, {  0,  0,167,163}, { 63,163}}, //14 left 5
+	{Sarah_ArcMain_Left0, {  0,  0,148,121}, { 63,163}}, //10 left 1
+	{Sarah_ArcMain_Left1, {  0,  0,150,121}, { 63,163}}, //11 left 2
+	{Sarah_ArcMain_Left2, {  0,  0,143,122}, { 63,163}}, //12 left 3
+	{Sarah_ArcMain_Left3, {  0,  0,135,125}, { 63,163}}, //13 left 4
+	{Sarah_ArcMain_Left4, {  0,  0,137,125}, { 63,163}}, //14 left 5
 	
 	{Sarah_ArcMain_Down0, {  0,  0,167,178}, { 63,163}}, //15 down 1
 	{Sarah_ArcMain_Down1, {  0,  0,167,178}, { 63,163}}, //16 down 2
@@ -81,11 +81,11 @@ static const CharFrame char_sarah_frame[] = {
 	{Sarah_ArcMain_Up3, {  0,  0,167,178}, { 63,163}}, //23 up 4
 	{Sarah_ArcMain_Up4, {  0,  0,167,178}, { 63,163}}, //24 up 5
 	
-	{Sarah_ArcMain_Right0, {  0,  0,167,178}, { 63,163}}, //25 right 1
-	{Sarah_ArcMain_Right1, {  0,  0,167,178}, { 63,163}}, //26 right 2
-	{Sarah_ArcMain_Right2, {  0,  0,167,178}, { 63,163}}, //27 right 3
-	{Sarah_ArcMain_Right3, {  0,  0,167,178}, { 63,163}}, //28 right 4
-	{Sarah_ArcMain_Right4, {  0,  0,167,178}, { 63,163}}, //29 right 5
+	{Sarah_ArcMain_Right0, {  0,  0,123,118}, { 63,163}}, //25 right 1
+	{Sarah_ArcMain_Right1, {  0,  0,121,118}, { 63,163}}, //26 right 2
+	{Sarah_ArcMain_Right2, {  0,  0,129,125}, { 63,163}}, //27 right 3
+	{Sarah_ArcMain_Right3, {  0,  0,137,130}, { 63,163}}, //28 right 4
+	{Sarah_ArcMain_Right4, {  0,  0,136,130}, { 63,163}}, //29 right 5
 };
 
 static const Animation char_sarah_anim[CharAnim_Max] = {
