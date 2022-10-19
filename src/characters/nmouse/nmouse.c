@@ -176,7 +176,7 @@ Character *Char_NMouse_New(fixed_t x, fixed_t y)
 	this->character.focus_y = FIXED_DEC(-80,1);
 	this->character.focus_zoom = FIXED_DEC(1,1);
 	
-	this->character.size = FIXED_DEC(1,1);
+	this->character.size = FIXED_DEC(12,10);
 	
 	//Load art
 	this->arc_main = IO_Read("\\CHAR\\NMOUSE.ARC;1");

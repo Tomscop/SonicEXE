@@ -26,6 +26,7 @@ all: \
 	\
 	iso/characters/sonicexe/main.arc \
 	iso/characters/ycn/main.arc \
+	iso/characters/majinog/main.arc \
 	iso/characters/lordx/main.arc \
 	iso/characters/nmouse/main.arc \
 	iso/characters/sarah/main.arc \
@@ -78,6 +79,9 @@ iso/characters/sonicexe/main.arc: iso/characters/sonicexe/idle0.tim iso/characte
 
 # You Can't Run
 iso/characters/ycn/main.arc: iso/characters/ycn/idle0.tim iso/characters/ycn/idle1.tim iso/characters/ycn/left0.tim iso/characters/ycn/left1.tim iso/characters/ycn/left2.tim iso/characters/ycn/down0.tim iso/characters/ycn/down1.tim iso/characters/ycn/down2.tim iso/characters/ycn/up0.tim iso/characters/ycn/up1.tim iso/characters/ycn/up2.tim iso/characters/ycn/right0.tim iso/characters/ycn/right1.tim iso/characters/ycn/right2.tim iso/characters/ycn/midle0.tim iso/characters/ycn/midle1.tim iso/characters/ycn/mleft0.tim iso/characters/ycn/mleft1.tim iso/characters/ycn/mleft2.tim iso/characters/ycn/mdown0.tim iso/characters/ycn/mdown1.tim iso/characters/ycn/mdown2.tim iso/characters/ycn/mup0.tim iso/characters/ycn/mup1.tim iso/characters/ycn/mup2.tim iso/characters/ycn/mright0.tim iso/characters/ycn/mright1.tim iso/characters/ycn/mright2.tim iso/characters/ycn/laugh0.tim iso/characters/ycn/laugh1.tim iso/characters/ycn/laugh2.tim iso/characters/ycn/scream0.tim iso/characters/ycn/scream1.tim iso/characters/ycn/scream2.tim iso/characters/ycn/scream3.tim iso/characters/ycn/justdie0.tim iso/characters/ycn/justdie1.tim iso/characters/ycn/justdie2.tim iso/characters/ycn/justdie3.tim iso/characters/ycn/justdie4.tim iso/characters/ycn/justdie5.tim iso/characters/ycn/pixel.tim 
+
+# Majin OG
+iso/characters/majinog/main.arc: iso/characters/majinog/idle0.tim iso/characters/majinog/idle1.tim iso/characters/majinog/idle2.tim iso/characters/majinog/idle3.tim iso/characters/majinog/idle4.tim iso/characters/majinog/idle5.tim iso/characters/majinog/left0.tim iso/characters/majinog/left1.tim iso/characters/majinog/left2.tim iso/characters/majinog/left3.tim iso/characters/majinog/left4.tim iso/characters/majinog/down0.tim iso/characters/majinog/down1.tim iso/characters/majinog/down2.tim iso/characters/majinog/down3.tim iso/characters/majinog/down4.tim iso/characters/majinog/up0.tim iso/characters/majinog/up1.tim iso/characters/majinog/up2.tim iso/characters/majinog/up3.tim iso/characters/majinog/up4.tim iso/characters/majinog/right0.tim iso/characters/majinog/right1.tim iso/characters/majinog/right2.tim iso/characters/majinog/right3.tim iso/characters/majinog/right4.tim
 
 # Lord X
 iso/characters/lordx/main.arc: iso/characters/lordx/idle0.tim iso/characters/lordx/idle1.tim iso/characters/lordx/idle2.tim iso/characters/lordx/idle3.tim iso/characters/lordx/idle4.tim iso/characters/lordx/idle5.tim iso/characters/lordx/left0.tim iso/characters/lordx/left1.tim iso/characters/lordx/left2.tim iso/characters/lordx/left3.tim iso/characters/lordx/down0.tim iso/characters/lordx/down1.tim iso/characters/lordx/down2.tim iso/characters/lordx/down3.tim iso/characters/lordx/up0.tim iso/characters/lordx/up1.tim iso/characters/lordx/up2.tim iso/characters/lordx/up3.tim iso/characters/lordx/right0.tim iso/characters/lordx/right1.tim iso/characters/lordx/right2.tim iso/characters/lordx/right3.tim 
