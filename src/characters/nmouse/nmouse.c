@@ -182,40 +182,40 @@ Character *Char_NMouse_New(fixed_t x, fixed_t y)
 	this->arc_main = IO_Read("\\CHAR\\NMOUSE.ARC;1");
 	
 	const char **pathp = (const char *[]){
-		"idle0.tim",
-		"idle1.tim",
-		"idle2.tim",
-		"idle3.tim",
-		"idle4.tim",
-		"idle5.tim",
-		"idle6.tim",
-		"idle7.tim",
-		"idle8.tim",
-		"idle9.tim",
+		"idle0.tim", //NMouse_ArcMain_Idle0
+		"idle1.tim", //NMouse_ArcMain_Idle1
+		"idle2.tim", //NMouse_ArcMain_Idle2
+		"idle3.tim", //NMouse_ArcMain_Idle3
+		"idle4.tim", //NMouse_ArcMain_Idle4
+		"idle5.tim", //NMouse_ArcMain_Idle5
+		"idle6.tim", //NMouse_ArcMain_Idle6
+		"idle7.tim", //NMouse_ArcMain_Idle7
+		"idle8.tim", //NMouse_ArcMain_Idle8
+		"idle9.tim", //NMouse_ArcMain_Idle9
 		
-		"left0.tim",
-		"left1.tim",
-		"left2.tim",
-		"left3.tim",
-		"left4.tim",
+		"left0.tim", //NMouse_ArcMain_Left0
+		"left1.tim", //NMouse_ArcMain_Left1
+		"left2.tim", //NMouse_ArcMain_Left2
+		"left3.tim", //NMouse_ArcMain_Left3
+		"left4.tim", //NMouse_ArcMain_Left4
 		
-		"down0.tim",
-		"down1.tim",
-		"down2.tim",
-		"down3.tim",
-		"down4.tim",
+		"down0.tim", //NMouse_ArcMain_Down0
+		"down1.tim", //NMouse_ArcMain_Down1
+		"down2.tim", //NMouse_ArcMain_Down2
+		"down3.tim", //NMouse_ArcMain_Down3
+		"down4.tim", //NMouse_ArcMain_Down4
 		
-		"up0.tim",
-		"up1.tim",
-		"up2.tim",
-		"up3.tim",
-		"up4.tim",
+		"up0.tim", //NMouse_ArcMain_Up0
+		"up1.tim", //NMouse_ArcMain_Up1
+		"up2.tim", //NMouse_ArcMain_Up2
+		"up3.tim", //NMouse_ArcMain_Up3
+		"up4.tim", //NMouse_ArcMain_Up4
 		
-		"right0.tim",
-		"right1.tim",
-		"right2.tim",
-		"right3.tim",
-		"right4.tim",
+		"right0.tim", //NMouse_ArcMain_Right0
+		"right1.tim", //NMouse_ArcMain_Right1
+		"right2.tim", //NMouse_ArcMain_Right2
+		"right3.tim", //NMouse_ArcMain_Right3
+		"right4.tim", //NMouse_ArcMain_Right4
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

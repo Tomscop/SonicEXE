@@ -177,35 +177,35 @@ Character *Char_Sarah_New(fixed_t x, fixed_t y)
 	this->arc_main = IO_Read("\\CHAR\\SARAH.ARC;1");
 	
 	const char **pathp = (const char *[]){
-		"idle0.tim",
-		"idle1.tim",
-		"idle2.tim",
-		"idle3.tim",
-		"idle4.tim",
+		"idle0.tim", //Sarah_ArcMain_Idle0
+		"idle1.tim", //Sarah_ArcMain_Idle1
+		"idle2.tim", //Sarah_ArcMain_Idle2
+		"idle3.tim", //Sarah_ArcMain_Idle3
+		"idle4.tim", //Sarah_ArcMain_Idle4
 		
-		"left0.tim",
-		"left1.tim",
-		"left2.tim",
-		"left3.tim",
-		"left4.tim",
+		"left0.tim", //Sarah_ArcMain_Left0
+		"left1.tim", //Sarah_ArcMain_Left1
+		"left2.tim", //Sarah_ArcMain_Left2
+		"left3.tim", //Sarah_ArcMain_Left3
+		"left4.tim", //Sarah_ArcMain_Left4
 		
-		"down0.tim",
-		"down1.tim",
-		"down2.tim",
-		"down3.tim",
-		"down4.tim",
+		"down0.tim", //Sarah_ArcMain_Down0
+		"down1.tim", //Sarah_ArcMain_Down1
+		"down2.tim", //Sarah_ArcMain_Down2
+		"down3.tim", //Sarah_ArcMain_Down3
+		"down4.tim", //Sarah_ArcMain_Down4
 		
-		"up0.tim",
-		"up1.tim",
-		"up2.tim",
-		"up3.tim",
-		"up4.tim",
+		"up0.tim", //Sarah_ArcMain_Up0
+		"up1.tim", //Sarah_ArcMain_Up1
+		"up2.tim", //Sarah_ArcMain_Up2
+		"up3.tim", //Sarah_ArcMain_Up3
+		"up4.tim", //Sarah_ArcMain_Up4
 		
-		"right0.tim",
-		"right1.tim",
-		"right2.tim",
-		"right3.tim",
-		"right4.tim",
+		"right0.tim", //Sarah_ArcMain_Right0
+		"right1.tim", //Sarah_ArcMain_Right1
+		"right2.tim", //Sarah_ArcMain_Right2
+		"right3.tim", //Sarah_ArcMain_Right3
+		"right4.tim", //Sarah_ArcMain_Right4
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

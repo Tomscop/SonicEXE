@@ -17,6 +17,7 @@ SRCS = src/main.c \
 	   \
        src/characters/sonicexe/sonicexe.c \
        src/characters/ycn/ycn.c \
+       src/characters/majinog/majinog.c \
        src/characters/lordx/lordx.c \
        src/characters/nmouse/nmouse.c \
 	   src/characters/sarah/sarah.c \
