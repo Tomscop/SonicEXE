@@ -271,7 +271,7 @@
 		//Song info
 		99, 11,
 		XA_Round_A_Bout, 0,
-		"Round A Bout",
+		"Round-A-Bout",
 		false, "",
 		
 		StageId_Round_A_Bout, 0
@@ -309,7 +309,7 @@
 		//Song info
 		99, 13,
 		XA_TooFest, 0,
-		"TooFest",
+		"Too Fest",
 		false, "",
 		
 		StageId_TooFest, 0

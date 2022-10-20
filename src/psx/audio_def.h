@@ -50,7 +50,6 @@ static const char *xa_paths[] = {
 	"\\MUSIC\\TRIPLETRO.XA;1", //FL_TripleTrouble
 	
 	"\\MUSIC\\ENDLESS.XA;1", //FL_Endless
-	"\\MUSIC\\ENDLESSOG.XA;1", //FL_EndlessOG
 	
 	"\\MUSIC\\CYC-EXEC.XA;1", //FL_Cyc_Exec
 	

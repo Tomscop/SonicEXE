@@ -148,16 +148,16 @@
                 <file name = "99.10.cht" type = "data" source = "iso/songs/fight-or-flight/fight-or-flight.json.cht"/>
 				
 				<!-- Round a Bout -->
-                <file name = "99.12.cht" type = "data" source = "iso/songs/round-a-bout/round-a-bout.json.cht"/>
+                <file name = "99.11.cht" type = "data" source = "iso/songs/round-a-bout/round-a-bout.json.cht"/>
 				
 				<!-- Milk -->
-                <file name = "99.13.cht" type = "data" source = "iso/songs/milk/milk.json.cht"/>
+                <file name = "99.12.cht" type = "data" source = "iso/songs/milk/milk.json.cht"/>
 				
 				<!-- Too Fest -->
-				<file name = "99.14.cht" type = "data" source = "iso/songs/too-fest/too-fest.json.cht"/>
+				<file name = "99.13.cht" type = "data" source = "iso/songs/too-fest/too-fest.json.cht"/>
 				
 				<!-- Personel -->
-				<file name = "99.15.cht" type = "data" source = "iso/songs/personel/personel.json.cht"/>
+				<file name = "99.14.cht" type = "data" source = "iso/songs/personel/personel.json.cht"/>
 				
 			</dir>
 			
@@ -194,7 +194,7 @@
 				<file name = "milk.xa" type = "xa" source = "iso/songs/milk.xa"/>
 				<dummy sectors="128"/>
 				
-				<file name = "too-fest.xa" type = "xa" source = "iso/songs/too-fest.xa"/>
+				<file name = "toofest.xa" type = "xa" source = "iso/songs/toofest.xa"/>
 				<dummy sectors="128"/>
 				
 				<file name = "personel.xa" type = "xa" source = "iso/songs/personel.xa"/>

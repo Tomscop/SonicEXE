@@ -10,7 +10,7 @@ all: \
 	iso/songs/pry-fof.xa \
 	iso/songs/rab.xa \
 	iso/songs/milk.xa \
-	iso/songs/too-fest.xa \
+	iso/songs/toofest.xa \
 	iso/songs/personel.xa \
 
 iso/%.xa: iso/%.ogg
@@ -51,7 +51,7 @@ iso/songs/rab.xa: iso/songs/round-a-bout/Inst.xa iso/songs/round-a-bout/Merged.x
 iso/songs/milk.xa: iso/songs/milk/Inst.xa iso/songs/milk/Merged.xa
 
 # Too Fest
-iso/songs/too-fest.xa: iso/songs/too-fest/Inst.xa iso/songs/too-fest/Merged.xa
+iso/songs/toofest.xa: iso/songs/too-fest/Inst.xa iso/songs/too-fest/Merged.xa
 
 # Personel
 iso/songs/personel.xa: iso/songs/personel/Inst.xa iso/songs/personel/Merged.xa
