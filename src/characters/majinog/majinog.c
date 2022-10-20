@@ -86,7 +86,7 @@ static const CharFrame char_majinog_frame[] = {
 };
 
 static const Animation char_majinog_anim[CharAnim_Max] = {
-	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, ASCR_BACK, 1}}, //CharAnim_Idle
+	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
 	{2, (const u8[]){ 6, 7, 8, 9, 10, ASCR_BACK, 0}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
 	{2, (const u8[]){ 11, 12, 13, 14, 15, ASCR_BACK, 0}},         //CharAnim_Down

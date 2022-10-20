@@ -57,6 +57,12 @@ typedef enum
 	
 	StageId_Round_A_Bout,
 	
+	StageId_Milk,
+	
+	StageId_TooFest,
+	
+	StageId_Personel,
+	
 	StageId_Max
 } StageId;
 

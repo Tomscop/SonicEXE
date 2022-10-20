@@ -608,7 +608,6 @@ void Menu_Tick(void)
 				{StageId_EndlessOG, 0xFF9271FD, "ENDLESS OG"},
 				
 				{StageId_Cycles, 0xFF9271FD, "CYCLES"},
-				{StageId_Execution, 0xFF9271FD, "EXECUTION"},
 				
 				{StageId_Sunshine, 0xFF9271FD, "SUNSHINE"},
 				{StageId_Soulless, 0xFF9271FD, "SOULLESS"},
@@ -618,7 +617,13 @@ void Menu_Tick(void)
 				{StageId_Prey, 0xFF9271FD, "PREY"},
 				{StageId_Fight_Or_Flight, 0xFF9271FD, "FIGHT OR FLIGHT"},
 				
-				{StageId_Round_A_Bout, 0xFF9271FD, "ROUND-A-BOUT"}
+				{StageId_Round_A_Bout, 0xFF9271FD, "ROUND-A-BOUT"},
+				
+				{StageId_Milk, 0xFF9271FD, "MILK"},
+				
+				{StageId_TooFest, 0xFF9271FD, "TOO FEST"},
+				
+				{StageId_Personel, 0xFF9271FD, "PERSONEL"},
 			};
 			
 			//Initialize page
@@ -1183,6 +1188,104 @@ void Menu_Tick(void)
 						FontAlign_Center
 					);
 				}
+			}
+			
+			//Draw background
+			RECT back_src = {0, 0, 256, 256};
+			RECT back_dst = {0, 0, 320, 240};
+			Gfx_DrawTex(&menu.tex_backopt, &back_src, &back_dst);
+			break;
+		}
+		case MenuPage_Extras:
+		{
+			static const struct
+			{
+				StageId stage;
+				u32 col;
+				const char *text;
+			} menu_options[] = {
+				{StageId_Execution, 0xFF9271FD, "EXECUTION"},
+			};
+			
+			//Initialize page
+			if (menu.page_swap)
+			{
+				menu.scroll = COUNT_OF(menu_options) * FIXED_DEC(24 + SCREEN_HEIGHT2,1);
+				menu.page_param.stage.diff = StageDiff_Normal;
+				menu.page_state.freeplay.back_r = FIXED_DEC(255,1);
+				menu.page_state.freeplay.back_g = FIXED_DEC(255,1);
+				menu.page_state.freeplay.back_b = FIXED_DEC(255,1);
+			}
+			
+			//Draw page label
+			menu.font_bold.draw(&menu.font_bold,
+				"EXTRAS",
+				16,
+				SCREEN_HEIGHT - 32,
+				FontAlign_Left
+			);
+			
+			//Handle option and selection
+			if (menu.next_page == menu.page && Trans_Idle())
+			{
+				//Change option
+				if (pad_state.press & PAD_UP)
+				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
+					if (menu.select > 0)
+						menu.select--;
+					else
+						menu.select = COUNT_OF(menu_options) - 1;
+				}
+				if (pad_state.press & PAD_DOWN)
+				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
+					if (menu.select < COUNT_OF(menu_options) - 1)
+						menu.select++;
+					else
+						menu.select = 0;
+				}
+				
+				//Select option if cross is pressed
+				if (pad_state.press & (PAD_START | PAD_CROSS))
+				{
+					Audio_PlaySound(menu.sound[1], 0x3fff);
+					menu.next_page = MenuPage_Stage;
+					menu.page_param.stage.id = menu_options[menu.select].stage;
+					menu.page_param.stage.story = false;
+					Trans_Start();
+				}
+				
+				//Return to main menu if circle is pressed
+				if (pad_state.press & PAD_CIRCLE)
+				{
+					Audio_PlaySound(menu.sound[0], 0x3fff);
+					menu.next_page = MenuPage_Main;
+					menu.next_select = 5; //Extras
+					Trans_Start();
+				}
+			}
+			
+			//Draw options
+			s32 next_scroll = menu.select * FIXED_DEC(24,1);
+			menu.scroll += (next_scroll - menu.scroll) >> 4;
+			
+			for (u8 i = 0; i < COUNT_OF(menu_options); i++)
+			{
+				//Get position on screen
+				s32 y = (i * 24) - 8 - (menu.scroll >> FIXED_SHIFT);
+				if (y <= -SCREEN_HEIGHT2 - 8)
+					continue;
+				if (y >= SCREEN_HEIGHT2 + 8)
+					break;
+				
+				//Draw text
+				menu.font_bold.draw(&menu.font_bold,
+					Menu_LowerIf(menu_options[i].text, menu.select != i),
+					48 + (y >> 2),
+					SCREEN_HEIGHT2 + y - 8,
+					FontAlign_Left
+				);
 			}
 			
 			//Draw background

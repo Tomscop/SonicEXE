@@ -113,6 +113,7 @@
 				
 				
 				<!-- Story Mode Encore -->
+				
 				<!-- Too Slow -->
 				<file name = "2.1.cht" type = "data" source = "iso/songs/too-slow-encore/too-slow-encore.json.cht"/>
 				<!-- You Can't Run -->
@@ -127,8 +128,6 @@
 				<file name = "99.1.cht" type = "data" source = "iso/songs/endless/endless.json.cht"/>
 				<!-- Endless OG -->
 				<file name = "99.2.cht" type = "data" source = "iso/songs/endless-og/endless-og.json.cht"/>
-				<!-- Endless Encore -->
-				<file name = "99.3.cht" type = "data" source = "iso/songs/endless-encore/endless-encore.json.cht"/>
 				
 				<!-- Cycles -->
 				<file name = "99.4.cht" type = "data" source = "iso/songs/cycles/cycles.json.cht"/>
@@ -138,7 +137,7 @@
 				<!-- Sunshine -->
                 <file name = "99.6.cht" type = "data" source = "iso/songs/sunshine/sunshine.json.cht"/>
 				<!-- Soulless -->
-                
+                <file name = "99.7.cht" type = "data" source = "iso/songs/soulless/soulless.json.cht"/>
 				
 				<!-- Chaos -->
                 <file name = "99.8.cht" type = "data" source = "iso/songs/chaos/chaos.json.cht"/>
@@ -148,17 +147,14 @@
 				<!-- Fight or Flight -->
                 <file name = "99.10.cht" type = "data" source = "iso/songs/fight-or-flight/fight-or-flight.json.cht"/>
 				
-				<!-- Substantial -->
-                
-				
 				<!-- Round a Bout -->
                 <file name = "99.12.cht" type = "data" source = "iso/songs/round-a-bout/round-a-bout.json.cht"/>
 				
 				<!-- Milk -->
-                
+                <file name = "99.13.cht" type = "data" source = "iso/songs/milk/milk.json.cht"/>
 				
 				<!-- Too Fest -->
-				
+				<file name = "99.14.cht" type = "data" source = "iso/songs/too-fest/too-fest.json.cht"/>
 				
 				<!-- Personel -->
 				<file name = "99.15.cht" type = "data" source = "iso/songs/personel/personel.json.cht"/>
@@ -178,8 +174,6 @@
 				<dummy sectors="128"/>
 				
 				<file name = "endless.xa" type = "xa" source = "iso/songs/endless.xa"/>
-				<dummy sectors="128"/>
-				<file name = "endlessog.xa" type = "xa" source = "iso/songs/endlessog.xa"/>
 				<dummy sectors="128"/>
 				
 				<file name = "cyc-exec.xa" type = "xa" source = "iso/songs/cyc-exec.xa"/>

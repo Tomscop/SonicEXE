@@ -20,14 +20,13 @@ static const XA_TrackDef xa_tracks[] = {
 	{FL_TripleTrouble, XA_LENGTH(50710)}, //XA_TripleTrouble
 	//ENDLESS.XA
 	{FL_Endless, XA_LENGTH(16954)}, //XA_Endless
-	//ENDLESSOG.XA
-	{FL_EndlessOG, XA_LENGTH(17032)}, //XA_EndlessOG
+	{FL_Endless, XA_LENGTH(17032)}, //XA_EndlessOG
 	//CYC-EXEC.XA
 	{FL_Cyc_Exec, XA_LENGTH(15230)}, //XA_Cycles
 	{FL_Cyc_Exec, XA_LENGTH(12158)}, //XA_Execution
 	//SUN-SOUL.XA
 	{FL_Sun_Soul, XA_LENGTH(18342)}, //XA_Sunshine
-	{FL_Sun_Soul, XA_LENGTH(19800)}, //XA_Soulless
+	{FL_Sun_Soul, XA_LENGTH(4856)}, //XA_Soulless
 	//CHAOS.XA
 	{FL_Chaos, XA_LENGTH(15751)}, //XA_Chaos
 	//PRY-FOF.XA
@@ -35,6 +34,12 @@ static const XA_TrackDef xa_tracks[] = {
 	{FL_Pry_FOF, XA_LENGTH(21990)}, //XA_Fight_Or_Flight
 	//RAB.XA
 	{FL_RAB, XA_LENGTH(16401)}, //XA_Round_A_Bout
+	//MILK.XA
+	{FL_Milk, XA_LENGTH(15846)}, //XA_Milk
+	//TOOFEST.XA
+	{FL_TooFest, XA_LENGTH(13179)}, //XA_TooFest
+	//PERSONEL.XA
+	{FL_Personel, XA_LENGTH(16115)}, //XA_Personel
 };
 
 static const char *xa_paths[] = {
@@ -56,6 +61,12 @@ static const char *xa_paths[] = {
 	"\\MUSIC\\PRY-FOF.XA;1", //FL_Pry_FOF
 	
 	"\\MUSIC\\RAB.XA;1", //FL_RAB
+	
+	"\\MUSIC\\MILK.XA;1", //FL_Milk
+	
+	"\\MUSIC\\TOOFEST.XA;1", //FL_TooFest
+	
+	"\\MUSIC\\PERSONEL.XA;1", //FL_Personel
 	
 	NULL,
 };

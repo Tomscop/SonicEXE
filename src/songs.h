@@ -269,10 +269,67 @@
 		Back_Trichael_New,
 		
 		//Song info
-		99, 12,
+		99, 11,
 		XA_Round_A_Bout, 0,
 		"Round A Bout",
 		false, "",
 		
 		StageId_Round_A_Bout, 0
-	}
+	},
+	{ //StageId_Milk
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
+		
+		//Stage background
+		Back_GH_New,
+		
+		//Song info
+		99, 12,
+		XA_Milk, 0,
+		"Milk",
+		false, "",
+		
+		StageId_Milk, 0
+	},
+	{ //StageId_TooFest
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
+		
+		//Stage background
+		Back_GH_New,
+		
+		//Song info
+		99, 13,
+		XA_TooFest, 0,
+		"TooFest",
+		false, "",
+		
+		StageId_TooFest, 0
+	},
+	{ //StageId_Personel
+		//Characters
+		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
+		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
+		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
+		
+		//Stage background
+		Back_GH_New,
+		
+		//Song info
+		99, 14,
+		XA_Personel, 0,
+		"Personel",
+		false, "",
+		
+		StageId_Personel, 0
+	},

@@ -13,7 +13,6 @@ typedef enum
 	FL_TripleTrouble,
 	
 	FL_Endless,
-	FL_EndlessOG,
 	
 	FL_Cyc_Exec,
 	
@@ -24,6 +23,12 @@ typedef enum
 	FL_Pry_FOF,
 	
 	FL_RAB,
+	
+	FL_Milk,
+	
+	FL_TooFest,
+	
+	FL_Personel,
 	
 	XA_Max,
 } XA_File;
@@ -43,7 +48,6 @@ typedef enum
 	XA_TripleTrouble,
 	
 	XA_Endless,
-	
 	XA_EndlessOG,
 	
 	XA_Cycles,
@@ -58,6 +62,12 @@ typedef enum
 	XA_Fight_Or_Flight,
 	
 	XA_Round_A_Bout,
+	
+	XA_Milk,
+	
+	XA_TooFest,
+	
+	XA_Personel,
 	
 	XA_TrackMax,
 } XA_Track;
