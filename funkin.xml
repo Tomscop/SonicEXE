@@ -84,6 +84,9 @@
 				<!-- YCN assets -->
 				<file name = "ycn.arc" type = "data" source = "iso/characters/ycn/main.arc"/>
 				
+				<!-- Majin assets -->
+				<file name = "majin.arc" type = "data" source = "iso/characters/majin/main.arc"/>
+				
 				<!-- Majin OG assets -->
 				<file name = "majinog.arc" type = "data" source = "iso/characters/majinog/main.arc"/>
 				

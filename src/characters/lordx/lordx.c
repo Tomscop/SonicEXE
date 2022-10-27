@@ -14,18 +14,22 @@ enum
 	LordX_ArcMain_Idle3,
 	LordX_ArcMain_Idle4,
 	LordX_ArcMain_Idle5,
+	
 	LordX_ArcMain_Left0,
 	LordX_ArcMain_Left1,
 	LordX_ArcMain_Left2,
 	LordX_ArcMain_Left3,
+	
 	LordX_ArcMain_Down0,
 	LordX_ArcMain_Down1,
 	LordX_ArcMain_Down2,
 	LordX_ArcMain_Down3,
+	
 	LordX_ArcMain_Up0,
 	LordX_ArcMain_Up1,
 	LordX_ArcMain_Up2,
 	LordX_ArcMain_Up3,
+	
 	LordX_ArcMain_Right0,
 	LordX_ArcMain_Right1,
 	LordX_ArcMain_Right2,
@@ -49,32 +53,32 @@ typedef struct
 
 //LordX character definitions
 static const CharFrame char_lordx_frame[] = {
-	{LordX_ArcMain_Idle0, {  0,   0, 134, 168}, { 63, 163}}, //0
-	{LordX_ArcMain_Idle1, {  0,   0, 134, 168}, { 63, 163}}, //1
-	{LordX_ArcMain_Idle2, {  0,   0, 134, 168}, { 63, 163}}, //2
-	{LordX_ArcMain_Idle3, {  0,   0, 134, 168}, { 63, 163}}, //3
-	{LordX_ArcMain_Idle4, {  0,   0, 134, 168}, { 63, 163}}, //4
-	{LordX_ArcMain_Idle5, {  0,   0, 134, 168}, { 63, 163}}, //5
+	{LordX_ArcMain_Idle0,{0,0,142,165},{69,160}},
+	{LordX_ArcMain_Idle1,{0,0,140,168},{67,159}},
+	{LordX_ArcMain_Idle2,{0,0,134,168},{63,159}},
+	{LordX_ArcMain_Idle3,{0,0,134,164},{64,160}},
+	{LordX_ArcMain_Idle4,{0,0,142,164},{70,160}},
+	{LordX_ArcMain_Idle5,{0,0,142,164},{68,160}},
 	
-	{LordX_ArcMain_Left0, {  0,   0, 134, 168}, { 63, 163}}, //6
-	{LordX_ArcMain_Left1, {  0,   0, 134, 168}, { 63, 163}}, //7
-	{LordX_ArcMain_Left2, {  0,   0, 134, 168}, { 63, 163}}, //8
-	{LordX_ArcMain_Left3, {  0,   0, 134, 168}, { 63, 163}}, //9
+	{LordX_ArcMain_Left0,{0,0,162,170},{68,165}},
+	{LordX_ArcMain_Left1,{0,0,162,168},{74,163}},
+	{LordX_ArcMain_Left2,{0,0,160,168},{74,163}},
+	{LordX_ArcMain_Left3,{0,0,162,168},{74,163}},
 	
-	{LordX_ArcMain_Down0, {  0,   0, 134, 168}, { 63, 163}}, //10
-	{LordX_ArcMain_Down1, {  0,   0, 134, 168}, { 63, 163}}, //11
-	{LordX_ArcMain_Down2, {  0,   0, 134, 168}, { 63, 163}}, //12
-	{LordX_ArcMain_Down3, {  0,   0, 134, 168}, { 63, 163}}, //13
+	{LordX_ArcMain_Down0,{0,0,178,164},{88,159}},
+	{LordX_ArcMain_Down1,{0,0,172,160},{87,155}},
+	{LordX_ArcMain_Down2,{0,0,174,162},{88,157}},
+	{LordX_ArcMain_Down3,{0,0,174,162},{88,157}},
 	
-	{LordX_ArcMain_Up0, {  0,   0, 134, 168}, { 63, 163}}, //14
-	{LordX_ArcMain_Up1, {  0,   0, 134, 168}, { 63, 163}}, //15
-	{LordX_ArcMain_Up2, {  0,   0, 134, 168}, { 63, 163}}, //16
-	{LordX_ArcMain_Up3, {  0,   0, 134, 168}, { 63, 163}}, //17
+	{LordX_ArcMain_Up0,{0,0,154,188},{77,180}},
+	{LordX_ArcMain_Up1,{0,0,152,194},{73,188}},
+	{LordX_ArcMain_Up2,{0,0,154,192},{74,185}},
+	{LordX_ArcMain_Up3,{0,0,154,194},{74,187}},
 	
-	{LordX_ArcMain_Right0, {  0,   0, 134, 168}, { 63, 163}}, //18
-	{LordX_ArcMain_Right1, {  0,   0, 134, 168}, { 63, 163}}, //19
-	{LordX_ArcMain_Right2, {  0,   0, 134, 168}, { 63, 163}}, //20
-	{LordX_ArcMain_Right3, {  0,   0, 134, 168}, { 63, 163}}, //21
+	{LordX_ArcMain_Right0,{0,0,156,172},{60,166}},
+	{LordX_ArcMain_Right1,{0,0,166,172},{60,166}},
+	{LordX_ArcMain_Right2,{0,0,166,172},{60,166}},
+	{LordX_ArcMain_Right3,{0,0,166,172},{59,166}},
 };
 
 static const Animation char_lordx_anim[CharAnim_Max] = {

@@ -77,6 +77,7 @@ static const u8 note_anims[4][3] = {
 
 #include "../characters/sonicexe/sonicexe.h"
 #include "../characters/ycn/ycn.h"
+#include "../characters/majin/majin.h"
 #include "../characters/majinog/majinog.h"
 #include "../characters/lordx/lordx.h"
 #include "../characters/nmouse/nmouse.h"

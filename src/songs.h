@@ -86,7 +86,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
-		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
+		{Char_Majin_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		
