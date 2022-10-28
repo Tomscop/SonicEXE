@@ -536,7 +536,7 @@ void Stage_DrawTexCol(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixe
 	fixed_t hz = dst->h;
 	
 	#ifdef STAGE_NOHUD
-		if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1)
+		if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1 || tex == &stage.tex_hudmajin)
 			return;
 	#endif
 	
@@ -568,7 +568,7 @@ void Stage_DrawTexArb(Gfx_Tex *tex, const RECT *src, const POINT_FIXED *p0, cons
 {
 	//Don't draw if HUD and HUD is disabled
 	#ifdef STAGE_NOHUD
-		if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1)
+		if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1 || tex == &stage.tex_hudmajin)
 			return;
 	#endif
 	
@@ -585,7 +585,7 @@ void Stage_BlendTexArb(Gfx_Tex *tex, const RECT *src, const POINT_FIXED *p0, con
 {
 	//Don't draw if HUD and HUD is disabled
 	#ifdef STAGE_NOHUD
-		if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1)
+		if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1 || tex == &stage.tex_hudmajin)
 			return;
 	#endif
 	
@@ -882,7 +882,11 @@ static void Stage_DrawNotes(void)
 							note_dst.y = -note_dst.y;
 							note_dst.h = -note_dst.h;
 						}
-						Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+						
+                        if (stage.stage_id == StageId_Endless) //add steps later
+                            Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
+                        else
+				            Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 					}
 				}
 				else
@@ -906,7 +910,11 @@ static void Stage_DrawNotes(void)
 						
 						if (stage.prefs.downscroll)
 							note_dst.y = -note_dst.y - note_dst.h;
-						Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+						
+                        if (stage.stage_id == StageId_Endless) //add steps later
+                            Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
+                        else
+				            Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 					}
 				}
 			}
@@ -929,7 +937,11 @@ static void Stage_DrawNotes(void)
 				
 				if (stage.prefs.downscroll)
 					note_dst.y = -note_dst.y - note_dst.h;
-				Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+                
+                if (stage.stage_id == StageId_Endless) //add steps later
+                    Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
+                else
+				    Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				
 				//if (stage.stage_id == StageId_Clwn_4)
 				if (false)
@@ -943,7 +955,10 @@ static void Stage_DrawNotes(void)
 					note_dst.y -= FIXED_DEC(6,1);
 					note_dst.h >>= 2;
 					
-					Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+                    if (stage.stage_id == StageId_Endless) //add steps later
+                        Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
+                    else
+				        Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				}
 				else
 				{
@@ -962,7 +977,11 @@ static void Stage_DrawNotes(void)
 					{
 						note_dst.h = note_dst.h * 3 / 2;
 					}
-					Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+					
+                    if (stage.stage_id == StageId_Endless) //add steps later
+                        Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
+                    else
+				        Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				}
 			}
 			else if (note->type & NOTE_FLAG_STATIC)
@@ -1005,7 +1024,11 @@ static void Stage_DrawNotes(void)
 				
 				if (stage.prefs.downscroll)
 					note_dst.y = -note_dst.y - note_dst.h;
-				Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+				
+                if (stage.stage_id == StageId_Endless) //add steps later
+                    Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
+                else
+				    Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 			}
 		}
 	}
@@ -1240,6 +1263,8 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 
 	//Load HUD textures
 	Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0.TIM;1"), GFX_LOADTEX_FREE);
+    if (stage.stage_id == StageId_Endless)
+        Gfx_LoadTex(&stage.tex_hudmajin, IO_Read("\\STAGE\\HUDMAJIN.TIM;1"), GFX_LOADTEX_FREE);
 	Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1.TIM;1"), GFX_LOADTEX_FREE);
 	
 	//Load Special Notes
@@ -1530,7 +1555,10 @@ void Stage_Tick(void)
 				RECT bot_src = {140, 224, 67, 16};
 				RECT_FIXED bot_dst = {FIXED_DEC(-bot_src.w / 2,1), FIXED_DEC(-58,1), FIXED_DEC(bot_src.w,1), FIXED_DEC(bot_src.h,1)};
 
-				Stage_DrawTex(&stage.tex_hud0, &bot_src, &bot_dst, stage.bump);
+                if (stage.stage_id == StageId_Endless) //add steps later
+                    Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
+                else
+				    Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 			}
 			
 			//Clear per-frame flags
@@ -1846,7 +1874,10 @@ void Stage_Tick(void)
 					note_dst.y = -note_dst.y - note_dst.h;
 				
 				Stage_DrawStrum(i, &note_src, &note_dst);
-				Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+                if (stage.stage_id == StageId_Endless) //add steps later
+                    Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
+                else
+				    Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				
 				//Opponent
 				note_dst.x = note_x[(i | 0x4) ^ stage.note_swap] - FIXED_DEC(16,1);
@@ -1855,7 +1886,11 @@ void Stage_Tick(void)
 				if (stage.prefs.downscroll)
 					note_dst.y = -note_dst.y - note_dst.h;
 				Stage_DrawStrum(i | 4, &note_src, &note_dst);
-				Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+				
+                if (stage.stage_id == StageId_Endless) //add steps later
+                    Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
+                else
+				    Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 			}
 			
 			//Draw stage foreground
