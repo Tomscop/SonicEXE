@@ -883,7 +883,7 @@ static void Stage_DrawNotes(void)
 							note_dst.h = -note_dst.h;
 						}
 						
-                        if (stage.stage_id == StageId_Endless) //add steps later
+                        if ((stage.stage_id == StageId_Endless) && (stage.song_step >= 900))
                             Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
                         else
 				            Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -911,7 +911,7 @@ static void Stage_DrawNotes(void)
 						if (stage.prefs.downscroll)
 							note_dst.y = -note_dst.y - note_dst.h;
 						
-                        if (stage.stage_id == StageId_Endless) //add steps later
+                        if ((stage.stage_id == StageId_Endless) && (stage.song_step >= 900))
                             Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
                         else
 				            Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -938,7 +938,7 @@ static void Stage_DrawNotes(void)
 				if (stage.prefs.downscroll)
 					note_dst.y = -note_dst.y - note_dst.h;
                 
-                if (stage.stage_id == StageId_Endless) //add steps later
+                if ((stage.stage_id == StageId_Endless) && (stage.song_step >= 900))
                     Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
                 else
 				    Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -955,7 +955,7 @@ static void Stage_DrawNotes(void)
 					note_dst.y -= FIXED_DEC(6,1);
 					note_dst.h >>= 2;
 					
-                    if (stage.stage_id == StageId_Endless) //add steps later
+                    if ((stage.stage_id == StageId_Endless) && (stage.song_step >= 900))
                         Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
                     else
 				        Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -978,7 +978,7 @@ static void Stage_DrawNotes(void)
 						note_dst.h = note_dst.h * 3 / 2;
 					}
 					
-                    if (stage.stage_id == StageId_Endless) //add steps later
+                    if ((stage.stage_id == StageId_Endless) && (stage.song_step >= 900))
                         Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
                     else
 				        Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -1025,7 +1025,7 @@ static void Stage_DrawNotes(void)
 				if (stage.prefs.downscroll)
 					note_dst.y = -note_dst.y - note_dst.h;
 				
-                if (stage.stage_id == StageId_Endless) //add steps later
+                if ((stage.stage_id == StageId_Endless) && (stage.song_step >= 900))
                     Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
                 else
 				    Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -1555,10 +1555,10 @@ void Stage_Tick(void)
 				RECT bot_src = {140, 224, 67, 16};
 				RECT_FIXED bot_dst = {FIXED_DEC(-bot_src.w / 2,1), FIXED_DEC(-58,1), FIXED_DEC(bot_src.w,1), FIXED_DEC(bot_src.h,1)};
 
-                if (stage.stage_id == StageId_Endless) //add steps later
-                    Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
+                if ((stage.stage_id == StageId_Endless) && (stage.song_step >= 900))
+                    Stage_DrawTex(&stage.tex_hudmajin, &bot_src, &bot_dst, stage.bump);
                 else
-				    Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+				    Stage_DrawTex(&stage.tex_hud0, &bot_src, &bot_dst, stage.bump);
 			}
 			
 			//Clear per-frame flags
@@ -1874,7 +1874,7 @@ void Stage_Tick(void)
 					note_dst.y = -note_dst.y - note_dst.h;
 				
 				Stage_DrawStrum(i, &note_src, &note_dst);
-                if (stage.stage_id == StageId_Endless) //add steps later
+                if ((stage.stage_id == StageId_Endless) && (stage.song_step >= 900))
                     Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
                 else
 				    Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
@@ -1887,7 +1887,7 @@ void Stage_Tick(void)
 					note_dst.y = -note_dst.y - note_dst.h;
 				Stage_DrawStrum(i | 4, &note_src, &note_dst);
 				
-                if (stage.stage_id == StageId_Endless) //add steps later
+                if ((stage.stage_id == StageId_Endless) && (stage.song_step >= 900))
                     Stage_DrawTex(&stage.tex_hudmajin, &note_src, &note_dst, stage.bump);
                 else
 				    Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
