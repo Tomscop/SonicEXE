@@ -40,6 +40,7 @@
 				<file name = "strscr.arc" type = "data" source = "iso/images/startscreens/strscr.arc"/>
 				
 				<file name = "hud0.tim" type = "data" source = "iso/images/hud0.tim"/>
+				<file name = "hudmajin.tim" type = "data" source = "iso/images/hudmajin.tim"/>
 				<file name = "hud1.tim" type = "data" source = "iso/images/hud1.tim"/>
 				
 				<file name = "note.tim" type = "data" source = "iso/images/note.tim"/>
