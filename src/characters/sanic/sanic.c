@@ -32,10 +32,10 @@ typedef struct
 
 //sanic character definitions
 static const CharFrame char_sanic_frame[] = {
-	{sanic_ArcMain_Idle, {  0,   0, 106, 165}, { 53, 165}}, //0
-	{sanic_ArcMain_Idle, {107,   0, 106, 165}, { 53, 165}}, //1
-	{sanic_ArcMain_Idle, {  0,   0, 105, 163}, { 52, 165}}, //2
-	{sanic_ArcMain_Idle, {106,   0, 105, 163}, { 52, 165}}, //3
+	{sanic_ArcMain_Idle, {  1,   0, 120, 111}, { -4, -6}}, //0
+	{sanic_ArcMain_Idle, {122,   1, 122, 110}, { -4, -7}}, //1
+	{sanic_ArcMain_Idle, {  1, 112, 121, 110}, { -4, -7}}, //2
+	{sanic_ArcMain_Idle, {123, 111, 120, 111}, { -5, -6}}, //3
 	
 	{sanic_ArcMain_Left, {  0,   0,  130, 170}, { 80, 170}}, //4
 	{sanic_ArcMain_Left, {131,   6,  121, 164}, { 70, 164}}, //5
