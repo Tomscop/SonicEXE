@@ -94,6 +94,9 @@
 				<!-- LordX assets -->
 				<file name = "lordx.arc" type = "data" source = "iso/characters/lordx/main.arc"/>
 				
+				<!-- Starved Eggman assets -->
+				<file name = "seggm.arc" type = "data" source = "iso/characters/starvedeggman/main.arc"/>
+				
 				<!-- Needlemouse assets -->
 				<file name = "nmouse.arc" type = "data" source = "iso/characters/nmouse/main.arc"/>
 				

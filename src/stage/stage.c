@@ -80,6 +80,7 @@ static const u8 note_anims[4][3] = {
 #include "../characters/majin/majin.h"
 #include "../characters/majinog/majinog.h"
 #include "../characters/lordx/lordx.h"
+#include "../characters/starvedeggman/seggm.h"
 #include "../characters/nmouse/nmouse.h"
 #include "../characters/sarah/sarah.h"
 

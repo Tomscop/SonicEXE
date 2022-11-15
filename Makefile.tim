@@ -30,6 +30,7 @@ all: \
 	iso/characters/majin/main.arc \
 	iso/characters/majinog/main.arc \
 	iso/characters/lordx/main.arc \
+	iso/characters/starvedeggman/main.arc \
 	iso/characters/nmouse/main.arc \
 	iso/characters/sarah/main.arc \
 	\
@@ -90,6 +91,9 @@ iso/characters/majinog/main.arc: iso/characters/majinog/idle0.tim iso/characters
 
 # Lord X
 iso/characters/lordx/main.arc: iso/characters/lordx/idle0.tim iso/characters/lordx/idle1.tim iso/characters/lordx/idle2.tim iso/characters/lordx/idle3.tim iso/characters/lordx/idle4.tim iso/characters/lordx/idle5.tim iso/characters/lordx/left0.tim iso/characters/lordx/left1.tim iso/characters/lordx/left2.tim iso/characters/lordx/left3.tim iso/characters/lordx/down0.tim iso/characters/lordx/down1.tim iso/characters/lordx/down2.tim iso/characters/lordx/down3.tim iso/characters/lordx/up0.tim iso/characters/lordx/up1.tim iso/characters/lordx/up2.tim iso/characters/lordx/up3.tim iso/characters/lordx/right0.tim iso/characters/lordx/right1.tim iso/characters/lordx/right2.tim iso/characters/lordx/right3.tim 
+
+# Starved Eggman
+iso/characters/starvedeggman/main.arc: iso/characters/starvedeggman/idle.tim iso/characters/starvedeggman/left.tim iso/characters/starvedeggman/down.tim iso/characters/starvedeggman/up0.tim iso/characters/starvedeggman/up1.tim iso/characters/starvedeggman/right.tim 
 
 # Prey Sonic
 iso/characters/sonic/main.arc: iso/characters/sonic/up.tim
