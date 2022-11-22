@@ -19,6 +19,7 @@ all: \
 	iso/characters/bfe/main.arc \
 	iso/characters/starvedtails/main.arc \
 	iso/characters/bfn/main.arc \
+	iso/characters/bfsunky/main.arc \
 	\
 	iso/characters/gf/main.arc \
 	iso/characters/gf/tut.arc \
@@ -69,6 +70,9 @@ iso/characters/starvedtails/main.arc: iso/characters/starvedtails/idle0.tim iso/
 
 # BF NMouse
 iso/characters/bfn/main.arc: iso/characters/bfn/bfn0.tim iso/characters/bfn/bfn1.tim iso/characters/bfn/bfn2.tim iso/characters/bfn/bfn3.tim iso/characters/bfn/bfn4.tim iso/characters/bfn/bfn5.tim iso/characters/bfn/bfn6.tim iso/characters/bfn/bfn7.tim iso/characters/bfn/bfn8.tim iso/characters/bfn/bfn9.tim iso/characters/bfn/bfn10.tim iso/characters/bfn/bfn11.tim iso/characters/bfn/bfn12.tim iso/characters/bfn/bfn13.tim iso/characters/bfn/bfn14.tim iso/characters/bfn/bfn15.tim iso/characters/bfn/dead0.tim iso/characters/bfn/dead1.tim iso/characters/bfn/dead2.tim iso/characters/bfn/retry.tim
+
+# BF Sunky
+iso/characters/bfsunky/main.arc: iso/characters/bfsunky/idle0.tim iso/characters/bfsunky/idle1.tim iso/characters/bfsunky/idle2.tim iso/characters/bfsunky/left0.tim iso/characters/bfsunky/left1.tim iso/characters/bfsunky/down.tim iso/characters/bfsunky/up0.tim iso/characters/bfsunky/up1.tim iso/characters/bfsunky/right0.tim iso/characters/bfsunky/right1.tim iso/characters/bfsunky/leftm.tim iso/characters/bfsunky/downm.tim iso/characters/bfsunky/upm.tim iso/characters/bfsunky/rightm.tim iso/characters/bfsunky/dead0.tim iso/characters/bfsunky/dead1.tim iso/characters/bfsunky/dead2.tim iso/characters/bfsunky/retry.tim
 
 # GF
 iso/characters/gf/main.arc: iso/characters/gf/gf0.tim iso/characters/gf/gf1.tim iso/characters/gf/gf2.tim

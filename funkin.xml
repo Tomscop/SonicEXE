@@ -71,6 +71,9 @@
 				<!-- Boyfriend NMouse assets -->
 				<file name = "bfn.arc" type = "data" source = "iso/characters/bfn/main.arc"/>
 				
+				<!-- Boyfriend Sunky assets -->
+				<file name = "bfsunky.arc" type = "data" source = "iso/characters/bfsunky/main.arc"/>
+				
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/characters/gf/main.arc"/>
 				<file name = "gftut.arc" type = "data" source = "iso/characters/gf/tut.arc"/>
