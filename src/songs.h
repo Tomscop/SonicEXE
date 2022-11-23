@@ -278,7 +278,7 @@
 	},
 	{ //StageId_Milk
 		//Characters
-		{Char_BF_New,    FIXED_DEC(95,1),  FIXED_DEC(110,1)},
+		{Char_BFSunky_New,    FIXED_DEC(95,1),  FIXED_DEC(20,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},
 		{Char_SonicEXE_New, FIXED_DEC(-95,1),  FIXED_DEC(110,1)},
 		{NULL,     FIXED_DEC(0,1),  FIXED_DEC(0,1)},

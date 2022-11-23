@@ -71,6 +71,7 @@ static const u8 note_anims[4][3] = {
 #include "../characters/bfe/bfe.h"
 #include "../characters/starvedtails/stails.h"
 #include "../characters/bfn/bfn.h"
+#include "../characters/bfsunky/bfsunky.h"
 
 #include "../characters/gf/gf.h"
 #include "../characters/gfn/gfn.h"
