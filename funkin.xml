@@ -108,6 +108,9 @@
 				
 				<!-- Sanic assets -->
 				<file name = "sanic.arc" type = "data" source = "iso/characters/sanic/main.arc"/>
+
+				<!-- Xenophanes assets -->
+				<file name = "xeno.arc" type = "data" source = "iso/characters/xenophanes/main.arc"/>
 			</dir>
 			
 			<!-- Songs -->

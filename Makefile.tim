@@ -125,3 +125,6 @@ iso/stages/Starved/back.arc: iso/stages/Starved/0.tim iso/stages/Starved/1.tim
 
 # Sanic
 iso/characters/sanic/main.arc: iso/characters/sanic/idle.tim
+
+# Xenophanes
+iso/character/xenophanes/main.arc: iso/character/xenophanes/dad0 iso/character/xenophanes/dad1 iso/character/xenophanes/dad2 iso/character/xenophanes/dad3 iso/character/xenophanes/dad4 iso/character/xenophanes/dad5 iso/character/xenophanes/dad6 iso/character/xenophanes/dad7 iso/character/xenophanes/dad8 iso/character/xenophanes/dad9 iso/character/xenophanes/dad10 iso/character/xenophanes/dad11 iso/character/xenophanes/dad12 iso/character/xenophanes/dad13 iso/character/xenophanes/dad14 iso/character/xenophanes/dad15 iso/character/xenophanes/dad16 iso/character/xenophanes/dad17 iso/character/xenophanes/dad18 iso/character/xenophanes/dad19 iso/character/xenophanes/dad20 iso/character/xenophanes/dad21 iso/character/xenophanes/dad22 iso/character/xenophanes/dad23 iso/character/xenophanes/dad24

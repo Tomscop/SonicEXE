@@ -84,6 +84,7 @@ static const u8 note_anims[4][3] = {
 #include "../characters/starvedeggman/seggm.h"
 #include "../characters/nmouse/nmouse.h"
 #include "../characters/sarah/sarah.h"
+#include "../characters/xenophanes/xenophanes.h"
 
 #include "../stages/gh/gh.h"
 #include "../stages/ycr/ycr.h"
