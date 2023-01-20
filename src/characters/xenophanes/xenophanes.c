@@ -8,32 +8,32 @@
 //Xenophanes character structure
 enum
 {
-  	Dad_ArcMain_Dad0,
-  	Dad_ArcMain_Dad1,
-  	Dad_ArcMain_Dad2,
-  	Dad_ArcMain_Dad3,
-  	Dad_ArcMain_Dad4,
-	Dad_ArcMain_Dad5,
-  	Dad_ArcMain_Dad6,
-  	Dad_ArcMain_Dad7,
-  	Dad_ArcMain_Dad8,
-  	Dad_ArcMain_Dad9,
-  	Dad_ArcMain_Dad10,
-  	Dad_ArcMain_Dad11,
-  	Dad_ArcMain_Dad12,
-  	Dad_ArcMain_Dad13,
-  	Dad_ArcMain_Dad14,
-  	Dad_ArcMain_Dad15,
-  	Dad_ArcMain_Dad16,
-  	Dad_ArcMain_Dad17,
-  	Dad_ArcMain_Dad18,
-  	Dad_ArcMain_Dad19,
-  	Dad_ArcMain_Dad20,
-  	Dad_ArcMain_Dad21,
-  	Dad_ArcMain_Dad22,
-  	Dad_ArcMain_Dad23,
+  	Xeno_ArcMain_Xeno0,
+  	Xeno_ArcMain_Xeno1,
+  	Xeno_ArcMain_Xeno2,
+  	Xeno_ArcMain_Xeno3,
+  	Xeno_ArcMain_Xeno4,
+	Xeno_ArcMain_Xeno5,
+  	Xeno_ArcMain_Xeno6,
+  	Xeno_ArcMain_Xeno7,
+  	Xeno_ArcMain_Xeno8,
+  	Xeno_ArcMain_Xeno9,
+  	Xeno_ArcMain_Xeno10,
+  	Xeno_ArcMain_Xeno11,
+  	Xeno_ArcMain_Xeno12,
+  	Xeno_ArcMain_Xeno13,
+  	Xeno_ArcMain_Xeno14,
+  	Xeno_ArcMain_Xeno15,
+  	Xeno_ArcMain_Xeno16,
+  	Xeno_ArcMain_Xeno17,
+  	Xeno_ArcMain_Xeno18,
+  	Xeno_ArcMain_Xeno19,
+  	Xeno_ArcMain_Xeno20,
+  	Xeno_ArcMain_Xeno21,
+  	Xeno_ArcMain_Xeno22,
+  	Xeno_ArcMain_Xeno23,
 	
-	Dad_Arc_Max,
+	Xeno_Arc_Max,
 };
 
 typedef struct
@@ -43,45 +43,45 @@ typedef struct
 	
 	//Render data and state
 	IO_Data arc_main;
-	IO_Data arc_ptr[Dad_Arc_Max];
+	IO_Data arc_ptr[Xeno_Arc_Max];
 	
 	Gfx_Tex tex;
 	u8 frame, tex_id;
-} Char_Dad;
+} Char_Xeno;
 
-//Dad character definitions
-static const CharFrame char_dad_frame[] = {
-  	{Dad_ArcMain_Dad0, {  2,  0,129,217}, { 86, 84}}, //0 idle 1
-  	{Dad_ArcMain_Dad1, {  0,  0,128,216}, { 86, 82}}, //1 idle 2
-  	{Dad_ArcMain_Dad2, {  0,  0,127,217}, { 86, 83}}, //2 idle 3
-  	{Dad_ArcMain_Dad3, {  0,  0,127,218}, { 87, 84}}, //3 idle 4
-  	{Dad_ArcMain_Dad4, {  0,  0,130,219}, { 90, 85}}, //4 idle 5
-  	{Dad_ArcMain_Dad5, {  0,  0,128,223}, { 89, 89}}, //5 idle 6
-  	{Dad_ArcMain_Dad6, {  0,  0,128,223}, { 89, 89}}, //6 idle 7
-  	{Dad_ArcMain_Dad7, {  0,  0,128,223}, { 89, 89}}, //7 idle 8
+//Xeno character definitions
+static const CharFrame char_xeno_frame[] = {
+  	{Xeno_ArcMain_Xeno0, {  2,  0,126,217}, { 84, 84}}, //0 idle 1
+  	{Xeno_ArcMain_Xeno1, {  0,  0,126,216}, { 85, 83}}, //1 idle 2
+  	{Xeno_ArcMain_Xeno1, {128,  0,126,217}, { 85, 83}}, //2 idle 3
+  	{Xeno_ArcMain_Xeno2, {  0,  0,126,218}, { 86, 84}}, //3 idle 4
+  	{Xeno_ArcMain_Xeno3, {  0,  0,129,219}, { 89, 85}}, //4 idle 5
+  	{Xeno_ArcMain_Xeno4, {  0,  0,127,223}, { 88, 89}}, //5 idle 6
+  	{Xeno_ArcMain_Xeno5, {  0,  0,127,223}, { 88, 89}}, //6 idle 7
+  	{Xeno_ArcMain_Xeno6, {  0,  0,127,223}, { 88, 89}}, //7 idle 8
 
-  	{Dad_ArcMain_Dad8, {  0,  0,206,203}, {129, 68}}, //8 left 1
-  	{Dad_ArcMain_Dad9, {  0,  0,202,203}, {123, 68}}, //9 left 2
-  	{Dad_ArcMain_Dad10, {  0,  0,194,197}, {105, 62}}, //10 left 3
-  	{Dad_ArcMain_Dad11, {  0,  0,199,199}, {110, 64}}, //11 left 4
+  	{Xeno_ArcMain_Xeno7, {  0,  0,204,202}, {128, 68}}, //8 left 1
+  	{Xeno_ArcMain_Xeno8, {  0,  0,201,202}, {122, 67}}, //9 left 2
+  	{Xeno_ArcMain_Xeno9, {  0,  0,194,196}, {105, 61}}, //10 left 3
+  	{Xeno_ArcMain_Xeno10, {  0,  0,198,198}, {109, 63}}, //11 left 4
 
-  	{Dad_ArcMain_Dad12, {  0,  0,146,191}, { 95, 57}}, //12 down 1
-  	{Dad_ArcMain_Dad13, {  0,  0,146,203}, { 95, 68}}, //13 down 2
-  	{Dad_ArcMain_Dad14, {  0,  0,146,199}, { 95, 65}}, //14 down 3
-  	{Dad_ArcMain_Dad15, {  0,  0,145,200}, { 94, 65}}, //15 down 4
+  	{Xeno_ArcMain_Xeno11, {  0,  0,146,189}, { 95, 55}}, //12 down 1
+  	{Xeno_ArcMain_Xeno12, {  0,  0,146,202}, { 95, 67}}, //13 down 2
+  	{Xeno_ArcMain_Xeno13, {  0,  0,146,198}, { 95, 64}}, //14 down 3
+  	{Xeno_ArcMain_Xeno14, {  0,  0,145,198}, { 94, 64}}, //15 down 4
 
-  	{Dad_ArcMain_Dad16, {  0,  0,149,242}, {100,105}}, //16 up 1
-  	{Dad_ArcMain_Dad17, {  0,  0,149,239}, {100,102}}, //17 up 2
-  	{Dad_ArcMain_Dad18, {  0,  0,149,228}, {100, 92}}, //18 up 3
- 	{Dad_ArcMain_Dad19, {  0,  0,149,230}, {100, 94}}, //19 up 4
+  	{Xeno_ArcMain_Xeno15, {  0,  0,147,241}, { 99,104}}, //16 up 1
+  	{Xeno_ArcMain_Xeno16, {  0,  0,148,238}, {100,101}}, //17 up 2
+  	{Xeno_ArcMain_Xeno17, {  0,  0,147,227}, { 99, 91}}, //18 up 3
+  	{Xeno_ArcMain_Xeno18, {  0,  0,148,229}, {100, 93}}, //19 up 4
 
-  	{Dad_ArcMain_Dad20, {  0,  0,179,207}, { 44, 74}}, //20 right 1
-  	{Dad_ArcMain_Dad21, {  0,  0,178,208}, { 44, 75}}, //21 right 2
-  	{Dad_ArcMain_Dad22, {  0,  0,174,207}, { 44, 74}}, //22 right 3
-  	{Dad_ArcMain_Dad23, {  0,  0,174,208}, { 44, 75}}, //23 right 4
+  	{Xeno_ArcMain_Xeno19, {  0,  0,179,206}, { 44, 73}}, //20 right 1
+  	{Xeno_ArcMain_Xeno20, {  0,  0,178,207}, { 44, 74}}, //21 right 2
+  	{Xeno_ArcMain_Xeno21, {  0,  0,174,207}, { 44, 74}}, //22 right 3
+  	{Xeno_ArcMain_Xeno22, {  0,  0,173,208}, { 43, 75}}, //23 right 4
 };
 
-static const Animation char_dad_anim[CharAnim_Max] = {
+static const Animation char_xeno_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 0,  1,  2,  3,  4,  5, 6, 7, ASCR_CHGANI, CharAnim_Idle}}, //CharAnim_Idle
 	{2, (const u8[]){ 8,  9,  10,  11, ASCR_BACK, 0}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
@@ -93,66 +93,66 @@ static const Animation char_dad_anim[CharAnim_Max] = {
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
 };
 
-//Dad character functions
-void Char_Dad_SetFrame(void *user, u8 frame)
+//Xeno character functions
+void Char_Xeno_SetFrame(void *user, u8 frame)
 {
-	Char_Dad *this = (Char_Dad*)user;
+	Char_Xeno *this = (Char_Xeno*)user;
 	
 	//Check if this is a new frame
 	if (frame != this->frame)
 	{
 		//Check if new art shall be loaded
-		const CharFrame *cframe = &char_dad_frame[this->frame = frame];
+		const CharFrame *cframe = &char_xeno_frame[this->frame = frame];
 		if (cframe->tex != this->tex_id)
 			Gfx_LoadTex(&this->tex, this->arc_ptr[this->tex_id = cframe->tex], 0);
 	}
 }
 
-void Char_Dad_Tick(Character *character)
+void Char_Xeno_Tick(Character *character)
 {
-	Char_Dad *this = (Char_Dad*)character;
+	Char_Xeno *this = (Char_Xeno*)character;
 	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
 	
 	//Animate and draw
-	Animatable_Animate(&character->animatable, (void*)this, Char_Dad_SetFrame);
-	Character_Draw(character, &this->tex, &char_dad_frame[this->frame]);
+	Animatable_Animate(&character->animatable, (void*)this, Char_Xeno_SetFrame);
+	Character_Draw(character, &this->tex, &char_xeno_frame[this->frame]);
 }
 
-void Char_Dad_SetAnim(Character *character, u8 anim)
+void Char_Xeno_SetAnim(Character *character, u8 anim)
 {
 	//Set animation
 	Animatable_SetAnim(&character->animatable, anim);
 	Character_CheckStartSing(character);
 }
 
-void Char_Dad_Free(Character *character)
+void Char_Xeno_Free(Character *character)
 {
-	Char_Dad *this = (Char_Dad*)character;
+	Char_Xeno *this = (Char_Xeno*)character;
 	
 	//Free art
 	Mem_Free(this->arc_main);
 }
 
-Character *Char_Dad_New(fixed_t x, fixed_t y)
+Character *Char_Xeno_New(fixed_t x, fixed_t y)
 {
-	//Allocate Dad object
-	Char_Dad *this = Mem_Alloc(sizeof(Char_Dad));
+	//Allocate Xeno object
+	Char_Xeno *this = Mem_Alloc(sizeof(Char_Xeno));
 	if (this == NULL)
 	{
-		sprintf(error_msg, "[Char_Dad_New] Failed to allocate dad object");
+		sprintf(error_msg, "[Char_Xeno_New] Failed to allocate Xeno object");
 		ErrorLock();
 		return NULL;
 	}
 	
 	//Initialize character
-	this->character.tick = Char_Dad_Tick;
-	this->character.set_anim = Char_Dad_SetAnim;
-	this->character.free = Char_Dad_Free;
+	this->character.tick = Char_Xeno_Tick;
+	this->character.set_anim = Char_Xeno_SetAnim;
+	this->character.free = Char_Xeno_Free;
 	
-	Animatable_Init(&this->character.animatable, char_dad_anim);
+	Animatable_Init(&this->character.animatable, char_xeno_anim);
 	Character_Init((Character*)this, x, y);
 	
 	//Set character information
@@ -167,7 +167,7 @@ Character *Char_Dad_New(fixed_t x, fixed_t y)
 	this->character.size = FIXED_DEC(11,10);
 	
 	//Load art
-	this->arc_main = IO_Read("\\CHAR\\DAD.ARC;1");
+	this->arc_main = IO_Read("\\CHAR\\XENO.ARC;1");
 	
 	const char **pathp = (const char *[]){
   		"dad0.tim",
@@ -193,7 +193,6 @@ Character *Char_Dad_New(fixed_t x, fixed_t y)
   		"dad20.tim",
   		"dad21.tim",
   		"dad22.tim",
-  		"dad23.tim",
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

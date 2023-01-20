@@ -34,6 +34,7 @@ all: \
 	iso/characters/starvedeggman/main.arc \
 	iso/characters/nmouse/main.arc \
 	iso/characters/sarah/main.arc \
+	iso/characters/xenophanes/main.arc \
 	\
 	iso/stages/GH/back.arc \
 	iso/stages/YCR/back.arc \
@@ -127,4 +128,4 @@ iso/stages/Starved/back.arc: iso/stages/Starved/0.tim iso/stages/Starved/1.tim
 iso/characters/sanic/main.arc: iso/characters/sanic/idle.tim
 
 # Xenophanes
-iso/character/xenophanes/main.arc: iso/character/xenophanes/dad0 iso/character/xenophanes/dad1 iso/character/xenophanes/dad2 iso/character/xenophanes/dad3 iso/character/xenophanes/dad4 iso/character/xenophanes/dad5 iso/character/xenophanes/dad6 iso/character/xenophanes/dad7 iso/character/xenophanes/dad8 iso/character/xenophanes/dad9 iso/character/xenophanes/dad10 iso/character/xenophanes/dad11 iso/character/xenophanes/dad12 iso/character/xenophanes/dad13 iso/character/xenophanes/dad14 iso/character/xenophanes/dad15 iso/character/xenophanes/dad16 iso/character/xenophanes/dad17 iso/character/xenophanes/dad18 iso/character/xenophanes/dad19 iso/character/xenophanes/dad20 iso/character/xenophanes/dad21 iso/character/xenophanes/dad22 iso/character/xenophanes/dad23 iso/character/xenophanes/dad24
+iso/characters/xenophanes/main.arc: iso/characters/xenophanes/dad0.tim iso/characters/xenophanes/dad1.tim iso/characters/xenophanes/dad2.tim iso/characters/xenophanes/dad3.tim iso/characters/xenophanes/dad4.tim iso/characters/xenophanes/dad5.tim iso/characters/xenophanes/dad6.tim iso/characters/xenophanes/dad7.tim iso/characters/xenophanes/dad8.tim iso/characters/xenophanes/dad9.tim iso/characters/xenophanes/dad10.tim iso/characters/xenophanes/dad11.tim iso/characters/xenophanes/dad12.tim iso/characters/xenophanes/dad13.tim iso/characters/xenophanes/dad14.tim iso/characters/xenophanes/dad15.tim iso/characters/xenophanes/dad16.tim iso/characters/xenophanes/dad17.tim iso/characters/xenophanes/dad18.tim iso/characters/xenophanes/dad19.tim iso/characters/xenophanes/dad20.tim iso/characters/xenophanes/dad21.tim iso/characters/xenophanes/dad22.tim
